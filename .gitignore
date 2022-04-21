@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.idea
+storybook-static
+/package-lock.json
+.npmrc
+launch.json
+playwright-report
+test-results
+FigmaTests
+reactpreview.config.js
+__reactpreview__/Wrapper.tsx
+.npmrc
+.VSCodeCounter
