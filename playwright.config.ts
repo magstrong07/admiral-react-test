@@ -1,7 +1,6 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  retries: 1,
   reporter: [['html', { open: 'on-failure' }]],
 
   use: {
