@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { T, Link, Accordion, AccordionItem } from '@admiral-ds/react-ui';
+import { Link } from 'react-router-dom';
+import { T, Accordion, AccordionItem } from '@admiral-ds/react-ui';
 import { links } from './links.ts';
 
 links.sort();
@@ -26,7 +27,7 @@ const Welcome = () => {
         <AccordionItem title="Components for testing">
           <Wrapper>
             {links.map((key, i) => (
-              <Link appearance={'primary'} href={key} key={i}>
+              <Link appearance={'primary'} to={key} key={i}>
                 {key.replace(/\\|\//g, '').charAt(0).toUpperCase() + key.slice(2)}
               </Link>
             ))}

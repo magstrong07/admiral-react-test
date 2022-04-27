@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
 
 import AccordionTest from './components/accordionTest.jsx';
@@ -83,7 +83,7 @@ import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route exact path="/" element={<Welcome />} />
           <Route path="/accordion" element={<AccordionTest />} />
@@ -163,7 +163,7 @@ function App() {
           <Route path="/edit_mode_field_forms" element={<EditModeFieldsForms />} />
           <Route path="/my_chips" element={<MyChips />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
