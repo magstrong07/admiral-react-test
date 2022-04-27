@@ -7,7 +7,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    // "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx playwright test",
     "serve": "webpack serve --mode development",
     "build": "webpack --stats-error-details --mode production"
   },
