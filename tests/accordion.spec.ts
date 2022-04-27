@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('accordion', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/accordion');
+    await page.goto('https://magstrong07.github.io/admiral-react-test/#/accordion');
   });
   test('Accordion click1', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Первый пункт")');

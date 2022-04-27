@@ -8,7 +8,7 @@ test.describe('Coomponents', () => {
     const screenName = 'v' + version + links[index].toLowerCase().replace(/ /g, '-') + '.png';
 
     test(links[index], async ({ page }) => {
-      await page.goto(`http://localhost:3000${url}`);
+      await page.goto(`https://magstrong07.github.io/admiral-react-test/#${url}`);
       expect(await page.screenshot({ fullPage: true })).toMatchSnapshot(screenName);
     });
   }

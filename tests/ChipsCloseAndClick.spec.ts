@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Chips', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/chips');
+    await page.goto('https://magstrong07.github.io/admiral-react-test/#/chips');
   });
   test('Chips close', async ({ page }) => {
     await page.locator('.sc-gsNilK').first().click();

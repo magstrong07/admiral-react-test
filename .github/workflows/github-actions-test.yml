@@ -12,8 +12,6 @@ jobs:
         run: npm ci
       - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: start localhost
-        run: npm run serve
       - name: Run your tests
         run: npm test
       - name: Upload test results

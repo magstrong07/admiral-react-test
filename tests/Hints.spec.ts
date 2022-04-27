@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Hint', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/hint');
+    await page.goto('https://magstrong07.github.io/admiral-react-test/#/hint');
   });
   test('Hint click', async ({ page }) => {
     await page.click('[aria-label="Additional information"]');

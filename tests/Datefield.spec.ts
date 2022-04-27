@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Date field', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/date_field');
+    await page.goto('https://magstrong07.github.io/admiral-react-test/#/date_field');
   });
   test('date field input text', async ({ page }) => {
     await page.click('input');
