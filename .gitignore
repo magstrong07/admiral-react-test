@@ -5,7 +5,6 @@ dist-ssr
 *.local
 .idea
 storybook-static
-/package-lock.json
 .npmrc
 launch.json
 playwright-report
