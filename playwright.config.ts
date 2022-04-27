@@ -1,6 +1,7 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
+  workers: process.env.CI ? 4 : undefined,
   reporter: [['html', { open: 'on-failure' }]],
 
   use: {
