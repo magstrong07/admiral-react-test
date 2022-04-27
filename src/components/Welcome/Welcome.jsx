@@ -20,7 +20,7 @@ const Welcome = () => {
   return (
     <>
       <T as="h2" font="Additional/L-bold">
-        Welcome to admiral-ds
+        Welcome to admiral-ds test deploy
       </T>
       <h3>Date : {new Date().toDateString()}</h3>
       <Accordion>
