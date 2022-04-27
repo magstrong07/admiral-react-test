@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { links } from '../src/components/welcome/links';
+import { links } from '../src/components/Welcome/links';
 links.sort();
 test.describe('Coomponents', () => {
   for (const index in links) {
