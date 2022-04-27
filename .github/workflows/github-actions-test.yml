@@ -13,7 +13,7 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: start localhost
-        run: npm serve
+        run: npm run serve
       - name: Run your tests
         run: npm test
       - name: Upload test results
