@@ -6,14 +6,14 @@ test.describe('Hint', () => {
   test('Hint click', async ({ page }) => {
     await page.click('[aria-label="Additional information"]');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('Hint_click.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     await page.waitForTimeout(250);
     await page.click('[aria-label="Закрыть подсказку"]');
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('Hint_close.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Hint hover', async ({ page }) => {
     await page.hover(':nth-match([aria-label="Additional information"], 2)');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('hint_hover.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

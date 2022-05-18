@@ -34,6 +34,6 @@ test.describe('Chips', () => {
       .click();
 
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('chips_select.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

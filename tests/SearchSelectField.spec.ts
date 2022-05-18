@@ -18,6 +18,6 @@ test.describe('search select field', () => {
     await page.keyboard.type('tex');
     await page.waitForTimeout(350);
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('search_select_field.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

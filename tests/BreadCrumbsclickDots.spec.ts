@@ -6,6 +6,6 @@ test.describe('Breadcrumbs', () => {
   test('breadcrumbs click dots', async ({ page }) => {
     await page.click('[aria-label=""]');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('breadcrumbs_click_dots.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

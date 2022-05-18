@@ -17,6 +17,6 @@ test.describe('Button Group', () => {
     await page.click('div:nth-child(6) div .sc-cTAqQK.kVTxIZ');
     await page.click('div:nth-child(6) div:nth-child(3) .sc-cTAqQK.kVTxIZ');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('button_group_click.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

@@ -13,6 +13,6 @@ test.describe('select', () => {
     await page.click('text=Option threeOption sixНомер Карты /****35 >> :nth-match(div[role="button"], 4)');
     await page.click('text=Option three long text long text');
     await page.waitForTimeout(350);
-    expect(await page.screenshot()).toMatchSnapshot('select_1.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

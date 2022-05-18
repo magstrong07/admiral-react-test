@@ -4,24 +4,23 @@ test.describe('accordion', () => {
     await page.goto('https://magstrong07.github.io/admiral-react-test/#/accordion');
   });
   test('Accordion click1', async ({ page }) => {
-    await page.click('button[role="button"]:has-text("Первый пункт")');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     await page.waitForTimeout(250);
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('1пункт_аккордион.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click2', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.waitForTimeout(250);
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('2пункт_аккордион.png');
-  });
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });  });
   test('Accordion click2 radio', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.waitForTimeout(250);
     await page.click('text=Second option');
     await page.waitForTimeout(250);
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('2пункт_аккордион_radio2.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click2 option 5', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
@@ -31,11 +30,11 @@ test.describe('accordion', () => {
     await page.click('text=Option five');
     await page.waitForTimeout(300);
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('2пункт_аккордион_option5.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click3', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Третий пункт")');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('3пункт_аккордион.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

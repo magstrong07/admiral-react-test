@@ -10,6 +10,6 @@ test.describe('Checkbox Field group', () => {
       'text=Error не управляемый чекбоксВариация с дополнительно декорированным текстом >> input[type="checkbox"]',
     );
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('checkbox_field_click_3.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

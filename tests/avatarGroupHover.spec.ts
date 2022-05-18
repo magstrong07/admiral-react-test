@@ -6,6 +6,6 @@ test.describe('avatarGroup', () => {
   test('avatarGroup hover', async ({ page }) => {
     await page.hover('[id="6"]');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('avatar_group_hover.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

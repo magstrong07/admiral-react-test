@@ -6,12 +6,12 @@ test.describe('Menu Button', () => {
   test('menu button open', async ({ page }) => {
     await page.click('button:has-text("Test")');
     await page.waitForTimeout(350);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('menu_button_open.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('menu button select', async ({ page }) => {
     await page.click('button:has-text("Test")');
     await page.click('text=Option four');
     await page.waitForTimeout(350);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('menu_button_select.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

@@ -6,6 +6,6 @@ test.describe('avatar', () => {
   test('avatar hover', async ({ page }) => {
     await page.hover('button:nth-child(6)');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('avatar_hover.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

@@ -4,12 +4,13 @@ links.sort();
 test.describe('Coomponents', () => {
   for (const index in links) {
     const url = links[index];
-    const version = '44';
-    const screenName = 'v' + version + links[index].toLowerCase().replace(/ /g, '-') + '.png';
+    // const version = '0.01';
+    // const screenName = 'v' + version + links[index].toLowerCase().replace(/ /g, '-') + '.png';
 
     test(links[index], async ({ page }) => {
       await page.goto(`https://magstrong07.github.io/admiral-react-test/#${url}`);
-      expect(await page.screenshot({ fullPage: true })).toMatchSnapshot(screenName);
+      // expect(await page.screenshot({ fullPage: true, scale: 'css' })).toMatchSnapshot(screenName);
+      await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     });
   }
 });

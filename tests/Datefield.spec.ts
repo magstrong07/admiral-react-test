@@ -17,13 +17,13 @@ test.describe('Date field', () => {
     await page.press('input', 'ArrowLeft');
     await page.fill('input', '01.05.2021');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('date_field_input_text.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('date field calendar', async ({ page }) => {
     await page.click('text=Labelsuccesserrorvalue >> :nth-match(svg, 2)');
 
     await page.click('text=10');
     await page.waitForTimeout(250);
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('date_field_calendar.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });
