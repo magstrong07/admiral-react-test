@@ -5,7 +5,7 @@ export const links = [
   '/badge',
   '/breadcrumbs',
   '/button',
-  '/button_group',
+  '/contentSwitcher',
   '/calendar',
   '/checkbox_composite_group',
   '/checkbox_field',
