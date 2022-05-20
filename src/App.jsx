@@ -8,7 +8,7 @@ import AvatarGroupTest from './components/AvatarGroupTest.jsx';
 import AvatarTest from './components/AvatarTest.jsx';
 import BadgeTest from './components/badgeTest.jsx';
 import BreadcrumbsTest from './components/Breadcrumbs.jsx';
-import ButtonGroupTest from './components/ButtonGroupTest.jsx';
+import ContentSwitcherTest from './components/ContentSwitcherTest.jsx';
 import ButtonTest from './components/buttonTest.jsx';
 import CalendarTest from './components/CalendarTest.jsx';
 import CheckBoxFieldTestHookForm from './components/Forms/CheckBoxFieldTestForms.jsx';
@@ -93,7 +93,7 @@ function App() {
           <Route path="/badge" element={<BadgeTest />} />
           <Route path="/breadcrumbs" element={<BreadcrumbsTest />} />
           <Route path="/button" element={<ButtonTest />} />
-          <Route path="/button_group" element={<ButtonGroupTest />} />
+          <Route path="/contentSwitcher" element={<ContentSwitcherTest />} />
           <Route path="/calendar" element={<CalendarTest />} />
           <Route path="/checkbox_composite_group" element={<CheckboxCompositeGroupTest />} />
           <Route path="/checkbox_field" element={<CheckboxFieldTest />} />
