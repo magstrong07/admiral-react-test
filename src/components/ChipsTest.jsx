@@ -23,6 +23,12 @@ const Container = styled.div`
 //     data-test-id: 'test';
 //   }
 // `;
+// const StyledChips = styled(Chips)`
+//   && > * svg {
+//     background-color: #000;
+//     [data-test-id= 'test'];
+//   }
+// `;
 const dimensions = ['s', 'm'];
 
 const appearances = ['filled', 'outlined'];
@@ -57,11 +63,13 @@ const Chip2 = (props) => {
   return (
     <div>
       <Container>
-        <Chips {...props}>Москва</Chips>
+        <Chips {...props} role="button" aria-label="close" data-test="testComponent">
+          Москва
+        </Chips>
         <Chips {...props} iconBefore={<VacationIcon />}>
           Самара
         </Chips>
-        <Chips {...props} iconAfter={<BurnIcon />}>
+        <Chips {...props} aria-label="test" iconAfter={<BurnIcon />}>
           Санкт-Петербург
         </Chips>
         <Chips {...props} iconBefore={<DiamondSolid />} iconAfter={<TrophyIcon />}>
@@ -71,7 +79,12 @@ const Chip2 = (props) => {
           Ограниченное пространство с большим текстом
         </Chips>
         {Data.map((Data) => (
-          <Chips key={Data.id} {...props} onClose={() => setData((prev) => prev.filter((d) => d.id !== Data.id))}>
+          <Chips
+            key={Data.id}
+            {...props}
+            onClose={() => setData((prev) => prev.filter((d) => d.id !== Data.id))}
+            data-test="testComponent2"
+          >
             Закрыть
           </Chips>
         ))}

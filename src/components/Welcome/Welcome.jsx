@@ -15,8 +15,15 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 400px;
 `;
+// const list = [
+//   { title: 'Active button', content: '1' },
+//   { title: 'Default button', content: '2' },
+//   { title: 'Disabled button', content: '3', disabled: true },
+// ];
 
 const Welcome = () => {
+  // const [active, setActive] = useState(0);
+  // const [activeS, setActiveS] = useState(0);
   return (
     <>
       <T as="h2" font="Additional/L-bold">

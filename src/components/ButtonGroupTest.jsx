@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonGroup, ButtonGroupItem, Badge } from '@admiral-ds/react-ui';
+import { ContentSwitcher, ContentSwitcherItem, Badge } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
 
@@ -25,31 +25,31 @@ const list = [
   { title: 'Disabled button', content: '3', disabled: true },
 ];
 
-const ButtonGroups = (props) => {
+const ContentSwitchers = (props) => {
   const [active, setActive] = useState(0);
   const [activeS, setActiveS] = useState(0);
 
   return (
     <div>
-      <ButtonGroup {...props}>
+      <ContentSwitcher {...props}>
         {list.map((item, index) => {
           return (
-            <ButtonGroupItem
+            <ContentSwitcherItem
               key={index}
               disabled={item.disabled}
               active={index === active}
               onClick={() => setActive(index)}
             >
               {item.title}
-            </ButtonGroupItem>
+            </ContentSwitcherItem>
           );
         })}
-      </ButtonGroup>
+      </ContentSwitcher>
       <Separator />
-      <ButtonGroup {...props}>
+      <ContentSwitcher {...props}>
         {list.map((item, index) => {
           return (
-            <ButtonGroupItem
+            <ContentSwitcherItem
               key={index}
               disabled={item.disabled}
               active={index === activeS}
@@ -69,23 +69,23 @@ const ButtonGroups = (props) => {
               >
                 6
               </Badge>
-            </ButtonGroupItem>
+            </ContentSwitcherItem>
           );
         })}
-      </ButtonGroup>
+      </ContentSwitcher>
       <Separator />
     </div>
   );
 };
 
-const ButtonGroupTest = () => {
+const ContentSwitcherTest = () => {
   return propsData.map((prop) => {
     return (
       <>
-        <ButtonGroups {...prop} />
+        <ContentSwitchers {...prop} />
       </>
     );
   });
 };
 
-export default ButtonGroupTest;
+export default ContentSwitcherTest;
