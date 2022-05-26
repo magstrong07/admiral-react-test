@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchSelectField, T, Option } from '@admiral-ds/react-ui';
+import { SelectField, T, Option, Highlight } from '@admiral-ds/react-ui';
 import styled, { css, keyframes } from 'styled-components';
 
 const Wrapper = styled.div`
@@ -10,14 +10,7 @@ const Wrapper = styled.div`
   }
   text-align: center;
 `;
-const Red = styled.span`
-  color: red;
-`;
-const secondItemTertiaryColor = css`
-  & > :nth-child(2) * {
-    color: ${(p) => p.theme.color.text.tertiary};
-  }
-`;
+
 const dimensions = ['s', 'm', 'xl'];
 
 const statuses = ['undefined', 'success', 'error'];
@@ -50,10 +43,7 @@ const animation = css`
   animation: ${jump} 0.35s ease-in-out;
 `;
 
-const Icon =
-  styled.div <
-  {} >
-  `
+const Icon = styled.div`
   width: 20px;
   height: 20px;
   border: 1px solid #8a96a8;
@@ -67,6 +57,7 @@ const Icon =
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: left;
 `;
 
 const ExtraText = styled.div`
@@ -110,33 +101,54 @@ async function wait(ms) {
   });
 }
 
-const SearchSelectFields = (props) => {
+const SelectFields = (props) => {
   const [selectValue, setSelectValue] = useState('');
+  const [selectValue2, setSelectValue2] = useState('');
 
   const onChange = (e) => {
     setSelectValue(e.target.value);
     props.onChange?.(e);
   };
+  const onChange2 = (e) => {
+    setSelectValue2(e.target.value);
+    props.onChange2?.(e);
+  };
 
   return (
-    <SearchSelectField
-      {...props}
-      label="label"
-      className="Search"
-      value={selectValue}
-      onChange={onChange}
-      placeholder="Placeholder"
-    >
-      {OPTIONS_SIMPLE.map((option, ind) => (
-        <Option key={option} value={option} disabled={ind === 4}>
-          {option}
-        </Option>
-      ))}
-    </SearchSelectField>
+    <>
+      <SelectField
+        {...props}
+        mode="searchSelect"
+        label="label"
+        className="Search"
+        value={selectValue}
+        onChange={onChange}
+        placeholder="Placeholder"
+      >
+        {OPTIONS_SIMPLE.map((option, ind) => (
+          <Option key={option} value={option} disabled={ind === 4}>
+            {option}
+          </Option>
+        ))}
+      </SelectField>
+      <SelectField mode="searchSelect" label="label" value={selectValue2} onChange={onChange2}>
+        {OPTIONS.map((option) => (
+          <Option key={option.value} value={option.value}>
+            <Icon />
+            <TextWrapper>
+              <Highlight>{option.text}</Highlight>
+              <ExtraText>
+                <Highlight>{option.extraText}</Highlight>
+              </ExtraText>
+            </TextWrapper>
+          </Option>
+        ))}
+      </SelectField>
+    </>
   );
 };
 
-const SearchSelectFieldTest = () => {
+const SelectFieldTest = () => {
   return propsData.map((prop, key) => {
     return (
       <>
@@ -144,11 +156,11 @@ const SearchSelectFieldTest = () => {
           <T font="Additional/L" as="div">
             {propsData[key].dimension}, {propsData[key].status}
           </T>
-          <SearchSelectFields {...prop} />
+          <SelectFields {...prop} />
         </Wrapper>
       </>
     );
   });
 };
 
-export default SearchSelectFieldTest;
+export default SelectFieldTest;
