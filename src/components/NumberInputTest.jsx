@@ -33,20 +33,21 @@ function func2(dimension, displayClearIcon) {
 dimensions.forEach((d) => func1(d));
 
 const NumberInputs = (props) => {
-  const [value1, setValue1] = React.useState('From 50 $');
+  const [value1, setValue1] = React.useState('From 85.00 $');
   return (
     <>
       <Wrapper>
         <NumberInput {...props} onChange={function noRefCheck() {}} />
         <NumberInput
           {...props}
-          prefix="prefix"
-          onChange={(fullStr, shortStr) => {
-            console.log({ fullStr, shortStr });
+          prefix="From"
+          suffix="$"
+          value={value1}
+          onChange={(event, fullStr, shortStr) => {
+            console.log({ event, fullStr, shortStr });
             setValue1(fullStr);
           }}
           status="success"
-          value={value1}
         />
         <NumberInput
           {...props}
