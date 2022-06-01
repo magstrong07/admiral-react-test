@@ -13,7 +13,8 @@ test.describe('accordion', () => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.waitForTimeout(250);
 
-    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });  });
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
   test('Accordion click2 radio', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.waitForTimeout(250);
@@ -24,8 +25,6 @@ test.describe('accordion', () => {
   });
   test('Accordion click2 option 5', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
-    await page.waitForTimeout(250);
-    await page.click('div[role="button"]');
     await page.waitForTimeout(250);
     await page.click('text=Option five');
     await page.waitForTimeout(300);

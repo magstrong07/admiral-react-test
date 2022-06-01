@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Accordion,
-  AccordionItem,
-  FieldSet,
-  RadioButton,
-  DropDownItem,
-  Button,
-  SelectField,
-} from '@admiral-ds/react-ui';
+import { Accordion, AccordionItem, FieldSet, RadioButton, Button, SelectField, Option } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 const Separator = styled.div`
   height: 70px;
@@ -19,31 +11,15 @@ const Desc = styled.div`
 `;
 
 const AccordionTest = () => {
-  const options = [
-    {
-      id: 1,
-      label:
-        'Option one very long very long very long very long very long very long very long very long very long very long very long ',
-      value: '1',
-    },
-    { id: 2, label: 'Option two', value: '2' },
-    { id: 3, label: 'Option three', value: '3' },
-    { id: 4, label: 'Option four', value: '4' },
-    { id: 5, label: 'Option five', value: '5' },
-    { id: 6, label: 'Option six', value: '6' },
-    { id: 7, label: 'Option seven', value: '7' },
-    { id: 8, label: 'Option seven', value: '7' },
-    { id: 9, label: 'Option seven', value: '7' },
-    { id: 10, label: 'Option seven', value: '7' },
-    { id: 11, label: 'Option seven', value: '7' },
-    { id: 12, label: 'Option seven', value: '7' },
-    { id: 13, label: 'Option seven', value: '7' },
-    { id: 14, label: 'Option seven', value: '7' },
-    { id: 15, label: 'Option seven', value: '7' },
-    { id: 16, label: 'Option seven', value: '7' },
-    { id: 17, label: 'Option seven', value: '7' },
-    { id: 18, label: 'Option seven', value: '7' },
+  const OPTIONS_SIMPLE = [
+    'teeext 1',
+    'text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text ',
+    'text 3',
+    'text 4',
+    'text 5',
+    'texttt 6',
   ];
+
   const Text = `
   Будущее игр никогда не было таким вдохновляющим. Творчество в играх процветает. Новые сервисы позволяют
           находить больше игр, а также приближают игроков к любимым играм, стримерам и создателям. Облако создает
@@ -51,8 +27,11 @@ const AccordionTest = () => {
           с кем хочется и где захочется. И для многих из нас нет ничего более вдохновляющего, чем рассвет нового
           поколения консолей.
 `;
+  const onChange = (e) => {
+    setSelectValue(e.target.value);
+  };
   const [content, setContent] = useState(Text);
-  const [selectValue, setValue] = useState('');
+  const [selectValue, setSelectValue] = React.useState('');
 
   return (
     <div>
@@ -83,14 +62,19 @@ const AccordionTest = () => {
               Third option
             </RadioButton>
           </FieldSet>
-          <SelectField label="Опции" value={selectValue} onChange={setValue} required>
-            {options.map((item, index) => {
-              return (
-                <DropDownItem role="option" value={item.label} key={index}>
-                  {item.label}
-                </DropDownItem>
-              );
-            })}
+          <SelectField
+            mode="searchSelect"
+            label="label"
+            className="Search"
+            value={selectValue}
+            onChange={onChange}
+            placeholder="Placeholder"
+          >
+            {OPTIONS_SIMPLE.map((option, ind) => (
+              <Option key={option} value={option} disabled={ind === 4}>
+                {option}
+              </Option>
+            ))}
           </SelectField>
         </AccordionItem>
         <AccordionItem id="accordion1-item3" isDefaultOpen title="Третий пункт">
