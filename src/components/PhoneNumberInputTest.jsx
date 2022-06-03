@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   }
   text-align: center;
 `;
-const dimensions = ['s', 'm', 'xl'];
+const dimensions = 's';
 
 const disableds = [false, true];
 
@@ -34,12 +34,18 @@ const PhoneNumberInputs = (props) => {
   }, {});
 
   const [localValue, setValue] = React.useState(props.value ?? '');
+  React.useEffect(() => {
+    if (props.value !== undefined) {
+      setValue(props.value);
+    }
+  }, [props.value]);
 
   const handleChange = (e) => {
     const inputValue = e.currentTarget.value;
     setValue(inputValue);
     props.onChange?.(e);
   };
+  console.log(props);
 
   return (
     <>

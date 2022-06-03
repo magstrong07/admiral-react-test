@@ -63,7 +63,7 @@ const Chip2 = (props) => {
   return (
     <div>
       <Container>
-        <Chips {...props} role="button" aria-label="close" data-test="testComponent">
+        <Chips {...props} role="button">
           Москва
         </Chips>
         <Chips {...props} iconBefore={<VacationIcon />}>
@@ -83,7 +83,7 @@ const Chip2 = (props) => {
             key={Data.id}
             {...props}
             onClose={() => setData((prev) => prev.filter((d) => d.id !== Data.id))}
-            data-test="testComponent2"
+            data-test-id="testComponent"
           >
             Закрыть
           </Chips>
