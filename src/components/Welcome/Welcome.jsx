@@ -17,13 +17,6 @@ const Wrapper = styled.div`
 `;
 
 const Welcome = (props) => {
-  const [localValue, setValue] = React.useState(props.value ?? '');
-
-  const handleChange = (e) => {
-    const inputValue = e.currentTarget.value;
-    setValue(inputValue);
-    props.onChange?.(e);
-  };
   return (
     <>
       <T as="h2" font="Additional/L-bold">
@@ -42,7 +35,6 @@ const Welcome = (props) => {
           </Wrapper>
         </AccordionItem>
       </Accordion>
-      <PhoneNumberInput onChange={handleChange} value={localValue} dimension="xl"></PhoneNumberInput>
     </>
   );
 };
