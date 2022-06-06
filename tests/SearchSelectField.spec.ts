@@ -9,7 +9,7 @@ test.describe('search select field', () => {
     await page.locator('input >> nth=1').click();
     await page.locator('div:has-text("Текст 1Доооп Текст 1")').nth(2).click();
     await page.locator('input >> nth=4').click();
-    await page.locator('#selectDropdownContainer div:has-text("texttt 6")').click();
+    await page.locator('#selectDropdownContainer div:has-text("texttt 6")').first().click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text', async ({ page }) => {

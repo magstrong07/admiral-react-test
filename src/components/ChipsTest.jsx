@@ -83,7 +83,7 @@ const Chip2 = (props) => {
             key={Data.id}
             {...props}
             onClose={() => setData((prev) => prev.filter((d) => d.id !== Data.id))}
-            data-test-id="testComponent"
+            data-test-id="chipClose"
           >
             Закрыть
           </Chips>
