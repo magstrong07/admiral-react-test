@@ -124,7 +124,6 @@ const SelectFields = (props) => {
         value={selectValue}
         onChange={onChange}
         placeholder="Placeholder"
-        data-test-id="searchSelectTest"
       >
         {OPTIONS_SIMPLE.map((option, ind) => (
           <Option key={option} value={option} disabled={ind === 4}>
@@ -132,14 +131,7 @@ const SelectFields = (props) => {
           </Option>
         ))}
       </SelectField>
-      <SelectField
-        {...props}
-        mode="searchSelect"
-        label="label"
-        value={selectValue2}
-        onChange={onChange2}
-        data-test-id="searchSelectTestWithExtraText"
-      >
+      <SelectField {...props} mode="searchSelect" label="label" value={selectValue2} onChange={onChange2}>
         {OPTIONS.map((option) => (
           <Option key={option.value} value={option.value}>
             <Icon />
