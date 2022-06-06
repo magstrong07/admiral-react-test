@@ -3,21 +3,15 @@ test.describe('search select field', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://magstrong07.github.io/admiral-react-test/#/search_select_field');
   });
-  test('search select field click', async ({ page }) => {
-    await page.click('#selectValueWrapper');
-    await page.click(
-      '#selectDropdownContainer >> text=text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text text 2 t',
-    );
-    await page.click(
-      'text=s, successlabelteeext 1text 2 text text 2 text text 2 text text 2 text text 2 te >> #selectValueWrapper',
-    );
-    await page.click('#selectDropdownContainer div div:has-text("texttt 6")');
-    await page.click(
-      'text=m, undefinedlabelteeext 1text 2 text text 2 text text 2 text text 2 text text 2  >> #selectValueWrapper',
-    );
-    await page.keyboard.type('tex');
-    await page.waitForTimeout(350);
-
-    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  test('search select field click', async ({ page }) => {  
+  await page.locator('data-test-id=searchSelectTest >>nth=0').click();
+  await page.locator('#selectDropdownContainer div:has-text("teeext 1")').first().click();
+  await page.locator('data-test-id="searchSelectTestWithExtraText >>nth=0').click();
+  await page.locator('div:has-text("Текст 1Доооп Текст 1")').nth(2).click();
+  await page.locator('data-test-id=searchSelectTest >>nth=1').click();
+  await page.locator('div:has-text("Текст 2Доп Теttкст 2")').nth(2).click();
+  await page.locator('data-test-id=searchSelectTest >>nth=2').click();
+  await page.locator('#selectDropdownContainer div:has-text("texttt 6")').click();
+});
   });
 });
