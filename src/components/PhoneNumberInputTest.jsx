@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   }
   text-align: center;
 `;
-const dimensions = 's';
+const dimensions = ['s', 'm', 'xl'];
 
 const disableds = [false, true];
 

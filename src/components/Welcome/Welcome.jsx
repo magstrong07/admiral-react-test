@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { T, Accordion, AccordionItem, PhoneNumberInput } from '@admiral-ds/react-ui';
+import { T, Accordion, AccordionItem } from '@admiral-ds/react-ui';
 import { links } from './links.ts';
 
 links.sort();
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   height: 400px;
 `;
 
-const Welcome = (props) => {
+const Welcome = () => {
   return (
     <>
       <T as="h2" font="Additional/L-bold">
