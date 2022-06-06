@@ -124,6 +124,7 @@ const SelectFields = (props) => {
         value={selectValue}
         onChange={onChange}
         placeholder="Placeholder"
+        data-test-id="searchSelectTest"
       >
         {OPTIONS_SIMPLE.map((option, ind) => (
           <Option key={option} value={option} disabled={ind === 4}>
