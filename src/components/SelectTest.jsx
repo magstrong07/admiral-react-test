@@ -1,21 +1,15 @@
 import React, { useState, Fragment } from 'react';
-import { Select, DropDownItem, typography, Tooltip } from '@admiral-ds/react-ui';
+import { Select, Tooltip, Option } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
 import { ReactComponent as CardSolid } from '@admiral-ds/icons/build/finance/CardSolid.svg';
+
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   > * {
     margin: 20px;
   }
-  justify-content: center;
-  align-items: center;
-`;
-const StyledText = styled.div`
-  ${typography['Additional/S']}
-  color: ${({ theme }) => theme.color.text.primary};
-  pointer-events: none;
+  width: 800px;
 `;
 
 const WrapperContent = styled.div`
@@ -44,7 +38,7 @@ const StyledSelect = styled(Select)`
   text-overflow: ellipsis;
   margin: 0 auto;
 `;
-const StyledDropDownItem = styled(DropDownItem)`
+const StyledOption = styled(Option)`
   & > * {
     white-space: nowrap;
     overflow: hidden;
@@ -65,6 +59,12 @@ const options = [
   { id: 5, label: 'Option five', value: '5' },
   { id: 6, label: 'Option six', value: '6' },
   { id: 7, label: 'Option seven', value: '7' },
+  {
+    id: 8,
+    label:
+      'Option eight long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text',
+    value: '8',
+  },
 ];
 const optionsOne = [
   { id: 1, label: 'Option one', value: '1', content: <StarSolid width={24} /> },
@@ -74,19 +74,23 @@ const optionsOne = [
   { id: 5, label: 'Option five', value: '5', content: <CardSolid width={24} /> },
   { id: 6, label: 'Option six', value: '6', content: <StarSolid width={24} /> },
   { id: 7, label: 'Disabled Option seven', value: '7', content: <StarSolid width={24} />, disabled: true },
-  { id: 11, label: 'Option one', value: '1', content: <StarSolid width={24} /> },
-  { id: 21, label: 'Option two', value: '2', content: <CardSolid width={24} /> },
-  { id: 31, label: 'Option three', value: '3', content: <CardSolid width={24} /> },
-  { id: 41, label: 'Option four', value: '4', content: <CardSolid width={24} /> },
-  { id: 51, label: 'Option five', value: '5', content: <CardSolid width={24} /> },
-  { id: 61, label: 'Option six', value: '6', content: <StarSolid width={24} /> },
-  { id: 71, label: 'Option seven', value: '7', content: <StarSolid width={24} /> },
+  { id: 11, label: 'Опция 1', value: '8', content: <StarSolid width={24} /> },
+  { id: 21, label: 'Опция 2', value: '9', content: <CardSolid width={24} /> },
+  { id: 31, label: 'Опция 3', value: '10', content: <CardSolid width={24} /> },
+  { id: 41, label: 'Опция 4', value: '11', content: <CardSolid width={24} /> },
+  { id: 51, label: 'Опция 5', value: '12', content: <CardSolid width={24} /> },
+  { id: 61, label: 'Опция 6', value: '13', content: <StarSolid width={24} /> },
+  { id: 71, label: 'Опция 7', value: '14', content: <StarSolid width={24} /> },
 ];
 const optionsTwo = [
   { id: 1, label: 'Option one long text long text', value: '1' },
   { id: 2, label: 'Option two long text long text ', value: '2' },
   { id: 3, label: 'Option three long text long text', value: '3' },
-  { id: 4, label: 'Option four long text long text', value: '4' },
+  {
+    id: 4,
+    label: 'Option four long text long text long text long text long text long text long text long text',
+    value: '4',
+  },
   { id: 5, label: 'Option five long text long text', value: '5' },
   { id: 6, label: 'Option six long text long text', value: '6' },
   { id: 7, label: 'Option seven long text long text', value: '7' },
@@ -108,13 +112,13 @@ dimensions.forEach((d) => func1(d));
 
 const Selects = (props) => {
   const [selectValue, setValue] = useState('');
-  const [selectValue1, setValue1] = useState('1');
-  const [selectValue2, setValue2] = useState('1');
+  const [selectValue1, setValue1] = useState('');
+  const [selectValue2, setValue2] = useState('');
   const [selectValue3, setValue3] = useState('');
 
-  const handleChange = (value) => {
-    console.log(value);
-    setValue(value);
+  const handleChange = (e) => {
+    console.log(e);
+    setValue(e.target.value);
   };
   const renderValue = (value) => {
     const content = [...category[0].content, ...category[1].content].filter((d) => d.value?.toString() === value)[0];
@@ -199,21 +203,26 @@ const Selects = (props) => {
   ];
 
   return (
-    <div>
+    <>
       <Wrapper>
+        {/* ===============================================1==================================================         */}
+
         <Select {...props} value={selectValue} placeholder={'Placeholder'} onChange={handleChange}>
           {options.map((item) => {
             return (
-              <DropDownItem role="option" value={item.label} key={item.id}>
+              <Option role="option" value={item.label} key={item.id}>
                 {item.label}
-              </DropDownItem>
+              </Option>
             );
           })}
         </Select>
+        {/* ===============================================2==================================================         */}
         <Select
           {...props}
           value={selectValue1}
-          onChange={(value1) => setValue1(value1)}
+          onChange={(e) => {
+            setValue1(e.target.value);
+          }}
           renderInputValue={(currentValue) => (
             <WrapperContent>
               {optionsOne.filter((d) => d.value === currentValue)[0]?.content}
@@ -223,7 +232,7 @@ const Selects = (props) => {
         >
           {optionsOne.map((item) => {
             return (
-              <DropDownItem
+              <Option
                 aria-selected={selectValue1 === item.value}
                 key={item.id}
                 role="option"
@@ -233,20 +242,28 @@ const Selects = (props) => {
                 <WrapperContent>
                   {item.content} {item.label}
                 </WrapperContent>
-              </DropDownItem>
+              </Option>
             );
           })}
         </Select>
-        <Select {...props} value={selectValue2} renderInputValue={renderValue} onChange={(value) => setValue2(value)}>
+        {/* ===============================================3==================================================         */}
+        <Select
+          {...props}
+          value={selectValue2}
+          renderInputValue={renderValue}
+          onChange={(e) => {
+            setValue2(e.target.value);
+          }}
+        >
           {category.map((item, index) => {
             return (
               <Fragment key={index}>
-                <DropDownItem disabled key={item.id}>
-                  <StyledText> {item.name}</StyledText>
-                </DropDownItem>
+                <Option disabled key={item.id}>
+                  {item.name}
+                </Option>
                 {item.content.map((subCategory) => {
                   return (
-                    <DropDownItem
+                    <Option
                       tabIndex={0}
                       role="option"
                       key={subCategory.id}
@@ -257,15 +274,16 @@ const Selects = (props) => {
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                           {subCategory.label} {subCategory.icon}
                         </div>
-                        <StyledText>{subCategory.subText}</StyledText>
+                        {subCategory.subText}
                       </div>
-                    </DropDownItem>
+                    </Option>
                   );
                 })}
               </Fragment>
             );
           })}
         </Select>
+        {/* ===============================================4==================================================         */}
         <StyledSelect
           {...props}
           renderInputValue={(selectValue3) => {
@@ -276,18 +294,20 @@ const Selects = (props) => {
             );
           }}
           value={selectValue3}
-          onChange={(value) => setValue3(value)}
+          onChange={(e) => {
+            setValue3(e.target.value);
+          }}
         >
           {optionsTwo.map((item) => {
             return (
-              <StyledDropDownItem role="option" value={item.label} key={item.id}>
+              <StyledOption role="option" value={item.label} key={item.id}>
                 <Tooltip renderContent={() => item.label}>{item.label}</Tooltip>
-              </StyledDropDownItem>
+              </StyledOption>
             );
           })}
         </StyledSelect>
       </Wrapper>
-    </div>
+    </>
   );
 };
 const SelectTest = () => {
