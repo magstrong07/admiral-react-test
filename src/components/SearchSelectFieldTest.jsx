@@ -95,11 +95,6 @@ const OPTIONS = [
     extraText: 'Доооп Тексттт 41232',
   },
 ];
-async function wait(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
 
 const SelectFields = (props) => {
   const [selectValue, setSelectValue] = useState('');
