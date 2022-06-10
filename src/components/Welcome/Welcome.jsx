@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { T, Accordion, AccordionItem } from '@admiral-ds/react-ui';
+import { T, Accordion, AccordionItem, SelectField, Option } from '@admiral-ds/react-ui';
 import { links } from './links.ts';
 
 links.sort();
@@ -15,8 +15,21 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 400px;
 `;
+const OPTIONS_SIMPLE = [
+  'teeext 1',
+  'text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text ',
+  'text 3',
+  'text 4',
+  'text 5',
+  'texttt 6',
+];
 
-const Welcome = () => {
+const Welcome = (props) => {
+  const [selectValue, setSelectValue] = useState('');
+  const onChange = (e) => {
+    setSelectValue(e.target.value);
+    props.onChange?.(e);
+  };
   return (
     <>
       <T as="h2" font="Additional/L-bold">
@@ -35,6 +48,22 @@ const Welcome = () => {
           </Wrapper>
         </AccordionItem>
       </Accordion>
+      <div style={{ height: '100px' }}></div>
+      <SelectField
+        {...props}
+        mode="searchSelect"
+        label="label"
+        className="Search"
+        value={selectValue}
+        onChange={onChange}
+        placeholder="Placeholder"
+      >
+        {OPTIONS_SIMPLE.map((option, ind) => (
+          <Option key={option} value={option} disabled={ind === 4}>
+            {option}
+          </Option>
+        ))}
+      </SelectField>
     </>
   );
 };
