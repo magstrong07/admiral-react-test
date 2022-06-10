@@ -3,10 +3,28 @@ test.describe('select', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/#/select');
   });
-  test('select', async ({ page }) => {
+  test('select click options', async ({ page }) => {
     await page.waitForTimeout(200);
-    await page.locator('select >> nth=0').click();
-    await page.locator('text=Option three').click();
+    await page.locator('input >> nth=0').click();
+    await page.locator('div[role="option"]:has-text("Option three")').click();
+    await page.locator('input >> nth=0').click();
+    await page.locator('div[role="option"]:has-text("Option five")').click();
+    await page.locator('input >> nth=0').click();
+    await page.locator('text=Номер Карты /****22 Дополнительный текст').click();
+    await page.locator('input >> nth=0').click();
+    await page
+      .locator(
+        '#selectDropdownContainer >> text=Option four long text long text long text long text long text long text long tex',
+      )
+      .click();
+    await page.locator('input >> nth=0').click();
+    await page.locator('div[role="option"]:has-text("Option six")').click();
+    await page.locator('input >> nth=3').click();
+    await page
+      .locator(
+        '#selectDropdownContainer >> text=Option eight long text long text long text long text long text long text long te',
+      )
+      .click();
 
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });

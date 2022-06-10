@@ -207,7 +207,7 @@ const Selects = (props) => {
       <Wrapper>
         {/* ===============================================1==================================================         */}
 
-        <Select {...props} value={selectValue} placeholder={'Placeholder'} onChange={handleChange}>
+        <Select {...props} value={selectValue} placeholder={'Placeholder 1'} onChange={handleChange}>
           {options.map((item) => {
             return (
               <Option role="option" value={item.label} key={item.id}>
@@ -220,6 +220,7 @@ const Selects = (props) => {
         <Select
           {...props}
           value={selectValue1}
+          placeholder={'Placeholder 2'}
           onChange={(e) => {
             setValue1(e.target.value);
           }}
@@ -251,6 +252,7 @@ const Selects = (props) => {
           {...props}
           value={selectValue2}
           renderInputValue={renderValue}
+          placeholder={'Placeholder 3'}
           onChange={(e) => {
             setValue2(e.target.value);
           }}
@@ -286,6 +288,7 @@ const Selects = (props) => {
         {/* ===============================================4==================================================         */}
         <StyledSelect
           {...props}
+          placeholder={'Placeholder 4'}
           renderInputValue={(selectValue3) => {
             return (
               <Tooltip renderContent={() => selectValue3}>
