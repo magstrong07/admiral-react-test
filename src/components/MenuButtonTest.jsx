@@ -92,7 +92,7 @@ const MenuButtons = (args) => {
         onOpen={() => console.log('open menu')}
         onClose={() => console.log('close menu')}
       >
-        test
+        Test
       </MenuButton>
     </WrapperButton>
   );
