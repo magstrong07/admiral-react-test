@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuButton, T } from '@admiral-ds/react-ui';
+import { MenuButton, MenuItem, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
 const WrapperButton = styled.div`
@@ -18,21 +18,7 @@ const Separator = styled.div`
 //     animation-play-state: paused;
 //   }
 // `;
-
-const dimension = ['s', 'm', 'l', 'xl'];
-const appearance = ['primary', 'secondary', 'ghost'];
-
-let propsData = [];
-
-dimension.forEach((k) => {
-  appearance.forEach((j) => {
-    propsData.push({
-      dimension: k,
-      appearance: j,
-    });
-  });
-});
-const items = [
+export const items = [
   {
     id: '1',
     display: 'Option one',
@@ -64,49 +50,75 @@ const items = [
   },
 ];
 
-const MenuButtons = (props) => {
-  const [selected, setSelected] = React.useState(null);
+const dimension = ['s', 'm', 'l', 'xl'];
+const appearance = ['primary', 'secondary', 'ghost'];
+
+let propsData = [];
+
+dimension.forEach((k) => {
+  appearance.forEach((j) => {
+    propsData.push({
+      dimension: k,
+      appearance: j,
+    });
+  });
+});
+
+const MenuButtons = (args) => {
+  const [selected, setSelected] = React.useState(undefined);
+  const model = React.useMemo(() => {
+    return args.items.map((item) => ({
+      id: item.id,
+      render: (items) => (
+        <MenuItem dimension={args.dimension === 'xl' ? 'l' : args.dimension} {...items} key={item.id}>
+          {item.display}
+        </MenuItem>
+      ),
+      disabled: item.disabled,
+    }));
+  }, [args.items]);
+  console.log(args);
+
   return (
     <WrapperButton>
       <MenuButton
-        {...props}
-        key={items.id}
+        {...args}
         selected={selected}
         onChange={(id) => {
           console.log(`selected: ${id}`);
           setSelected(id);
         }}
-        options={items}
+        items={model}
         onOpen={() => console.log('open menu')}
         onClose={() => console.log('close menu')}
       >
-        Test
+        test
       </MenuButton>
     </WrapperButton>
   );
 };
-const MenuButtonTest = () => {
+const MenuButtonTest = (args) => {
   return propsData.map((prop, key) => {
     return (
       <>
         <WrapperButton>
-          <MenuButtons {...prop} />
-          <T font="Additional/L" as="div">
+          <MenuButtons {...prop} {...args} />
+          <T font="Additional/L">
             {propsData[key].dimension},{propsData[key].appearance}
           </T>
           <Separator />
-          <MenuButtons {...prop} disabled />
+          <MenuButtons {...prop} {...args} disabled />
           <T font="Additional/L" as="div">
             {propsData[key].dimension}, disabled,{''}
             {propsData[key].appearance}
           </T>
           <Separator />
-          <MenuButtons {...prop} loading />
+          <MenuButtons {...prop} {...args} loading />
           <T font="Additional/L" as="div">
             {propsData[key].dimension}, loading, {''} {propsData[key].appearance}
           </T>
           <Separator />
-          <MenuButtons {...prop} skeleton />
+          <MenuButtons {...prop} {...args} skeleton />
           <T font="Additional/L" as="div">
             {propsData[key].dimension}, skeleton,{''}
             {propsData[key].appearance}

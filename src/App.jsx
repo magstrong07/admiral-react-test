@@ -76,7 +76,7 @@ import TimeInputTest from './components/TimeInputTest.jsx';
 import ToastTest from './components/ToastTest.jsx';
 import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
-import Welcome from './components/Welcome/Welcome.jsx';
+import Welcome, { items } from './components/Welcome/Welcome.jsx';
 import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
 
@@ -85,7 +85,7 @@ function App() {
     <div>
       <HashRouter>
         <Routes>
-          <Route path="" element={<Welcome />} />
+          <Route path="" element={<Welcome items={items} />} />
           <Route path="accordion" element={<AccordionTest />} />
           <Route path="accordion_forms_radio" element={<AccordionTestFormRadio />} />
           <Route path="avatar" element={<AvatarTest />} />
@@ -113,7 +113,7 @@ function App() {
           <Route path="icon_button" element={<IconButtonTest />} />
           <Route path="input_field" element={<InputFieldTest />} />
           <Route path="link" element={<LinkTest />} />
-          <Route path="menu_button" element={<MenuButtonTest />} />
+          <Route path="menu_button" element={<MenuButtonTest items={items} />} />
           <Route path="modal" element={<ModalTest />} />
           <Route path="multibutton" element={<MultiButtonTest />} />
           <Route path="multiselect_field" element={<MultiSelectFieldTest />} />

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { T, Accordion, AccordionItem, SelectField, Option } from '@admiral-ds/react-ui';
+import { T, Accordion, AccordionItem, MenuButton, MenuItem } from '@admiral-ds/react-ui';
+
 import { links } from './links.ts';
 
 links.sort();
@@ -15,21 +16,52 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 400px;
 `;
-const OPTIONS_SIMPLE = [
-  'teeext 1',
-  'text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text text 2 text ',
-  'text 3',
-  'text 4',
-  'text 5',
-  'texttt 6',
+export const items = [
+  {
+    id: '1',
+    display: 'Option one',
+  },
+  {
+    id: '2',
+    display: 'Option two',
+  },
+  {
+    id: '3',
+    display: 'Option three',
+  },
+  {
+    id: '4',
+    display: 'Option four',
+  },
+  {
+    id: '5',
+    display: 'Option five',
+    disabled: true,
+  },
+  {
+    id: '6',
+    display: 'Option six',
+  },
+  {
+    id: '7',
+    display: 'Option seven',
+  },
 ];
 
-const Welcome = (props) => {
-  const [selectValue, setSelectValue] = useState('');
-  const onChange = (e) => {
-    setSelectValue(e.target.value);
-    props.onChange?.(e);
-  };
+const Welcome = (args) => {
+  const [selected, setSelected] = React.useState(undefined);
+  const model = React.useMemo(() => {
+    return args.items.map((item) => ({
+      id: item.id,
+      render: (items) => (
+        <MenuItem dimension={args.dimension === 'xl' ? 'l' : args.dimension} {...items} key={item.id}>
+          {item.display}
+        </MenuItem>
+      ),
+      disabled: item.disabled,
+    }));
+  }, [args.items]);
+  console.log(args);
   return (
     <>
       <T as="h2" font="Additional/L-bold">
@@ -49,21 +81,19 @@ const Welcome = (props) => {
         </AccordionItem>
       </Accordion>
       <div style={{ height: '100px' }}></div>
-      <SelectField
-        {...props}
-        mode="searchSelect"
-        label="label"
-        className="Search"
-        value={selectValue}
-        onChange={onChange}
-        placeholder="Placeholder"
+      <MenuButton
+        {...args}
+        selected={selected}
+        onChange={(id) => {
+          console.log(`selected: ${id}`);
+          setSelected(id);
+        }}
+        items={model}
+        onOpen={() => console.log('open menu')}
+        onClose={() => console.log('close menu')}
       >
-        {OPTIONS_SIMPLE.map((option, ind) => (
-          <Option key={option} value={option} disabled={ind === 4}>
-            {option}
-          </Option>
-        ))}
-      </SelectField>
+        test
+      </MenuButton>
     </>
   );
 };
