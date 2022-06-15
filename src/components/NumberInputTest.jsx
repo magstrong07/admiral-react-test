@@ -33,7 +33,7 @@ function func2(dimension, displayClearIcon) {
 dimensions.forEach((d) => func1(d));
 
 const NumberInputs = (props) => {
-  const [value1, setValue1] = React.useState('From 85.00 $');
+  const [value1, setValue1] = React.useState('From 85.00$');
   return (
     <>
       <Wrapper>
