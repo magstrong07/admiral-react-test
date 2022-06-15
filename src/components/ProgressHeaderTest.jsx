@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // останавливаем анимацию для скриншота
 const StyledProgressHeader = styled(ProgressHeader)`
   & > * div {
-    transition-delay: 10s;
+    transition-delay: 0s;
   }
 `;
 const ProgressHeaderTest = () => {
