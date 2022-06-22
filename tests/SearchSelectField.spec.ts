@@ -19,7 +19,9 @@ test.describe('search select field', () => {
   });
   test('search select field input text 2', async ({ page }) => {
     await page.locator('input >> nth=1').click();
-    await page.keyboard.type('Доп');
+    // await page.keyboard.type('Доп');
+    await page.locator('input >> nth=1').fill('Доп');
+
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
 });

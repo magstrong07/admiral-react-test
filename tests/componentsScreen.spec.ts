@@ -9,6 +9,7 @@ test.describe('Coomponents', () => {
 
     test(links[index], async ({ page }) => {
       await page.goto(`https://magstrong07.github.io/admiral-react-test/#${url}`);
+      await page.evaluate('document.fonts.ready');
       // expect(await page.screenshot({ fullPage: true, scale: 'css' })).toMatchSnapshot(screenName);
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     });
