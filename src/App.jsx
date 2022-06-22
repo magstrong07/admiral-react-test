@@ -29,7 +29,7 @@ import HintTest from './components/hintTest.jsx';
 import IconButtonTest from './components/iconButtonTest.jsx';
 import InputFieldTest from './components/InputFieldTest.jsx';
 import LinkTest from './components/LinkTest.jsx';
-import MenuButtonTest from './components/MenuButtonTest.jsx';
+import MenuButtonTest, { items } from './components/MenuButtonTest.jsx';
 import ModalTest from './components/ModalTest.jsx';
 import MultiButtonTest from './components/MultiButtonTest.jsx';
 import MultiSelectFieldTest from './components/MultiSelectFieldTest.jsx';
@@ -76,7 +76,7 @@ import TimeInputTest from './components/TimeInputTest.jsx';
 import ToastTest from './components/ToastTest.jsx';
 import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
-import Welcome, { items } from './components/Welcome/Welcome.jsx';
+import Welcome from './components/Welcome/Welcome.jsx';
 import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
 
