@@ -8,7 +8,7 @@ const Separator = styled.div`
 // останавливаем анимацию для скриншота
 const StyledProgressPage = styled(ProgressPage)`
   & > * div {
-    transition-delay: 2s;
+    transition-delay: 999s;
   }
 `;
 
