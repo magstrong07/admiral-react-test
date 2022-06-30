@@ -4,6 +4,7 @@ import App from './App.jsx';
 import './App.css';
 import { LIGHT_THEME, FontsVTBGroup } from '@admiral-ds/react-ui';
 import { ThemeProvider } from 'styled-components';
+import '@admiral-ds/fonts/VTBGroupUI.css';
 
 ReactDom.render(
   <React.StrictMode>
