@@ -9,7 +9,7 @@ import '@admiral-ds/fonts/VTBGroupUI.css';
 ReactDom.render(
   <React.StrictMode>
     <ThemeProvider theme={LIGHT_THEME}>
-      <FontsVTBGroup />
+      {/* <FontsVTBGroup /> */}
       <App />
     </ThemeProvider>
   </React.StrictMode>,
