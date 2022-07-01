@@ -33,7 +33,6 @@ function func2(dimension, displayClearIcon) {
 dimensions.forEach((d) => func1(d));
 
 const NumberInputs = (props) => {
-  const [value1, setValue1] = React.useState('85.00');
   return (
     <>
       <Wrapper>
@@ -42,10 +41,9 @@ const NumberInputs = (props) => {
           {...props}
           prefix="From"
           suffix="$"
-          value={value1}
-          onChange={(event, fullStr, shortStr) => {
-            console.log({ event, fullStr, shortStr });
-            setValue1(fullStr);
+          defaultValue="85.00"
+          onChange={(event) => {
+            console.log(event.target.value);
           }}
           status="success"
         />
