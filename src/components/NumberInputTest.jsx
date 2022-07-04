@@ -35,19 +35,24 @@ dimensions.forEach((d) => func1(d));
 const NumberInputs = (props) => {
   return (
     <>
-      <Wrapper>
-        <NumberInput {...props} onChange={function noRefCheck() {}} />
-        <NumberInput
-          {...props}
-          prefix="From"
-          suffix="$"
-          defaultValue="85.00"
-          onChange={(event) => {
-            console.log(event.target.value);
-          }}
-          status="success"
-        />
-        <NumberInput
+      {/* <Wrapper> */}
+      {/* <NumberInput {...props} defaultValue="85.00" suffix="$" onChange={function noRefCheck() {}} />
+        <NumberInput {...props} defaultValue="5.00" suffix="$" onChange={function noRefCheck() {}} />
+        <NumberInput {...props} defaultValue="85.00" prefix="From" onChange={function noRefCheck() {}} />
+        <NumberInput {...props} defaultValue="0" prefix="From" onChange={function noRefCheck() {}} />
+        <NumberInput {...props} defaultValue="0" suffix="$" onChange={function noRefCheck() {}} /> */}
+
+      <NumberInput
+        {...props}
+        prefix="From"
+        suffix="$"
+        defaultValue="85.00"
+        onChange={(event) => {
+          console.log(event.target.value);
+        }}
+        status="success"
+      />
+      {/* <NumberInput
           {...props}
           onChange={function noRefCheck() {}}
           status="error"
@@ -56,8 +61,8 @@ const NumberInputs = (props) => {
           suffix="$"
           placeholder="0 $"
           precision={0}
-        />
-      </Wrapper>
+        /> */}
+      {/* </Wrapper> */}
     </>
   );
 };
@@ -71,6 +76,28 @@ const NumberInputTest = () => {
             {propsData[key].dimension}, {propsData[key].type}
           </T>
           <NumberInputs {...prop} />
+          <NumberInput {...prop} dimension="s" defaultValue="85.00" suffix="$" onChange={function noRefCheck() {}} />
+          <NumberInput
+            {...prop}
+            dimension="s"
+            status="success"
+            defaultValue="85.00"
+            suffix="$"
+            onChange={function noRefCheck() {}}
+          />
+          <NumberInput
+            {...prop}
+            dimension="s"
+            status="error"
+            defaultValue="85.00"
+            suffix="$"
+            onChange={function noRefCheck() {}}
+          />
+
+          <NumberInput {...prop} dimension="s" defaultValue="5.00" suffix="$" onChange={function noRefCheck() {}} />
+          <NumberInput {...prop} dimension="s" defaultValue="85.00" prefix="From" onChange={function noRefCheck() {}} />
+          <NumberInput {...prop} dimension="s" defaultValue="0" prefix="From" onChange={function noRefCheck() {}} />
+          <NumberInput {...prop} dimension="s" defaultValue="0" suffix="$" onChange={function noRefCheck() {}} />
         </Wrapper>
       </>
     );
