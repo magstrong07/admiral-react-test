@@ -35,7 +35,7 @@ const Welcome = (props) => {
   return (
     <>
       <T as="h2" font="Additional/L-bold">
-        Welcome to admiral-ds start
+        Welcome to admiral-ds start 38
       </T>
 
       <h3>Date : {new Date().toDateString()}</h3>
