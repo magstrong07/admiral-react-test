@@ -20,6 +20,10 @@ const config: PlaywrightTestConfig = {
       name: 'webkit',
       use: { ...devices['Desktop Safari'], deviceScaleFactor: 2 },
     },
+    {
+      name: '84',
+      use: { channel: 'chrome' },
+    },
   ],
 };
 export default config;
