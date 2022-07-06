@@ -2495,9 +2495,9 @@
   left: 0;
   height: 0;
   visibility: hidden;
-  overflow: scroll;
   white-space: pre;
   pointer-events: none;
+  box-sizing: border-box;
 `,Ji=j.default.div`
   position: absolute;
   top: 0;
@@ -2597,7 +2597,7 @@
 
   ${eo}
   ${to}
-`,ao=H.forwardRef((({placeholder:e,type:t,precision:n=2,prefix:a="",suffix:l="₽",thousand:r=" ",decimal:i=".",...o},c)=>{const[u,s]=H.useState(!1),d=H.useRef(null),f=H.useRef(null),p=t=>{d.current&&f.current&&(d.current.innerHTML=t||e||"",f.current.style.width=`${d.current.scrollWidth+2}px`),t?null==s||s(!0):null==s||s(!1)},m=e=>{const{value:t,selectionStart:a}=e||{},l=a||0,o=t||"",c=qi(o,n,i,r);return p(c),r&&o.charAt(l-1)===r&&c.length===o.length?{...e,value:c,selectionStart:l-1,selectionEnd:l-1}:{...e,value:c,selectionStart:c.length-o.length+l,selectionEnd:c.length-o.length+l}};return H.useLayoutEffect((()=>{const n=m(null);function a(){const{value:t,selectionStart:a,selectionEnd:l}=this,r=m({value:t,selectionStart:a,selectionEnd:l});e&&!Sa(n,r)?Oa(this,{...r,value:""}):Oa(this,r)}if("date"!==t&&f.current){const t=f.current;t.addEventListener("input",a);const{value:l,selectionStart:r,selectionEnd:i}=t,o=m({value:l,selectionStart:r,selectionEnd:i});return e&&!Sa(n,o)?Oa(t,{...o,value:""}):Oa(t,o),()=>{t.removeEventListener("input",a)}}}),[f.current,e]),H.useLayoutEffect((()=>{f.current&&p(f.current.value)}),[o.value,o.defaultValue,o.dimension]),H.createElement(Xi,null,a&&u&&H.createElement(Yi,null,a," "),H.createElement(Xi,null,H.createElement(Qi,{ref:d}),H.createElement(no,{...o,ref:va(c,f),placeholder:e,type:"text",onMouseDown:e=>{var t;e.stopPropagation(),null==(t=o.onMouseDown)||t.call(o,e)}}),H.createElement(Ji,null),l&&u&&H.createElement(Zi,null," ",l)))})),lo=a.css`
+`,ao=H.forwardRef((({placeholder:e,type:t,precision:n=2,prefix:a="",suffix:l="₽",thousand:r=" ",decimal:i=".",...o},c)=>{const[u,s]=H.useState(!1),d=H.useRef(null),f=H.useRef(0),p=H.useRef(null),m=t=>{d.current&&p.current&&(d.current.innerHTML=t||e||"",p.current.style.width=`${d.current.getBoundingClientRect().width+2}px`),t?null==s||s(!0):null==s||s(!1)},h=e=>{const{value:t,selectionStart:a}=e||{},l=a||0,o=t||"",c=qi(o,n,i,r);return m(c),r&&o.charAt(l-1)===r&&c.length===o.length?{...e,value:c,selectionStart:l-1,selectionEnd:l-1}:{...e,value:c,selectionStart:c.length-o.length+l,selectionEnd:c.length-o.length+l}};return H.useLayoutEffect((()=>{const n=h(null);function a(){const{value:t,selectionStart:a,selectionEnd:l}=this,r=h({value:t,selectionStart:a,selectionEnd:l});e&&!Sa(n,r)?Oa(this,{...r,value:""}):Oa(this,r)}if("date"!==t&&p.current){const t=p.current;t.addEventListener("input",a);const{value:l,selectionStart:r,selectionEnd:i}=t,o=h({value:l,selectionStart:r,selectionEnd:i});return e&&!Sa(n,o)?Oa(t,{...o,value:""}):Oa(t,o),()=>{t.removeEventListener("input",a)}}}),[p.current,e]),H.useLayoutEffect((()=>{p.current&&m(p.current.value)}),[o.value,o.defaultValue,o.dimension]),H.useLayoutEffect((()=>{if(d.current){const e=$t(d.current,(e=>{const t=(null==e?void 0:e.width)||0;f.current!==t&&(f.current=t,p.current&&m(p.current.value))}));return e.observe(),()=>{e.unobserve()}}}),[d.current]),H.createElement(Xi,null,a&&u&&H.createElement(Yi,null,a," "),H.createElement(Xi,null,H.createElement(Qi,{ref:d}),H.createElement(no,{...o,ref:va(c,p),placeholder:e,type:"text",onMouseDown:e=>{var t;e.stopPropagation(),null==(t=o.onMouseDown)||t.call(o,e)}}),H.createElement(Ji,null),l&&u&&H.createElement(Zi,null," ",l)))})),lo=a.css`
   padding-right: ${e=>{var t;return ro(e)+(fo(e)+8)*(null!=(t=e.iconCount)?t:0)}}px;
 `,ro=e=>{switch(e.dimension){case"xl":default:return 16;case"s":return 12}},io=a.css`
   & *[fill^='#'] {
@@ -3279,7 +3279,7 @@
   [disabled] & {
     color: ${e=>e.theme.color["Neutral/Neutral 30"]};
   }
-`,lu=H.forwardRef((({extraText:e,className:t,children:n,dimension:a="m",...l},r)=>H.createElement(nu,{className:t,dimension:a,disabled:l.disabled},H.createElement(tu,{dimension:a,ref:r,...l}),n,e&&H.createElement(au,{dimension:a,children:e}))));lu.displayName="CheckboxField";const ru=H.forwardRef(((e,t)=>{const{className:n,displayInline:a,status:l,required:r,extraText:i,label:o,id:c=he(),name:u,disabled:s,...d}=e,f={className:n,extraText:i,status:l,required:r,label:o,"data-field-id":c,"data-field-name":u,displayInline:a,disabled:s};Object.keys(d).forEach((e=>{e.startsWith("data-field")&&(f[e]=d[e])}));const p={ref:t,id:c,name:u,"aria-required":r,status:l,disabled:s,...d};return H.createElement(_a,{...f},H.createElement(hl,{...p}))}));ru.displayName="DateField";const iu=j.default(ui)`
+`,lu=H.forwardRef((({extraText:e,className:t,children:n,dimension:a="m",...l},r)=>H.createElement(nu,{className:t,dimension:a,disabled:l.disabled},H.createElement(tu,{dimension:a,ref:r,...l}),n,e&&H.createElement(au,{dimension:a,children:e}))));lu.displayName="CheckboxField";const ru=H.forwardRef(((e,t)=>{const{className:n,displayInline:a,status:l,required:r,extraText:i,label:o,id:c=he(),name:u,disabled:s,...d}=e,f={className:n,extraText:i,status:l,required:r,label:o,id:c,"data-field-id":c,"data-field-name":u,displayInline:a,disabled:s};Object.keys(d).forEach((e=>{e.startsWith("data-field")&&(f[e]=d[e])}));const p={ref:t,id:c,name:u,"aria-required":r,status:l,disabled:s,...d};return H.createElement(_a,{...f},H.createElement(hl,{...p}))}));ru.displayName="DateField";const iu=j.default(ui)`
   [data-status='error'] & {
     border-color: ${e=>e.theme.color["Error/Error 60 Main"]};
   }
