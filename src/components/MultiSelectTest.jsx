@@ -33,11 +33,7 @@ function func2(dimension, status) {
 dimensions.forEach((d) => func1(d));
 
 const MultiSelects = (props) => {
-  const [selectValue, setSelectValue] = React.useState(
-    Array.from({ length: 20 })
-      .map((_, ind) => ind)
-      .slice(0, 10),
-  );
+  const [selectValue, setSelectValue] = React.useState([]);
 
   const onChange = (e) => {
     const newValues = Array.from(e.target.selectedOptions).map((option) => option.value);
@@ -53,6 +49,7 @@ const MultiSelects = (props) => {
       onChange={onChange}
       displayClearIcon={true}
       placeholder="Placeholder"
+      mode="searchSelect"
     >
       <Option value="big">
         Здесь ооооочень большой текст, который может, так сказать, и не поместиться в одну строку
