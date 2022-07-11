@@ -32,7 +32,7 @@ import LinkTest from './components/LinkTest.jsx';
 import MenuButtonTest, { items } from './components/MenuButtonTest.jsx';
 import ModalTest from './components/ModalTest.jsx';
 import MultiButtonTest from './components/MultiButtonTest.jsx';
-import MultiSelectFieldTest from './components/MultiSelectFieldTest.jsx';
+import MultiSelectTest from './components/MultiSelectTest.jsx';
 import NotificationTest from './components/NotificationTest.jsx';
 import NumberInputFieldTest from './components/NumberInputFieldTest.jsx';
 import NumberInputTest from './components/NumberInputTest.jsx';
@@ -116,7 +116,7 @@ function App() {
           <Route path="menu_button" element={<MenuButtonTest items={items} />} />
           <Route path="modal" element={<ModalTest />} />
           <Route path="multibutton" element={<MultiButtonTest />} />
-          <Route path="multiselect_field" element={<MultiSelectFieldTest />} />
+          <Route path="multiselect" element={<MultiSelectTest />} />
           <Route path="notifications" element={<NotificationTest />} />
           <Route path="number_input" element={<NumberInputTest />} />
           <Route path="number_input_field" element={<NumberInputFieldTest />} />
