@@ -27,7 +27,7 @@ export const links = [
   '/menu_button',
   '/modal',
   '/multibutton',
-  '/multiselect_field',
+  '/multiselect',
   '/notifications',
   '/number_input',
   '/number_input_field',
