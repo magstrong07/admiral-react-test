@@ -15,11 +15,11 @@ const Separator = styled.div`
   height: 40px;
 `;
 const OrangeColor = css`
-  color: ${(p) => p.theme.color.status.warn};
+  color: ${(p) => p.theme.color['Warning/Warning 50 Main']};
   > div {
     svg {
       path {
-        fill: ${(p) => p.theme.color.status.warn};
+        fill: ${(p) => p.theme.color['Warning/Warning 50 Main']};
       }
     }
   }
