@@ -1,5 +1,5 @@
 import React from 'react';
-import { T } from '@admiral-ds/react-ui';
+import { T, MainPrimaryColorName } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
 const WrapperT = styled.div`
@@ -9,14 +9,14 @@ const WrapperT = styled.div`
   }
 `;
 const BlueText = styled(T)`
-  color: ${(p) => p.theme.color.basic.primary};
+  color: ${(p) => p.theme.color[MainPrimaryColorName]};
 `;
 const CustomParagraph = styled(T)`
-  color: ${(p) => p.theme.color.basic.tertiary};
+  color: ${(p) => p.theme.color['Neutral/Neutral 70']};
 `;
 
 const OrangeColor = css`
-  color: ${(p) => p.theme.color.status.warn};
+  color: ${(p) => p.theme.color['Warning/Warning 50 Main']};
 `;
 
 const typographys = [
