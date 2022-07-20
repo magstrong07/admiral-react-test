@@ -67,7 +67,7 @@ dimension.forEach((k) => {
 const MenuButtons = (args) => {
   const [selected, setSelected] = React.useState(undefined);
   const model = React.useMemo(() => {
-    return args.items.map((item) => ({
+    return items.map((item) => ({
       id: item.id,
       render: (items) => (
         <MenuItem dimension={args.dimension === 'xl' ? 'l' : args.dimension} {...items} key={item.id}>
@@ -77,7 +77,6 @@ const MenuButtons = (args) => {
       disabled: item.disabled,
     }));
   }, [args.items]);
-  console.log(args);
 
   return (
     <WrapperButton>

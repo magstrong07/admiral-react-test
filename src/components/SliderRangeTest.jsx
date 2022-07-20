@@ -13,20 +13,24 @@ const Wrapper = styled.div`
 
 const dimensions = ['s', 'm', 'xl'];
 
-const statuses = ['undefined', 'success', 'error'];
-
+const inputs1Statuses = [{ status: 'undefined' }, { status: 'success' }, { status: 'error' }];
+const inputs2Statuses = [{ status: 'undefined' }, { status: 'success' }, { status: 'error' }];
 const disableds = [false, true];
 
 let propsData = [];
 
 function func1(dimension) {
-  statuses.forEach((a) => func2(dimension, a));
+  inputs1Statuses.forEach((a) => func2(dimension, a));
 }
-function func2(dimension, status) {
+function func2(input1, dimension) {
+  inputs2Statuses.forEach((a) => func3(input1, dimension, a));
+}
+function func3(dimension, input1, input2) {
   disableds.forEach((disabled) => {
     propsData.push({
       dimension,
-      status,
+      input1,
+      input2,
       disabled,
     });
   });

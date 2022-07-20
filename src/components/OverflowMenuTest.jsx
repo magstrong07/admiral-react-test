@@ -1,5 +1,5 @@
-import React from 'react';
-import { OverflowMenu, DropDownItem, T } from '@admiral-ds/react-ui';
+import React, { useMemo } from 'react';
+import { OverflowMenu, MenuItem, T } from '@admiral-ds/react-ui';
 import { ReactComponent as MinusCircleOutline } from '@admiral-ds/icons/build/service/MinusCircleOutline.svg';
 
 import styled from 'styled-components';
@@ -51,7 +51,18 @@ const items = [
 ];
 
 const OverflowMenuTest = (...args) => {
-  const [selected, setSelected] = React.useState(null);
+  const [selected, setSelected] = React.useState();
+  const model = useMemo(() => {
+    return items.map((item) => ({
+      id: item.id,
+      render: (options) => (
+        <MenuItem dimension={args.dimension} {...options} key={item.id}>
+          {item.display}
+        </MenuItem>
+      ),
+      disabled: item.disabled,
+    }));
+  }, [args.dimension]);
   return (
     <div>
       <Wrapper>
@@ -61,60 +72,49 @@ const OverflowMenuTest = (...args) => {
         <OverflowMenu
           {...args}
           dimension="s"
+          items={model}
           selected={selected}
-          onChange={(id) => setSelected(id)}
+          onChange={(id) => {
+            console.log(`onChange('${id}')`);
+            setSelected(id);
+          }}
           onOpen={() => console.log('open menu')}
           onClose={() => console.log('close menu')}
           aria-label="Overflow Menu component"
-        >
-          {items.map((item) => {
-            return (
-              <DropDownItem role="option" key={item.id} id={item.id} disabled={item.disabled}>
-                {item.display}
-              </DropDownItem>
-            );
-          })}
-        </OverflowMenu>
+        />
+
         <T font="Additional/L" as="div">
           dimension M
         </T>
         <OverflowMenu
           {...args}
-          dimension="s"
+          dimension="m"
+          items={model}
           selected={selected}
-          onChange={(id) => setSelected(id)}
+          onChange={(id) => {
+            console.log(`onChange('${id}')`);
+            setSelected(id);
+          }}
           onOpen={() => console.log('open menu')}
           onClose={() => console.log('close menu')}
           aria-label="Overflow Menu component"
-        >
-          {items.map((item) => {
-            return (
-              <DropDownItem role="option" key={item.id} id={item.id} disabled={item.disabled}>
-                {item.display}
-              </DropDownItem>
-            );
-          })}
-        </OverflowMenu>
+        />
         <T font="Additional/L" as="div">
           dimension L
         </T>
         <OverflowMenu
-          dimension="l"
           {...args}
+          dimension="l"
+          items={model}
           selected={selected}
-          onChange={(id) => setSelected(id)}
+          onChange={(id) => {
+            console.log(`onChange('${id}')`);
+            setSelected(id);
+          }}
           onOpen={() => console.log('open menu')}
           onClose={() => console.log('close menu')}
           aria-label="Overflow Menu component"
-        >
-          {items.map((item) => {
-            return (
-              <DropDownItem role="option" key={item.id} id={item.id} disabled={item.disabled}>
-                {item.display}
-              </DropDownItem>
-            );
-          })}
-        </OverflowMenu>
+        />
       </Wrapper>
     </div>
   );
