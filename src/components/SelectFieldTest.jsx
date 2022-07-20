@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectField, DropDownItem, T } from '@admiral-ds/react-ui';
+import { SelectField, Option, T } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div`
@@ -41,7 +41,7 @@ function func2(dimension, status) {
 dimensions.forEach((d) => func1(d));
 
 const SelectFields = (props) => {
-  const [selectValue, setValue] = useState('');
+  const [selectValue, setSelectValue] = useState('');
 
   const options = [
     {
@@ -62,6 +62,9 @@ const SelectFields = (props) => {
     { label: 'Option six', value: '6' },
     { label: 'Option seven', value: '7' },
   ];
+  const onChange = (e) => {
+    setSelectValue(e.target.value);
+  };
 
   const valueToModelMap = options.reduce((acc, model) => {
     acc[model.value] = model;
@@ -76,14 +79,14 @@ const SelectFields = (props) => {
       label="Опции"
       value={selectValue}
       renderInputValue={simpleRender}
-      onChange={setValue}
+      onChange={onChange}
       required
       dropContainerCssMixin={secondItemTertiaryColor}
     >
       {options.map((item, index) => (
-        <DropDownItem role="option" value={item.value} key={index}>
+        <Option role="option" value={item.value} key={index}>
           {item.label}
-        </DropDownItem>
+        </Option>
       ))}
     </SelectField>
   );
