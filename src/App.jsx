@@ -79,6 +79,7 @@ import TooltipTest from './components/TooltipTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
 import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
+import IconsTest from './icons/IconsTest.jsx';
 
 function App() {
   return (
@@ -162,6 +163,7 @@ function App() {
           <Route path="typography" element={<TTest />} />
           <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
           <Route path="my_chips" element={<MyChips />} />
+          <Route path="icons" element={<IconsTest />} />
         </Routes>
       </HashRouter>
     </div>

@@ -11,8 +11,12 @@ export { ReactComponent as CloseOutline } from '@admiral-ds/icons/build/service/
 export { ReactComponent as CloseSolid } from '@admiral-ds/icons/build/service/CloseSolid.svg';
 export { ReactComponent as CutOutline } from '@admiral-ds/icons/build/service/CutOutline.svg';
 export { ReactComponent as CutSolid } from '@admiral-ds/icons/build/service/CutSolid.svg';
+export { ReactComponent as DotsMenuOutline } from '@admiral-ds/icons/build/service/DotsMenuOutline.svg';
+export { ReactComponent as DotsMenuSolid } from '@admiral-ds/icons/build/service/DotsMenuSolid.svg';
 export { ReactComponent as DragOutline } from '@admiral-ds/icons/build/service/DragOutline.svg';
 export { ReactComponent as DragSolid } from '@admiral-ds/icons/build/service/DragSolid.svg';
+export { ReactComponent as EquallyOutline } from '@admiral-ds/icons/build/service/EquallyOutline.svg';
+export { ReactComponent as EquallySolid } from '@admiral-ds/icons/build/service/EquallySolid.svg';
 export { ReactComponent as ErrorOutline } from '@admiral-ds/icons/build/service/ErrorOutline.svg';
 export { ReactComponent as ErrorSolid } from '@admiral-ds/icons/build/service/ErrorSolid.svg';
 export { ReactComponent as ErrorTriangleOutline } from '@admiral-ds/icons/build/service/ErrorTriangleOutline.svg';
@@ -40,6 +44,8 @@ export { ReactComponent as PlusOutline } from '@admiral-ds/icons/build/service/P
 export { ReactComponent as PlusSolid } from '@admiral-ds/icons/build/service/PlusSolid.svg';
 export { ReactComponent as ProcessOutline } from '@admiral-ds/icons/build/service/ProcessOutline.svg';
 export { ReactComponent as ProcessSolid } from '@admiral-ds/icons/build/service/ProcessSolid.svg';
+export { ReactComponent as SizeChangerHorizontalOutline } from '@admiral-ds/icons/build/service/SizeChangerHorizontalOutline.svg';
+export { ReactComponent as SizeChangerVerticalOutline } from '@admiral-ds/icons/build/service/SizeChangerVerticalOutline.svg';
 export { ReactComponent as SmallCloseOutline } from '@admiral-ds/icons/build/service/SmallCloseOutline.svg';
 export { ReactComponent as SmallCloseSolid } from '@admiral-ds/icons/build/service/SmallCloseSolid.svg';
 export { ReactComponent as ThumbsDownOutline } from '@admiral-ds/icons/build/service/ThumbsDownOutline.svg';
