@@ -56,10 +56,13 @@ function func3(dimension, appearance, disabled) {
 dimensions.forEach((d) => func1(d));
 const closeData = [{ id: 1, label: 'Закрыть' }];
 const selectData = [{ id: 2, label: 'Выбрать' }];
+const selectWithBadgeData = [{ id: 3, label: 'Выбрать badge' }];
 
 const Chip2 = (props) => {
   const [Data, setData] = useState(closeData);
   const [selected, setSelected] = useState('');
+  const [selected1, setSelected1] = useState('');
+
   return (
     <div>
       <Container>
@@ -96,6 +99,19 @@ const Chip2 = (props) => {
             onClick={() => setSelected(closeData.disabled ? null : setSelected(selectData.id))}
           >
             {closeData.label}
+          </Chips>
+        ))}
+        {selectWithBadgeData.map((selectWithBadgeData) => (
+          <Chips
+            key={selectWithBadgeData.id}
+            {...props}
+            selected={selected1 === selectWithBadgeData.id}
+            badge={4}
+            onClick={() =>
+              selectWithBadgeData(selectWithBadgeData.disabled ? null : setSelected1(selectWithBadgeData.id))
+            }
+          >
+            {selectWithBadgeData.label}
           </Chips>
         ))}
       </Container>
