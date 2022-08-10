@@ -319,6 +319,7 @@ const SelectTest = () => {
       <>
         <Wrapper>
           <Selects {...prop} />
+          <Select readOnly placeholder="Select read only"></Select>
         </Wrapper>
       </>
     );

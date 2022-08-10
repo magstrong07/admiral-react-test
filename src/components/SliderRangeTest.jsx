@@ -25,7 +25,7 @@ function func1(dimension) {
 function func2(input1, dimension) {
   inputs2Statuses.forEach((a) => func3(input1, dimension, a));
 }
-function func3(dimension, input1, input2) {
+function func3(dimension, input1, input2, onChange) {
   disableds.forEach((disabled) => {
     propsData.push({
       dimension,
@@ -36,9 +36,9 @@ function func3(dimension, input1, input2) {
   });
 }
 dimensions.forEach((d) => func1(d));
-
+const handleChange = (value) => console.log(value);
 const SliderRanges = (props) => {
-  return <SliderRange {...props} label="введите диапазон" />;
+  return <SliderRange {...props} label="введите диапазон" onChange={onChange || handleChange} />;
 };
 
 const SliderRangeTest = () => {

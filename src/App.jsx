@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
 
@@ -80,93 +80,123 @@ import Welcome from './components/Welcome/Welcome.jsx';
 import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
 import IconsTest from './icons/IconsTest.jsx';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
 function App() {
+  const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
+  const [checked, setChecked] = useState(false);
+
+  const HandleThemeChange = (theme) => {
+    setSelectedTheme(theme);
+  };
+
+  const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) => theme.color['Neutral/Neutral 00']};
+  }
+`;
+  const ToggleStyled = styled(Toggle)`
+    margin: 10px 0 30px 10px;
+  `;
+
   return (
-    <div>
-      <HashRouter>
-        <Routes>
-          <Route path="" element={<Welcome items={items} />} />
-          <Route path="accordion" element={<AccordionTest />} />
-          <Route path="accordion_forms_radio" element={<AccordionTestFormRadio />} />
-          <Route path="avatar" element={<AvatarTest />} />
-          <Route path="avatar_group" element={<AvatarGroupTest />} />
-          <Route path="badge" element={<BadgeTest />} />
-          <Route path="breadcrumbs" element={<BreadcrumbsTest />} />
-          <Route path="button" element={<ButtonTest />} />
-          <Route path="contentSwitcher" element={<ContentSwitcherTest />} />
-          <Route path="calendar" element={<CalendarTest />} />
-          <Route path="checkbox_composite_group" element={<CheckboxCompositeGroupTest />} />
-          <Route path="checkbox_field" element={<CheckboxFieldTest />} />
-          <Route path="checkbox_forms" element={<CheckBoxFieldTestHookForm />} />
-          <Route path="chips" element={<ChipsTest />} />
-          <Route path="date_field" element={<DateFieldTest />} />
-          <Route path="date_fields_forms" element={<DateFieldTestHookForm />} />
-          <Route path="date_input" element={<DateInputTest />} />
-          <Route path="date_input_forms" element={<DateInputTestHookForm />} />
-          <Route path="edit_mode_field" element={<EditModeFieldTest />} />
-          <Route path="example" element={<Example />} />
-          <Route path="example2" element={<Example2 />} />
-          <Route path="field_set" element={<FieldSetTest />} />
-          <Route path="field_set_radio" element={<FieldSetRadioTest />} />
-          <Route path="file_uploader" element={<FileUploaderTest />} />
-          <Route path="hint" element={<HintTest />} />
-          <Route path="icon_button" element={<IconButtonTest />} />
-          <Route path="input_field" element={<InputFieldTest />} />
-          <Route path="link" element={<LinkTest />} />
-          <Route path="menu_button" element={<MenuButtonTest items={items} />} />
-          <Route path="modal" element={<ModalTest />} />
-          <Route path="multibutton" element={<MultiButtonTest />} />
-          <Route path="multiselect" element={<MultiSelectTest />} />
-          <Route path="notifications" element={<NotificationTest />} />
-          <Route path="number_input" element={<NumberInputTest />} />
-          <Route path="number_input_field" element={<NumberInputFieldTest />} />
-          <Route path="ovetflowmenu" element={<OverflowMenuTest />} />
-          <Route path="pagination_one" element={<PaginationOneTest />} />
-          <Route path="pagination_simple" element={<PaginationSimpleTest />} />
-          <Route path="pagination_two" element={<PaginationTwoTest />} />
-          <Route path="phone_input_field" element={<PhoneInputFieldTest />} />
-          <Route path="phone_number_input" element={<PhoneNumberInputTest />} />
-          <Route path="progress_header" element={<ProgressHeaderTest />} />
-          <Route path="progress_page" element={<ProgressPageTest />} />
-          <Route path="progress_stepper" element={<ProgressStepperTest />} />
-          <Route path="radio_button" element={<RadioButtonTest />} />
-          <Route path="search_select_field" element={<SearchSelectFieldTest />} />
-          <Route path="select" element={<SelectTest />} />
-          <Route path="select_field" element={<SelectFieldTest />} />
-          <Route path="select_tree" element={<SelectTreeTest />} />
-          <Route path="slider" element={<SliderTest />} />
-          <Route path="slider_input" element={<SliderInputTest />} />
-          <Route path="slider_input_field" element={<SliderInputFieldTest />} />
-          <Route path="slider_range" element={<SliderRangeTest />} />
-          <Route path="slider_range_field" element={<SliderRangeFieldTest />} />
-          <Route path="spinner" element={<SpinnerTest />} />
-          <Route path="status_indicator" element={<StatusIndicatorTest />} />
-          <Route path="stepper" element={<StepperTest />} />
-          <Route path="suggest_field" element={<SuggestFieldTest />} />
-          <Route path="suggest_input" element={<SuggestInputTest />} />
-          <Route path="table" element={<TableTest />} />
-          <Route path="table_column_orientation" element={<TableColumnOrientationTest />} />
-          <Route path="table_width" element={<TableWidthColumnTest />} />
-          <Route path="table_with_checkbox" element={<TableWithCheckboxTest />} />
-          <Route path="tabmenu" element={<TabMenuTest />} />
-          <Route path="tags" element={<TagsTest />} />
-          <Route path="text_area" element={<TextAreaTest />} />
-          <Route path="text_button" element={<TextButtonTest />} />
-          <Route path="text_field" element={<TextFieldTest />} />
-          <Route path="text_input" element={<TextInputTest />} />
-          <Route path="time_field" element={<TimeFieldTest />} />
-          <Route path="time_input" element={<TimeInputTest />} />
-          <Route path="toast" element={<ToastTest />} />
-          <Route path="toggle" element={<TogglesTest />} />
-          <Route path="tooltip" element={<TooltipTest />} />
-          <Route path="typography" element={<TTest />} />
-          <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
-          <Route path="my_chips" element={<MyChips />} />
-          <Route path="icons" element={<IconsTest />} />
-        </Routes>
-      </HashRouter>
-    </div>
+    <ThemeProvider theme={selectedTheme}>
+      <GlobalStyle />
+      <ToggleStyled
+        checked={checked}
+        onChange={(e) => {
+          setChecked(e.target.checked);
+          HandleThemeChange(checked ? LIGHT_THEME : DARK_THEME);
+        }}
+      >
+        Dark_mode
+      </ToggleStyled>
+      <div>
+        <HashRouter>
+          <Routes>
+            <Route path="" element={<Welcome />} />
+            <Route path="accordion" element={<AccordionTest />} />
+            <Route path="accordion_forms_radio" element={<AccordionTestFormRadio />} />
+            <Route path="avatar" element={<AvatarTest />} />
+            <Route path="avatar_group" element={<AvatarGroupTest />} />
+            <Route path="badge" element={<BadgeTest />} />
+            <Route path="breadcrumbs" element={<BreadcrumbsTest />} />
+            <Route path="button" element={<ButtonTest />} />
+            <Route path="contentSwitcher" element={<ContentSwitcherTest />} />
+            <Route path="calendar" element={<CalendarTest />} />
+            <Route path="checkbox_composite_group" element={<CheckboxCompositeGroupTest />} />
+            <Route path="checkbox_field" element={<CheckboxFieldTest />} />
+            <Route path="checkbox_forms" element={<CheckBoxFieldTestHookForm />} />
+            <Route path="chips" element={<ChipsTest />} />
+            <Route path="date_field" element={<DateFieldTest />} />
+            <Route path="date_fields_forms" element={<DateFieldTestHookForm />} />
+            <Route path="date_input" element={<DateInputTest />} />
+            <Route path="date_input_forms" element={<DateInputTestHookForm />} />
+            <Route path="edit_mode_field" element={<EditModeFieldTest />} />
+            <Route path="example" element={<Example />} />
+            <Route path="example2" element={<Example2 />} />
+            <Route path="field_set" element={<FieldSetTest />} />
+            <Route path="field_set_radio" element={<FieldSetRadioTest />} />
+            <Route path="file_uploader" element={<FileUploaderTest />} />
+            <Route path="hint" element={<HintTest />} />
+            <Route path="icon_button" element={<IconButtonTest />} />
+            <Route path="input_field" element={<InputFieldTest />} />
+            <Route path="link" element={<LinkTest />} />
+            <Route path="menu_button" element={<MenuButtonTest items={items} />} />
+            <Route path="modal" element={<ModalTest />} />
+            <Route path="multibutton" element={<MultiButtonTest />} />
+            <Route path="multiselect" element={<MultiSelectTest />} />
+            <Route path="notifications" element={<NotificationTest />} />
+            <Route path="number_input" element={<NumberInputTest />} />
+            <Route path="number_input_field" element={<NumberInputFieldTest />} />
+            <Route path="ovetflowmenu" element={<OverflowMenuTest />} />
+            <Route path="pagination_one" element={<PaginationOneTest />} />
+            <Route path="pagination_simple" element={<PaginationSimpleTest />} />
+            <Route path="pagination_two" element={<PaginationTwoTest />} />
+            <Route path="phone_input_field" element={<PhoneInputFieldTest />} />
+            <Route path="phone_number_input" element={<PhoneNumberInputTest />} />
+            <Route path="progress_header" element={<ProgressHeaderTest />} />
+            <Route path="progress_page" element={<ProgressPageTest />} />
+            <Route path="progress_stepper" element={<ProgressStepperTest />} />
+            <Route path="radio_button" element={<RadioButtonTest />} />
+            <Route path="search_select_field" element={<SearchSelectFieldTest />} />
+            <Route path="select" element={<SelectTest />} />
+            <Route path="select_field" element={<SelectFieldTest />} />
+            <Route path="select_tree" element={<SelectTreeTest />} />
+            <Route path="slider" element={<SliderTest />} />
+            <Route path="slider_input" element={<SliderInputTest />} />
+            <Route path="slider_input_field" element={<SliderInputFieldTest />} />
+            <Route path="slider_range" element={<SliderRangeTest />} />
+            <Route path="slider_range_field" element={<SliderRangeFieldTest />} />
+            <Route path="spinner" element={<SpinnerTest />} />
+            <Route path="status_indicator" element={<StatusIndicatorTest />} />
+            <Route path="stepper" element={<StepperTest />} />
+            <Route path="suggest_field" element={<SuggestFieldTest />} />
+            <Route path="suggest_input" element={<SuggestInputTest />} />
+            <Route path="table" element={<TableTest />} />
+            <Route path="table_column_orientation" element={<TableColumnOrientationTest />} />
+            <Route path="table_width" element={<TableWidthColumnTest />} />
+            <Route path="table_with_checkbox" element={<TableWithCheckboxTest />} />
+            <Route path="tabmenu" element={<TabMenuTest />} />
+            <Route path="tags" element={<TagsTest />} />
+            <Route path="text_area" element={<TextAreaTest />} />
+            <Route path="text_button" element={<TextButtonTest />} />
+            <Route path="text_field" element={<TextFieldTest />} />
+            <Route path="text_input" element={<TextInputTest />} />
+            <Route path="time_field" element={<TimeFieldTest />} />
+            <Route path="time_input" element={<TimeInputTest />} />
+            <Route path="toast" element={<ToastTest />} />
+            <Route path="toggle" element={<TogglesTest />} />
+            <Route path="tooltip" element={<TooltipTest />} />
+            <Route path="typography" element={<TTest />} />
+            <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
+            <Route path="my_chips" element={<MyChips />} />
+            <Route path="icons" element={<IconsTest />} />
+          </Routes>
+        </HashRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 

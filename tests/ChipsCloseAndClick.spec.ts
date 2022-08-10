@@ -27,4 +27,17 @@ test.describe('Chips', () => {
 
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
+
+  test('Chips select with badge', async ({ page }) => {
+    await page.locator(`text=Выбрать badge >> nth=0`).click();
+    await page.locator(`text=Выбрать badge >> nth=1`).click();
+    await page.locator(`text=Выбрать badge >> nth=4`).click();
+    await page.locator(`text=Выбрать badge >> nth=5`).click();
+    await page.locator(`text=Выбрать badge >> nth=8`).click();
+    await page.locator(`text=Выбрать badge >> nth=9`).click();
+    await page.locator(`text=Выбрать badge >> nth=12`).click();
+    await page.locator(`text=Выбрать badge >> nth=13`).click();
+
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
 });
