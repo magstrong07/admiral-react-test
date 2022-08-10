@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
+
 
 import AccordionTest from './components/accordionTest.jsx';
 import AccordionTestFormRadio from './components/Forms/AccordionFormTest.jsx';
@@ -8,18 +11,19 @@ import AvatarGroupTest from './components/AvatarGroupTest.jsx';
 import AvatarTest from './components/AvatarTest.jsx';
 import BadgeTest from './components/badgeTest.jsx';
 import BreadcrumbsTest from './components/Breadcrumbs.jsx';
-import ContentSwitcherTest from './components/ContentSwitcherTest.jsx';
 import ButtonTest from './components/buttonTest.jsx';
 import CalendarTest from './components/CalendarTest.jsx';
 import CheckBoxFieldTestHookForm from './components/Forms/CheckBoxFieldTestForms.jsx';
 import CheckboxCompositeGroupTest from './components/CheckboxCompositeGroupTest.jsx';
 import CheckboxFieldTest from './components/CheckBoxFieldTest.jsx';
 import ChipsTest from './components/ChipsTest.jsx';
+import ContentSwitcherTest from './components/ContentSwitcherTest.jsx';
 import DateFieldTest from './components/DateFieldTest.jsx';
 import DateFieldTestHookForm from './components/Forms/DateFieldTestForms.jsx';
 import DateInputTest from './components/DateInputTest.jsx';
 import DateInputTestHookForm from './components/Forms/DateInputTestForms.jsx';
 import EditModeFieldTest from './components/EditModeFieldTest.jsx';
+import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import Example from './components/exampleTest.jsx';
 import Example2 from './components/exampleTest2.jsx';
 import FieldSetRadioTest from './components/FieldSetRadioTest.jsx';
@@ -27,6 +31,7 @@ import FieldSetTest from './components/FieldSetTest.jsx';
 import FileUploaderTest from './components/FileUploaderTest.jsx';
 import HintTest from './components/hintTest.jsx';
 import IconButtonTest from './components/iconButtonTest.jsx';
+import IconsTest from './icons/IconsTest.jsx';
 import InputFieldTest from './components/InputFieldTest.jsx';
 import LinkTest from './components/LinkTest.jsx';
 import MenuButtonTest, { items } from './components/MenuButtonTest.jsx';
@@ -77,11 +82,7 @@ import ToastTest from './components/ToastTest.jsx';
 import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
-import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
-import IconsTest from './icons/IconsTest.jsx';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
@@ -94,6 +95,7 @@ function App() {
   const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.color['Neutral/Neutral 00']};
+    font-family: 'VTB Group UI';
   }
 `;
   const ToggleStyled = styled(Toggle)`
@@ -123,17 +125,18 @@ function App() {
             <Route path="badge" element={<BadgeTest />} />
             <Route path="breadcrumbs" element={<BreadcrumbsTest />} />
             <Route path="button" element={<ButtonTest />} />
-            <Route path="contentSwitcher" element={<ContentSwitcherTest />} />
             <Route path="calendar" element={<CalendarTest />} />
             <Route path="checkbox_composite_group" element={<CheckboxCompositeGroupTest />} />
             <Route path="checkbox_field" element={<CheckboxFieldTest />} />
             <Route path="checkbox_forms" element={<CheckBoxFieldTestHookForm />} />
             <Route path="chips" element={<ChipsTest />} />
+            <Route path="contentSwitcher" element={<ContentSwitcherTest />} />
             <Route path="date_field" element={<DateFieldTest />} />
             <Route path="date_fields_forms" element={<DateFieldTestHookForm />} />
             <Route path="date_input" element={<DateInputTest />} />
             <Route path="date_input_forms" element={<DateInputTestHookForm />} />
             <Route path="edit_mode_field" element={<EditModeFieldTest />} />
+            <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
             <Route path="example" element={<Example />} />
             <Route path="example2" element={<Example2 />} />
             <Route path="field_set" element={<FieldSetTest />} />
@@ -141,12 +144,14 @@ function App() {
             <Route path="file_uploader" element={<FileUploaderTest />} />
             <Route path="hint" element={<HintTest />} />
             <Route path="icon_button" element={<IconButtonTest />} />
+            <Route path="icons" element={<IconsTest />} />
             <Route path="input_field" element={<InputFieldTest />} />
             <Route path="link" element={<LinkTest />} />
             <Route path="menu_button" element={<MenuButtonTest items={items} />} />
             <Route path="modal" element={<ModalTest />} />
             <Route path="multibutton" element={<MultiButtonTest />} />
             <Route path="multiselect" element={<MultiSelectTest />} />
+            <Route path="my_chips" element={<MyChips />} />
             <Route path="notifications" element={<NotificationTest />} />
             <Route path="number_input" element={<NumberInputTest />} />
             <Route path="number_input_field" element={<NumberInputFieldTest />} />
@@ -190,9 +195,6 @@ function App() {
             <Route path="toggle" element={<TogglesTest />} />
             <Route path="tooltip" element={<TooltipTest />} />
             <Route path="typography" element={<TTest />} />
-            <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
-            <Route path="my_chips" element={<MyChips />} />
-            <Route path="icons" element={<IconsTest />} />
           </Routes>
         </HashRouter>
       </div>
