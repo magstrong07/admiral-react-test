@@ -16,4 +16,24 @@ test.describe('Hint', () => {
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
+
+  /*==============Dark mode=================*/
+
+  test('Hint click Dark', async ({ page }) => {
+    await page.locator('label[role="switch"] span').click();
+
+    await page.click('[aria-label="Additional information"]');
+    await page.waitForTimeout(250);
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+    await page.waitForTimeout(250);
+    await page.click('[aria-label="Закрыть подсказку"]');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
+  test('Hint hover Dark', async ({ page }) => {
+    await page.locator('label[role="switch"] span').click();
+
+    await page.hover(':nth-match([aria-label="Additional information"], 2)');
+    await page.waitForTimeout(250);
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
 });

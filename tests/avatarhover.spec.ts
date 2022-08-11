@@ -8,4 +8,10 @@ test.describe('avatar', () => {
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
+  test('avatar hover Dark', async ({ page }) => {
+    await page.locator('label[role="switch"] span').click();
+    await page.hover('button:nth-child(6)');
+    await page.waitForTimeout(250);
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
 });

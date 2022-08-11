@@ -26,4 +26,33 @@ test.describe('Date field', () => {
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
+  /*==============Dark mode=================*/
+
+  test('date field input text Dark', async ({ page }) => {
+    await page.locator('label[role="switch"] span').click();
+
+    await page.click('input');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.press('input', 'ArrowLeft');
+    await page.fill('input', '01.05.2021');
+    await page.waitForTimeout(250);
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
+  test('date field calendar Dark', async ({ page }) => {
+    await page.locator('label[role="switch"] span').click();
+
+    await page.click('text=Labelsuccesserrorvalue >> :nth-match(svg, 2)');
+
+    await page.click('text=10');
+    await page.waitForTimeout(250);
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  });
 });
