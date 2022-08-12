@@ -22,9 +22,9 @@ const ProgressHeaderTest = () => {
   }, [tik]);
   return (
     <>
-      <ProgressHeader percent={40} role="alert" />
-      <ProgressHeader percent={60} appearance="error" style={{ position: 'fixed', top: '20px' }} />
-      <StyledProgressHeader percent={tik} role="alert" style={{ position: 'fixed', top: '80px' }} />
+      <ProgressHeader percent={40} role="alert" style={{ position: 'fixed', top: '100px' }}/>
+      <ProgressHeader percent={60} appearance="error" style={{ position: 'fixed', top: '120px' }} />
+      <StyledProgressHeader percent={tik} role="alert" style={{ position: 'fixed', top: '180px' }} />
     </>
   );
 };

@@ -16,7 +16,7 @@ const ProgressPageTest = () => {
   const [tik, setTick] = useState(0);
   useEffect(() => {
     const counter = () => setTick((prev) => prev + 1);
-    const timerId = setTimeout(counter, 1000);
+    const timerId = setTimeout(counter, 10000);
     if (tik >= 20) {
       clearTimeout(timerId);
     }
