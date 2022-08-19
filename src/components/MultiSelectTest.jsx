@@ -50,6 +50,7 @@ const MultiSelects = (props) => {
       displayClearIcon={true}
       placeholder="Placeholder"
       mode="searchSelect"
+      data-test-id="multiselect"
     >
       <Option value="big">
         Здесь ооооочень большой текст, который может, так сказать, и не поместиться в одну строку

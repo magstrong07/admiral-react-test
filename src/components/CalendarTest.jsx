@@ -25,6 +25,7 @@ const CalendarTest = () => {
     <div>
       <Wrapper>
         <Calendar
+          data-test-id="calendar1"
           selected={selected}
           onChange={(value) => {
             setSelected(value);
