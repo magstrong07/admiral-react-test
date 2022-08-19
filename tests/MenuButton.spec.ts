@@ -14,7 +14,6 @@ test.describe('Menu Button', () => {
     await page.waitForTimeout(350);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
-
   /*==============Dark mode=================*/
 
   test('menu button open Dark', async ({ page }) => {
