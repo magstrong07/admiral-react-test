@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Select, Tooltip, Option } from '@admiral-ds/react-ui';
+import { Select, Tooltip, Option, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
 import { ReactComponent as CardSolid } from '@admiral-ds/icons/build/finance/CardSolid.svg';
@@ -309,6 +309,18 @@ const Selects = (props) => {
             );
           })}
         </StyledSelect>
+
+        {/* ===============================================5==================================================         */}
+
+        <Select {...props} readOnly placeholder="Read only">
+          {options.map((item) => {
+            return (
+              <Option role="option" value={item.label} key={item.id}>
+                {item.label}
+              </Option>
+            );
+          })}
+        </Select>
       </Wrapper>
     </>
   );
@@ -318,8 +330,10 @@ const SelectTest = () => {
     return (
       <>
         <Wrapper>
+          <T>
+            {prop.disabled ? 'disabled' : 'active'}, {prop.dimension}
+          </T>
           <Selects {...prop} />
-          <Select readOnly placeholder="Select read only"></Select>
         </Wrapper>
       </>
     );

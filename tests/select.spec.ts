@@ -5,24 +5,25 @@ test.describe('select', () => {
   });
   test('select click options', async ({ page }) => {
     await page.waitForTimeout(200);
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option three")>> nth=0').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option five")').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('text=Номер Карты /****22 Дополнительный текст').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page
       .locator(
-        '#selectDropdownContainer >> text=Option four long text long text long text long text long text long text long tex',
+        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
       )
       .click();
-    await page.locator('input >> nth=0').click();
+
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option six")').click();
-    await page.locator('input >> nth=3').click();
+    await page.locator('input >> nth=4').click();
     await page
       .locator(
-        '#selectDropdownContainer >> text=Option eight long text long text long text long text long text long text long te',
+        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
       )
       .click();
 
@@ -35,24 +36,24 @@ test.describe('select', () => {
     await page.locator('label[role="switch"] span').click();
 
     await page.waitForTimeout(200);
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option three")>> nth=0').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option five")').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('text=Номер Карты /****22 Дополнительный текст').click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page
       .locator(
-        '#selectDropdownContainer >> text=Option four long text long text long text long text long text long text long tex',
+        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
       )
       .click();
-    await page.locator('input >> nth=0').click();
+    await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option six")').click();
-    await page.locator('input >> nth=3').click();
+    await page.locator('input >> nth=4').click();
     await page
       .locator(
-        '#selectDropdownContainer >> text=Option eight long text long text long text long text long text long text long te',
+        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
       )
       .click();
 
