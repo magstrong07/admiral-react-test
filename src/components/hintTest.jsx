@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hint, Button, T } from '@admiral-ds/react-ui';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ReactComponent as HelpOutline } from '@admiral-ds/icons/build/service/HelpOutline.svg';
 
 const Container = styled.div`
@@ -16,44 +16,65 @@ const Container = styled.div`
 const StyledButton = styled(Button)`
   padding: 4px;
 `;
+const anchorCss = css`
+  padding: 10px;
+  border: 2px dotted red;
+`;
 
 const text = `At breakpoint boundaries, mini units divide the screen into a fixed master grid, and multiples
-of mini units map to fluid grid column widths and row heights.`;
+ of mini units map to fluid grid column widths and row heights.`;
 
-const HintTest = () => {
+const HintTest = (anchorId) => {
+  const [visible, setVisible] = React.useState(false);
+  const [visible1, setVisible1] = React.useState(false);
+  const [visible2, setVisible2] = React.useState(false);
+
+  const handleVisibilityChange = (visible) => setVisible(visible);
+  const handleVisibilityChange1 = (visible1) => setVisible1(visible1);
+  const handleVisibilityChange2 = (visible2) => setVisible2(visible2);
+
   return (
     <div>
       <Container>
         <T font="Additional/L" as="div">
-          Dimension - l, click
+          click:
         </T>
-        <Hint anchorId="hint_base" renderContent={() => text} visibilityTrigger="click">
-          <StyledButton dimension="l" aria-label="Additional information">
-            <HelpOutline aria-hidden height={24} width={24} />
+        <Hint
+          anchorId={anchorId}
+          visible={visible}
+          onVisibilityChange={handleVisibilityChange}
+          renderContent={() => text}
+          visibilityTrigger="click"
+        >
+          <StyledButton dimension="l" aria-label="Additional information" aria-describedby={anchorId}>
+            <HelpOutline aria-hidden />
           </StyledButton>
         </Hint>
         <T font="Additional/L" as="div">
-          Dimension - m, hover
+          hover:
         </T>
-        <Hint anchorId="hint_base" renderContent={() => text} visibilityTrigger="hover">
-          <StyledButton dimension="m" aria-label="Additional information">
-            <HelpOutline aria-hidden height={24} width={24} />
+        <Hint
+          anchorId={anchorId}
+          visible={visible1}
+          onVisibilityChange={handleVisibilityChange1}
+          renderContent={() => text}
+        >
+          <StyledButton dimension="l" aria-label="Additional information" aria-describedby={anchorId}>
+            <HelpOutline aria-hidden />
           </StyledButton>
         </Hint>
         <T font="Additional/L" as="div">
-          Dimension - s, hover
+          styled:
         </T>
-        <Hint anchorId="hint_base" renderContent={() => text} visibilityTrigger="hover">
-          <StyledButton dimension="s" aria-label="Additional information">
-            <HelpOutline aria-hidden height={24} width={24} />
-          </StyledButton>
-        </Hint>
-        <T font="Additional/L" as="div">
-          Dimension - l, hover
-        </T>
-        <Hint anchorId="hint_base" renderContent={() => text} visibilityTrigger="hover">
-          <StyledButton dimension="l" aria-label="Additional information">
-            <HelpOutline aria-hidden height={24} width={24} />
+        <Hint
+          anchorId={anchorId}
+          visible={visible2}
+          onVisibilityChange={handleVisibilityChange2}
+          renderContent={() => text}
+          anchorCssMixin={anchorCss}
+        >
+          <StyledButton dimension="l" aria-label="Additional information" aria-describedby={anchorId}>
+            <HelpOutline aria-hidden />
           </StyledButton>
         </Hint>
       </Container>
