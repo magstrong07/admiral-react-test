@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxCompositeGroup, CheckboxGroup, T } from '@admiral-ds/react-ui';
+import { CheckboxField, CheckboxCompositeGroup, CheckboxGroup, T } from '@admiral-ds/react-ui';
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
@@ -29,32 +29,32 @@ const initialValue = [
 const CheckboxCompositeGroupTest = (props) => {
   const [list, setValue] = useState(initialValue);
 
-  const checkedStatus = () => list.some((item) => item.checked);
+  const someItemChecked = () => list.some((item) => item.checked);
 
   const handleOnchangeAll = () => {
-    setValue((prev) => prev.map((item) => ({ ...item, checked: checkedStatus() ? false : true })));
+    setValue((prev) => prev.map((item) => ({ ...item, checked: !someItemChecked() })));
   };
   const handleOnchange = (e) => {
     const { name } = e.target;
     setValue((prev) => prev.map((item) => (name === item.label ? { ...item, checked: !item.checked } : { ...item })));
   };
-  const getIndeterminateStatus = () => !list.every((item) => item.checked) && checkedStatus();
+  const getIndeterminateStatus = () => !list.every((item) => item.checked) && someItemChecked();
   return (
     <div>
       <CheckboxCompositeGroup {...props}>
-        <Wrapper>
-          <Checkbox indeterminate={getIndeterminateStatus()} checked={checkedStatus()} onChange={handleOnchangeAll} />
-          <span>Города : </span>
-        </Wrapper>
+        <CheckboxField
+          indeterminate={getIndeterminateStatus()}
+          checked={someItemChecked()}
+          onChange={handleOnchangeAll}
+        >
+          Города:
+        </CheckboxField>
         <CheckboxGroup>
-          {list.map((item) => {
-            return (
-              <Wrapper key={item.id}>
-                <Checkbox checked={item.checked} name={item.label} key={item.id} onChange={handleOnchange} />
-                <span>{item.label}</span>
-              </Wrapper>
-            );
-          })}
+          {list.map((item) => (
+            <CheckboxField checked={item.checked} name={item.label} key={item.id} onChange={handleOnchange}>
+              {item.label}
+            </CheckboxField>
+          ))}
         </CheckboxGroup>
       </CheckboxCompositeGroup>
       <Separator />
