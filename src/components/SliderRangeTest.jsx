@@ -25,35 +25,50 @@ function func1(dimension) {
 function func2(input1, dimension) {
   inputs2Statuses.forEach((a) => func3(input1, dimension, a));
 }
-function func3(dimension, input1, input2, onChange) {
+function func3(dimension, input1, input2, index) {
   disableds.forEach((disabled) => {
     propsData.push({
       dimension,
       input1,
       input2,
       disabled,
+      index,
     });
   });
 }
 dimensions.forEach((d) => func1(d));
-const handleChange = (value) => console.log(value);
 const SliderRanges = (props) => {
-  return <SliderRange {...props} label="введите диапазон" onChange={onChange || handleChange} />;
+  return (
+    <SliderRange
+      onChange={(value) => console.log(value)}
+      minValue={10}
+      maxValue={100}
+      prefix={['From', 'To']}
+      suffix="$"
+    />
+  );
 };
 
 const SliderRangeTest = () => {
-  return propsData.map((prop, key) => {
-    return (
-      <>
-        <Wrapper>
-          <T font="Additional/L" as="div">
+  // return propsData.map((prop, key) => {
+  return (
+    <>
+      <Wrapper>
+        {/* <T font="Additional/L" as="div">
             {propsData[key].dimension}, {propsData[key].status}
           </T>
-          <SliderRanges {...prop} />
-        </Wrapper>
-      </>
-    );
-  });
+          <SliderRanges {...prop} /> */}
+        <SliderRange
+          onChange={(value) => console.log(value)}
+          minValue={1}
+          maxValue={100}
+          prefix={['From', 'To']}
+          suffix="$"
+        />
+      </Wrapper>
+    </>
+  );
+  // });
 };
 
 export default SliderRangeTest;
