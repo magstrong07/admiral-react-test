@@ -18,12 +18,12 @@ test.describe('select', () => {
       )
       .click();
 
-    await page.locator('input >> nth=1').click();
+    await page.locator('input >> nth=2').click();
     await page.locator('div[role="option"]:has-text("Option six")').click();
-    await page.locator('input >> nth=4').click();
+    await page.locator('input >> nth=6').click();
     await page
       .locator(
-        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
+        'div[role="option"]:has-text("Option eight long text long text long text long text long text long text long te")',
       )
       .click();
 
@@ -48,12 +48,13 @@ test.describe('select', () => {
         'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
       )
       .click();
-    await page.locator('input >> nth=1').click();
+
+    await page.locator('input >> nth=2').click();
     await page.locator('div[role="option"]:has-text("Option six")').click();
-    await page.locator('input >> nth=4').click();
+    await page.locator('input >> nth=6').click();
     await page
       .locator(
-        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
+        'div[role="option"]:has-text("Option eight long text long text long text long text long text long text long te")',
       )
       .click();
 
