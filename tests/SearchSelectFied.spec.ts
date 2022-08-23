@@ -5,11 +5,11 @@ test.describe('search select field', () => {
   });
   test('search select field click', async ({ page }) => {
     await page.locator('input >> nth=1').click();
-    await page.locator('#selectDropdownContainer div:has-text("teeext 1")').first().click();
+    await page.locator('div:has-text("teeext 1")').first().click();
     await page.locator('input >> nth=2').click();
     await page.locator('div:has-text("Текст 1Доооп Текст 1")').nth(2).click();
     await page.locator('input >> nth=5').click();
-    await page.locator('#selectDropdownContainer div:has-text("texttt 6")').first().click();
+    await page.locator('div:has-text("texttt 6")').first().click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text', async ({ page }) => {
@@ -31,11 +31,11 @@ test.describe('search select field', () => {
     await page.locator('label[role="switch"] span').click();
 
     await page.locator('input >> nth=1').click();
-    await page.locator('#selectDropdownContainer div:has-text("teeext 1")').first().click();
+    await page.locator('div:has-text("teeext 1")').first().click();
     await page.locator('input >> nth=2').click();
     await page.locator('div:has-text("Текст 1Доооп Текст 1")').nth(2).click();
     await page.locator('input >> nth=5').click();
-    await page.locator('#selectDropdownContainer div:has-text("texttt 6")').first().click();
+    await page.locator('div:has-text("texttt 6")').first().click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text Dark', async ({ page }) => {
