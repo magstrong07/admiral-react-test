@@ -12,7 +12,7 @@ const Separator = styled.div`
   height: 40px;
 `;
 
-const StepperTest = (lineClamp, activeStep, orientation, ...args) => {
+const StepperTest = (...args) => {
   const steps = [
     {
       key: 0,
@@ -39,7 +39,7 @@ const StepperTest = (lineClamp, activeStep, orientation, ...args) => {
   return (
     <>
       <Wrapper>
-        <Stepper lineClamp={2} activeStep={2} orientation={orientation} {...args}>
+        <Stepper lineClamp={2} activeStep={2} stepWidth={200} {...args}>
           {steps.map(({ content, ...step }) => {
             return (
               <Step key={step.key} {...step}>
