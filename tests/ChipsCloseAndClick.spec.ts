@@ -29,14 +29,14 @@ test.describe('Chips', () => {
   });
 
   test('Chips select with badge', async ({ page }) => {
-    await page.locator(`text=Выбрать badge >> nth=0`).click();
-    await page.locator(`text=Выбрать badge >> nth=1`).click();
-    await page.locator(`text=Выбрать badge >> nth=4`).click();
-    await page.locator(`text=Выбрать badge >> nth=5`).click();
-    await page.locator(`text=Выбрать badge >> nth=8`).click();
-    await page.locator(`text=Выбрать badge >> nth=9`).click();
-    await page.locator(`text=Выбрать badge >> nth=12`).click();
-    await page.locator(`text=Выбрать badge >> nth=13`).click();
+    await page.locator(`text=with badge >> nth=0`).click();
+    await page.locator(`text=with badge >> nth=1`).click();
+    await page.locator(`text=with badge >> nth=4`).click();
+    await page.locator(`text=with badge >> nth=5`).click();
+    await page.locator(`text=with badge >> nth=8`).click();
+    await page.locator(`text=with badge >> nth=9`).click();
+    await page.locator(`text=with badge >> nth=12`).click();
+    await page.locator(`text=with badge >> nth=13`).click();
 
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
@@ -75,14 +75,14 @@ test.describe('Chips', () => {
   test('Chips select with badge Dark', async ({ page }) => {
     await page.locator('label[role="switch"] span').click();
 
-    await page.locator(`text=Выбрать badge >> nth=0`).click();
-    await page.locator(`text=Выбрать badge >> nth=1`).click();
-    await page.locator(`text=Выбрать badge >> nth=4`).click();
-    await page.locator(`text=Выбрать badge >> nth=5`).click();
-    await page.locator(`text=Выбрать badge >> nth=8`).click();
-    await page.locator(`text=Выбрать badge >> nth=9`).click();
-    await page.locator(`text=Выбрать badge >> nth=12`).click();
-    await page.locator(`text=Выбрать badge >> nth=13`).click();
+    await page.locator(`text=with badge >> nth=0`).click();
+    await page.locator(`text=with badge >> nth=1`).click();
+    await page.locator(`text=with badge >> nth=4`).click();
+    await page.locator(`text=with badge >> nth=5`).click();
+    await page.locator(`text=with badge >> nth=8`).click();
+    await page.locator(`text=with badge >> nth=9`).click();
+    await page.locator(`text=with badge >> nth=12`).click();
+    await page.locator(`text=with badge >> nth=13`).click();
 
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });

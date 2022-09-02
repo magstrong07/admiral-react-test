@@ -56,7 +56,7 @@ function func3(dimension, appearance, disabled) {
 dimensions.forEach((d) => func1(d));
 const closeData = [{ id: 1, label: 'Закрыть' }];
 const selectData = [{ id: 2, label: 'Выбрать' }];
-const selectWithBadgeData = [{ id: 3, label: 'Выбрать badge' }];
+const selectWithBadgeData = [{ id: 3, label: 'with badge' }];
 
 const Chip2 = (props) => {
   const [Data, setData] = useState(closeData);
