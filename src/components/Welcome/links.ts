@@ -71,4 +71,5 @@ export const links = [
   '/tooltip',
   '/typography',
   '/edit_mode_field_forms',
+  '/tree',
 ];

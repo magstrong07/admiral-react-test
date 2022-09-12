@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
-
 import AccordionTest from './components/accordionTest.jsx';
 import AccordionTestFormRadio from './components/Forms/AccordionFormTest.jsx';
 import AvatarGroupTest from './components/AvatarGroupTest.jsx';
@@ -83,6 +82,7 @@ import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
+import TreeTest from './components/TreeTest.jsx';
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
@@ -195,6 +195,7 @@ function App() {
             <Route path="toggle" element={<TogglesTest />} />
             <Route path="tooltip" element={<TooltipTest />} />
             <Route path="typography" element={<TTest />} />
+            <Route path="tree" element={<TreeTest />} />
           </Routes>
         </HashRouter>
       </div>
