@@ -78,6 +78,7 @@ const InputFields = (props) => {
   return (
     <>
       <InputField
+        required
         label="label"
         {...cleanProps}
         style={{ maxWidth: '500px' }}
