@@ -82,7 +82,7 @@ import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
-import TreeTest from './components/TreeTest.jsx';
+import TreeTest from './components/Tree/TreeTest.jsx';
 import InputExTest from './components/InputExTest.jsx';
 
 function App() {
