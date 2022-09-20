@@ -32,7 +32,7 @@ const Welcome = () => {
     <>
       <Wrapper>
         <T as="h2" font="Additional/L-bold">
-          Welcome to admiral-ds
+          Welcome to admiral-ds проверка
         </T>
 
         <T>Date : {new Date().toDateString()}</T>
