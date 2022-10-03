@@ -6,7 +6,8 @@ test.describe('select', () => {
   test('select click options', async ({ page }) => {
     await page.waitForTimeout(200);
     await page.locator('input >> nth=1').click();
-    await page.locator('div[role="option"]:has-text("Option three")>> nth=0').click();
+    // await page.locator('div[role="option"]:has-text("Option three")>> nth=0').click();
+    await page.locator('select#colors').selectOption('Option three');
     await page.locator('input >> nth=1').click();
     await page.locator('div[role="option"]:has-text("Option five")').click();
     await page.locator('input >> nth=1').click();
