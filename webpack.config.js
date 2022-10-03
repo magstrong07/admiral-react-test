@@ -71,9 +71,6 @@ module.exports = {
             },
           },
         ],
-        issuer: {
-          and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-        },
       },
     ],
   },
