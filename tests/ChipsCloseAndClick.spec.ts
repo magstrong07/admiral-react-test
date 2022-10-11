@@ -55,7 +55,7 @@ test.describe('Chips', () => {
     await page.locator(`data-test-id=chipClose >>svg >> nth=6`).click();
     await page.locator(`data-test-id=chipClose >>svg >> nth=6`).click();
 
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('chips_close.png');
+    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Chips select Dark', async ({ page }) => {
     await page.locator('label[role="switch"] span').click();
