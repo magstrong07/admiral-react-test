@@ -12,37 +12,36 @@ const Wrapper = styled.div`
 `;
 
 const TooltipTest = () => {
+  const btnRef = React.useRef(null);
+  const [visible, setVisible] = React.useState(false);
+  const btnRef1 = React.useRef(null);
+  const [visible1, setVisible1] = React.useState(false);
+
   return (
     <>
       <Wrapper>
+        <Button ref={btnRef} dimension="m" displayAsSquare aria-label="Delete" aria-describedby="test2">
+          <DeleteOutline height={24} width={24} />
+        </Button>
         <Tooltip
-          renderContent={() => (
-            <div style={{ maxWidth: 400 }}>
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-              Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
-              Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
-              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum
-            </div>
-          )}
-          tooltipPosition="bottom"
-          id="test1"
-        >
-          <Button
-            dimension="m"
-            displayAsSquare
-            aria-label="Delete"
-            aria-describedby="test1"
-            title={'Это title на кнопке'}
-          >
-            <DeleteOutline aria-hidden />
-          </Button>
-        </Tooltip>
-        <Tooltip renderContent={() => 'Delete file'} withDelay id="test2">
-          <Button dimension="m" displayAsSquare aria-label="Delete" aria-describedby="test2">
-            <DeleteOutline height={24} width={24} />
-          </Button>
-        </Tooltip>
+          targetRef={btnRef}
+          visible={visible}
+          onVisibilityChange={(visible) => setVisible(visible)}
+          renderContent={() => 'Delete file'}
+          id="test2"
+        />
+        <Button ref={btnRef1} dimension="m" displayAsSquare aria-label="Delete" aria-describedby="test2">
+          <DeleteOutline height={24} width={24} />
+        </Button>
+        <Tooltip
+          targetRef={btnRef1}
+          visible={visible1}
+          onVisibilityChange={(visible) => setVisible1(visible)}
+          renderContent={() => 'Delete file'}
+          id="test3"
+          tooltipPosition="right"
+          withDelay
+        />
       </Wrapper>
     </>
   );
