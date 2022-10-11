@@ -14,7 +14,7 @@ test.describe('select', () => {
     await page.locator('input >> nth=1').click();
     await page
       .locator(
-        'div[role="option"]:has-text("Option four long text long text long text long text long text long text long tex")',
+        'div[role="option"]:has-text("Option eight long text long text long text long text long text long text long te")',
       )
       .click();
 
@@ -23,7 +23,7 @@ test.describe('select', () => {
     await page.locator('input >> nth=6').click();
     await page
       .locator(
-        'div[role="option"]:has-text("Option eight long text long text long text long text long text long text long te")',
+        'div[role="option"]:has-text("Option eight long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text long text")',
       )
       .click();
 
