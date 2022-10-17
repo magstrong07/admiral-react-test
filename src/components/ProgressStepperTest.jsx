@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ProgressStepperTest = (args) => {
+const ProgressStepperTest = (props) => {
   const steps = [
     'название первого шага',
     'название второго шага',
@@ -29,25 +29,25 @@ const ProgressStepperTest = (args) => {
   return (
     <>
       <Wrapper>
-        <ProgressStepper {...args} steps={steps} activeStep={0} />
+        <ProgressStepper {...props} steps={steps} activeStep={0} />
 
-        <ProgressStepper {...args} steps={steps} activeStep={2} />
+        <ProgressStepper {...props} steps={steps} activeStep={2} />
 
-        <ProgressStepper {...args} steps={steps} activeStep={5} />
+        <ProgressStepper {...props} steps={steps} activeStep={5} />
         <T font="Additional/L-bold"> Adaptive (Mobile): </T>
-        <ProgressStepper {...args} steps={steps} activeStep={0} mobile />
-        <ProgressStepper {...args} steps={steps} activeStep={2} mobile />
-        <ProgressStepper {...args} steps={steps} activeStep={5} mobile />
+        <ProgressStepper {...props} steps={steps} activeStep={0} mobile />
+        <ProgressStepper {...props} steps={steps} activeStep={2} mobile />
+        <ProgressStepper {...props} steps={steps} activeStep={5} mobile />
         <T font="Additional/L-bold"> Кастомная подпись о следующем шаге: </T>
         <ProgressStepper
-          {...args}
+          {...props}
           steps={steps}
           activeStep={2}
-          renderNextStepName={(nextStepName) => `Далее следует шаг: ${nextStepName}`}
+          locale={{ renderNextStepName: (nextStepName) => `Далее следует шаг: ${nextStepName}` }}
         />
-        <ProgressStepper {...args} steps={steps} activeStep={2} displayNextStepName={false} mobile />
+        <ProgressStepper {...props} steps={steps} activeStep={2} displayNextStepName={false} mobile />
         <T font="Additional/L-bold"> Пример настройки названия шага: </T>
-        <ProgressStepper {...args} steps={steps2} activeStep={2} stepName={['этап', 'этапа', 'этапов']} />
+        <ProgressStepper {...props} steps={steps2} activeStep={2} stepName={['этап', 'этапа', 'этапов']} />
       </Wrapper>
     </>
   );
