@@ -84,6 +84,7 @@ import Welcome from './components/Welcome/Welcome.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
 import TreeTest from './components/Tree/TreeTest.jsx';
 import InputExTest from './components/InputExTest.jsx';
+import DropMenuTest from './components/DropMenuTest.jsx';
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
@@ -198,6 +199,7 @@ function App() {
             <Route path="typography" element={<TTest />} />
             <Route path="tree" element={<TreeTest />} />
             <Route path="input_ex" element={<InputExTest />} />
+            <Route path="drop_menu" element={<DropMenuTest />} />
           </Routes>
         </HashRouter>
       </div>

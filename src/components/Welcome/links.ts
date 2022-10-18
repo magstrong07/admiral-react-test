@@ -18,7 +18,7 @@ export const links = [
   '/edit_mode_field',
   '/field_set',
   '/field_set_radio',
-  '/file_uploader',
+  '/file_input',
   '/hint',
   '/icon_button',
   '/icons',
@@ -73,4 +73,5 @@ export const links = [
   '/edit_mode_field_forms',
   '/tree',
   '/input_ex',
+  '/drop_menu'
 ];
