@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileUploader, T } from '@admiral-ds/react-ui';
+import { FileInput, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -35,16 +35,16 @@ function func2(dimension, fileDimension) {
 }
 dimensions.forEach((d) => func1(d));
 
-const FileUploaders = (props) => {
+const FileInputs = (props) => {
   return (
     <div>
       <Wrapper>
-        <FileUploader {...props} title="Загрузите не более 3-х файлов до 5 MB каждый"></FileUploader>
+        <FileInput {...props} title="Загрузите не более 3-х файлов до 5 MB каждый"></FileInput>
       </Wrapper>
     </div>
   );
 };
-const FileUploaderTest = () => {
+const FileInputTest = () => {
   return propsData.map((prop, key) => {
     return (
       <>
@@ -53,7 +53,7 @@ const FileUploaderTest = () => {
             dimension: {propsData[key].dimension}, fileDimensions: {propsData[key].fileDimension}
           </T>
           <Separator1 />
-          <FileUploaders {...prop} />
+          <FileInputs {...prop} />
           <Separator2 />
         </Wrapper>
       </>
@@ -61,4 +61,4 @@ const FileUploaderTest = () => {
   });
 };
 
-export default FileUploaderTest;
+export default FileInputTest;

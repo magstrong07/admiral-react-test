@@ -27,7 +27,7 @@ import Example from './components/exampleTest.jsx';
 import Example2 from './components/exampleTest2.jsx';
 import FieldSetRadioTest from './components/FieldSetRadioTest.jsx';
 import FieldSetTest from './components/FieldSetTest.jsx';
-import FileUploaderTest from './components/FileUploaderTest.jsx';
+import FileInputTest from './components/FileInputTest.jsx';
 import HintTest from './components/hintTest.jsx';
 import IconButtonTest from './components/iconButtonTest.jsx';
 import IconsTest from './icons/IconsTest.jsx';
@@ -142,7 +142,7 @@ function App() {
             <Route path="example2" element={<Example2 />} />
             <Route path="field_set" element={<FieldSetTest />} />
             <Route path="field_set_radio" element={<FieldSetRadioTest />} />
-            <Route path="file_uploader" element={<FileUploaderTest />} />
+            <Route path="file_input" element={<FileInputTest />} />
             <Route path="hint" element={<HintTest />} />
             <Route path="icon_button" element={<IconButtonTest />} />
             <Route path="icons" element={<IconsTest />} />
