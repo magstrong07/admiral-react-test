@@ -50,6 +50,7 @@ const items = [
 
 const TagMenuTest = (props) => {
   const [selected, setSelected] = React.useState(items[0]);
+  const [selected1, setSelected1] = React.useState(items[0]);
 
   return (
     <>
@@ -60,6 +61,18 @@ const TagMenuTest = (props) => {
           onSelectOption={(id) => {
             console.log(`selected: ${id}`);
             setSelected(items.find((item) => item.id === id));
+          }}
+          {...props}
+          data-dropdown-container-id="tag-menu-with-dropdown"
+          className="tag-menu-class"
+        />
+        <TagMenu
+          dimension="s"
+          options={items}
+          selected={selected1}
+          onSelectOption={(id) => {
+            console.log(`selected: ${id}`);
+            setSelected1(items.find((item) => item.id === id));
           }}
           {...props}
           data-dropdown-container-id="tag-menu-with-dropdown"
