@@ -13,11 +13,6 @@ const Wrapper = styled.div`
 const Red = styled.span`
   color: red;
 `;
-const secondItemTertiaryColor = css`
-  & > :nth-child(2) * {
-    color: ${(p) => p.theme.color.text.tertiary};
-  }
-`;
 const dimensions = ['s', 'm', 'xl'];
 
 const statuses = ['undefined', 'success', 'error'];
@@ -81,7 +76,6 @@ const SelectFields = (props) => {
       renderInputValue={simpleRender}
       onChange={onChange}
       required
-      dropContainerCssMixin={secondItemTertiaryColor}
     >
       {options.map((item, index) => (
         <Option role="option" value={item.value} key={index}>

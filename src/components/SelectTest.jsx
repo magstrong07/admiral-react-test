@@ -120,6 +120,7 @@ const Selects = (props) => {
     console.log(e);
     setValue(e.target.value);
   };
+
   const renderValue = (value) => {
     const content = [...category[0].content, ...category[1].content].filter((d) => d.value?.toString() === value)[0];
     return (
@@ -210,7 +211,7 @@ const Selects = (props) => {
         <Select {...props} value={selectValue} placeholder={'Placeholder 1'} onChange={handleChange}>
           {options.map((item) => {
             return (
-              <Option role="option" value={item.label} key={item.id}>
+              <Option value={item.label} key={item.id}>
                 {item.label}
               </Option>
             );
@@ -236,7 +237,6 @@ const Selects = (props) => {
               <Option
                 aria-selected={selectValue1 === item.value}
                 key={item.id}
-                role="option"
                 value={item.value}
                 disabled={item.disabled}
               >
@@ -304,7 +304,7 @@ const Selects = (props) => {
           {optionsTwo.map((item) => {
             return (
               <StyledOption role="option" value={item.label} key={item.id}>
-                <Tooltip renderContent={() => item.label}>{item.label}</Tooltip>
+                {item.label}
               </StyledOption>
             );
           })}
@@ -312,10 +312,10 @@ const Selects = (props) => {
 
         {/* ===============================================5==================================================         */}
 
-        <Select {...props} readOnly placeholder="Read only">
+        <Select {...props} readOnly placeholder={'placeholder'}>
           {options.map((item) => {
             return (
-              <Option role="option" value={item.label} key={item.id}>
+              <Option role="option" value={item.label[1]} key={item.id}>
                 {item.label}
               </Option>
             );
