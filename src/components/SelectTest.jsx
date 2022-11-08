@@ -312,7 +312,7 @@ const Selects = (props) => {
 
         {/* ===============================================5==================================================         */}
 
-        <Select {...props} readOnly placeholder={'placeholder'}>
+        <Select {...props} readOnly placeholder={'placeholder'} value="option 1">
           {options.map((item) => {
             return (
               <Option role="option" value={item.label[1]} key={item.id}>
