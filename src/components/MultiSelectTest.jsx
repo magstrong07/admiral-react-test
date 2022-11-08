@@ -42,25 +42,47 @@ const MultiSelects = (props) => {
   };
 
   return (
-    <Select
-      {...props}
-      value={selectValue}
-      multiple={true}
-      onChange={onChange}
-      displayClearIcon={true}
-      placeholder="Placeholder"
-      mode="searchSelect"
-      data-test-id="multiselect"
-    >
-      <Option value="big">
-        Здесь ооооочень большой текст, который может, так сказать, и не поместиться в одну строку
-      </Option>
-      {Array.from({ length: 20 }).map((_option, ind) => (
-        <Option key={ind} value={String(ind)} disabled={[1, 3].includes(ind)}>
-          {`${ind}0000`}
+    <>
+      <Select
+        {...props}
+        value={selectValue}
+        multiple={true}
+        onChange={onChange}
+        displayClearIcon={true}
+        placeholder="Placeholder"
+        mode="searchSelect"
+        data-test-id="multiselect"
+      >
+        <Option value="big">
+          Здесь ооооочень большой текст, который может, так сказать, и не поместиться в одну строку
         </Option>
-      ))}
-    </Select>
+        {Array.from({ length: 20 }).map((_option, ind) => (
+          <Option key={ind} value={String(ind)} disabled={[1, 3].includes(ind)}>
+            {`${ind}0000`}
+          </Option>
+        ))}
+      </Select>
+      <Select
+        {...props}
+        readOnly
+        value={selectValue}
+        multiple={true}
+        onChange={onChange}
+        displayClearIcon={true}
+        placeholder="Read only"
+        mode="searchSelect"
+        data-test-id="multiselect"
+      >
+        <Option value="big">
+          Здесь ооооочень большой текст, который может, так сказать, и не поместиться в одну строку
+        </Option>
+        {Array.from({ length: 20 }).map((_option, ind) => (
+          <Option key={ind} value={String(ind)} disabled={[1, 3].includes(ind)}>
+            {`${ind}0000`}
+          </Option>
+        ))}
+      </Select>
+    </>
   );
 };
 
