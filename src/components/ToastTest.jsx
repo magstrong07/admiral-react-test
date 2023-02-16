@@ -50,7 +50,7 @@ const ToastTest = () => {
         <ToastProvider>
           <NotificationEmitter />
 
-          <Toast style={{ top: 128, left: 64 }}>
+          <Toast style={{ top: 128, left: 12 }}>
             <Button>test</Button>
           </Toast>
         </ToastProvider>
