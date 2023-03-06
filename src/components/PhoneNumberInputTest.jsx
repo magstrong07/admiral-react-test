@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     margin: 20px;
   }
   text-align: center;
+  box-sizing: border-box;
 `;
 const dimensions = ['s', 'm', 'xl'];
 
@@ -50,7 +51,7 @@ const PhoneNumberInputs = (props) => {
   return (
     <>
       <Wrapper>
-        <PhoneNumberInput {...props} {...cleanProps} onChange={handleChange} value={localValue} />
+        <PhoneNumberInput data-test-id="Phone" {...props} {...cleanProps} onChange={handleChange} value={localValue} />
       </Wrapper>
     </>
   );
