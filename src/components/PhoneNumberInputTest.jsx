@@ -51,7 +51,7 @@ const PhoneNumberInputs = (props) => {
   return (
     <>
       <Wrapper>
-        <PhoneNumberInput data-test-id="Phone" {...props} {...cleanProps} onChange={handleChange} value={localValue} />
+        <PhoneNumberInput data-testid="Phone" {...props} {...cleanProps} onChange={handleChange} value={localValue} />
       </Wrapper>
     </>
   );
