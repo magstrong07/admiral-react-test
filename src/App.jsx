@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HashRouter } from 'react-router-dom';
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 

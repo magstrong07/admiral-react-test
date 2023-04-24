@@ -14,3 +14,4 @@ reactpreview.config.js
 __reactpreview__/Wrapper.tsx
 .npmrc
 .VSCodeCounter
+.yarn
