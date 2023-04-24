@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
@@ -86,7 +85,6 @@ import TreeTest from './components/Tree/TreeTest.jsx';
 import InputExTest from './components/InputExTest.jsx';
 import DropMenuTest from './components/DropMenuTest.jsx';
 import TagMenuTest from './components/TagMenuTest.jsx';
-
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
