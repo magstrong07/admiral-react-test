@@ -711,8 +711,8 @@
   transition: all 0.25s ease-in-out;
 `,Sl=W.default.div`
   position: absolute;
-  top: ${2}px;
-  left: ${2}px;
+  top: ${e=>"s"===e.dimension?1:2}px;
+  left: ${e=>"s"===e.dimension?1:2}px;
   display: inline-block;
   ${({dimension:e})=>`\n    min-width: ${"s"===e?Ml:20}px;\n    height: ${"s"===e?Ml:20}px;\n  `}
   fieldset[data-dimension='s'] & {
@@ -782,7 +782,7 @@
   }
 `,_l=W.default.label`
   margin: 0;
-  ${({dimension:e})=>`\n    padding-top: ${"s"===e?3:2}px;\n    padding-bottom: ${"s"===e?3:2}px;\n    padding-left: ${"s"===e?28:32}px;\n  `}
+  ${({dimension:e})=>`\n    padding-top: 2px;\n    padding-bottom: 2px;\n    padding-left: ${"s"===e?28:32}px;\n  `}
   display: inline-block;
   position: relative;
   box-sizing: content-box;
@@ -1468,6 +1468,7 @@
   max-width: ${e=>e.transparent&&!e.error?0:"none"};
   overflow: hidden;
 `,Ua=W.default.label`
+  display: block;
   text-align: left;
   ${ve["Body/Body 2 Short"]}
   color: ${e=>e.theme.color["Neutral/Neutral 50"]};
@@ -1504,13 +1505,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 16px;
   width: 50%;
-
+  margin-bottom: 8px;
   ${La}
 `,Wa=W.default.div`
   position: relative;
-  margin-bottom: 8px;
   text-align: left;
 `,Ga=r.css`
   color: transparent;
@@ -5989,7 +5989,7 @@
   visibility: hidden;
   display: flex;
   overflow: hidden;
-`,Lg=({row:e,dimension:t,displayRowSelectionColumn:l,checkboxDimension:a,renderCell:n,onRowExpansionChange:r,onRowSelectionChange:i,indeterminate:o,checked:s})=>{var d,c;return K.createElement(K.Fragment,null,K.createElement(ng,null,K.createElement(xg,{dimension:t},K.createElement(fg,{dimension:"s"===t||"m"===t?"mBig":"lBig",disabled:!(!e.disabled&&0!==(null==(d=e.groupRows)?void 0:d.length))||void 0,highlightFocus:!1,onClick:()=>{null==r||r(e.id)}},K.createElement(ug,{$isOpened:e.expanded,"aria-hidden":!0}))),l&&K.createElement(yg,{dimension:t,className:"td_checkbox"},K.createElement(Ra,{disabled:e.disabled||e.checkboxDisabled||0===(null==(c=e.groupRows)?void 0:c.length),dimension:a,checked:!!s,indeterminate:o,onChange:()=>{null==i||i(e.id)},onClick:e=>{e.stopPropagation()}})),K.createElement(mg,{key:`${e.id}`,dimension:t,className:"td","data-column":"group","data-row":e.id},e.renderGroupTitle?e.renderGroupTitle(e):n?n(e,"group"):K.createElement(wg,null,e.groupTitle||""))),K.createElement(og,null))},Ng=({row:e,dimension:t,checkboxDimension:l,columns:a,stickyColumns:n,displayRowSelectionColumn:r,displayRowExpansionColumn:i,onRowExpansionChange:o,onRowSelectionChange:s,renderBodyCell:d})=>K.createElement(K.Fragment,null,(r||i||n.length>0)&&K.createElement(rg,null,i&&K.createElement(xg,{dimension:t},e.expandedRowRender&&K.createElement(fg,{style:{margin:0,flexShrink:0},dimension:"s"===t||"m"===t?"mBig":"lBig",disabled:!!e.disabled||void 0,highlightFocus:!1,onClick:()=>null==o?void 0:o(e.id)},K.createElement(ug,{$isOpened:e.expanded,"aria-hidden":!0}))),r&&K.createElement(yg,{dimension:t,className:"td_checkbox"},K.createElement(Ra,{disabled:e.disabled||e.checkboxDisabled,dimension:l,checked:!!e.selected,onChange:()=>null==s?void 0:s(e.id),onClick:e=>{e.stopPropagation()}})),n.length>0&&n.map((t=>d(e,t)))),a.map((t=>t.sticky?null:d(e,t))),K.createElement(og,null)),Tg=({tableWidth:e,row:t,dimension:l,verticalScroll:a,scrollbar:n,...r})=>{var i;const o=K.useRef(null);return K.createElement(ig,{ref:o,"data-overflowmenu":!0,"data-opened":!1,$offset:e-(a?n:0),dimension:l,...r},t.actionRender?t.actionRender(t):null==(i=t.overflowMenuRender)?void 0:i.call(t,t,(e=>{e?o.current&&(o.current.dataset.opened="true"):o.current&&(o.current.dataset.opened="false")})))},Pg=({row:e,dimension:t,underline:l,onRowClick:a,onRowDoubleClick:n,children:r,tableWidth:i,isGroup:o,rowWidth:s,verticalScroll:d,scrollbar:c,grey:u,...f})=>{const h=K.useRef(null);return K.createElement(Hg,{...f,ref:h,onClick:()=>{return t=e.id,void(null==a||a(t));var t},onDoubleClick:()=>{return t=e.id,void(null==n||n(t));var t},underline:l,disabled:!!e.disabled,dimension:t,className:`tr ${e.className||""} hoverable`,isGroup:o,rowWidth:s,hover:!!e.hover},K.createElement(Ag,{className:"tr-simple",selected:!!e.selected,disabled:!!e.disabled,error:!!e.error,success:!!e.success,grey:!!u},r),(e.overflowMenuRender||e.actionRender)&&K.createElement(Tg,{dimension:t,tableWidth:i,row:e,verticalScroll:d,scrollbar:c}),e.expandedRowRender&&K.createElement(Bg,{opened:e.expanded,contentMaxHeight:"90vh",className:"tr-expanded",onMouseEnter:()=>{var e;null==(e=h.current)||e.classList.remove("hoverable")},onMouseLeave:()=>{var e;null==(e=h.current)||e.classList.add("hoverable")}},K.createElement(Vg,null,e.expandedRowRender(e))))},Ug=W.default.div`
+`,Lg=({row:e,dimension:t,displayRowSelectionColumn:l,checkboxDimension:a,renderCell:n,onRowExpansionChange:r,onRowSelectionChange:i,indeterminate:o,checked:s})=>{var d,c;return K.createElement(K.Fragment,null,K.createElement(ng,null,K.createElement(xg,{dimension:t},K.createElement(fg,{dimension:"s"===t||"m"===t?"mBig":"lBig",disabled:!(!e.disabled&&0!==(null==(d=e.groupRows)?void 0:d.length))||void 0,highlightFocus:!1,onClick:()=>{null==r||r(e.id)}},K.createElement(ug,{$isOpened:e.expanded,"aria-hidden":!0}))),l&&K.createElement(yg,{dimension:t,className:"td_checkbox"},K.createElement(Ra,{disabled:e.disabled||e.checkboxDisabled||0===(null==(c=e.groupRows)?void 0:c.length),dimension:a,checked:!!s,indeterminate:o,onChange:()=>{null==i||i(e.id)},onClick:e=>{e.stopPropagation()}})),K.createElement(mg,{key:`${e.id}`,dimension:t,className:"td","data-column":"group","data-row":e.id},e.renderGroupTitle?e.renderGroupTitle(e):n?n(e,"group"):K.createElement(wg,null,e.groupTitle||""))),K.createElement(og,null))},Ng=({row:e,dimension:t,checkboxDimension:l,columns:a,stickyColumns:n,displayRowSelectionColumn:r,displayRowExpansionColumn:i,onRowExpansionChange:o,onRowSelectionChange:s,renderBodyCell:d})=>K.createElement(K.Fragment,null,(r||i||n.length>0)&&K.createElement(rg,null,i&&K.createElement(xg,{dimension:t},e.expandedRowRender&&K.createElement(fg,{style:{margin:0,flexShrink:0},dimension:"s"===t||"m"===t?"mBig":"lBig",disabled:!!e.disabled||void 0,highlightFocus:!1,onClick:t=>{t.stopPropagation(),null==o||o(e.id)}},K.createElement(ug,{$isOpened:e.expanded,"aria-hidden":!0}))),r&&K.createElement(yg,{dimension:t,className:"td_checkbox"},K.createElement(Ra,{disabled:e.disabled||e.checkboxDisabled,dimension:l,checked:!!e.selected,onChange:()=>null==s?void 0:s(e.id),onClick:e=>{e.stopPropagation()}})),n.length>0&&n.map((t=>d(e,t)))),a.map((t=>t.sticky?null:d(e,t))),K.createElement(og,null)),Tg=({tableWidth:e,row:t,dimension:l,verticalScroll:a,scrollbar:n,...r})=>{var i;const o=K.useRef(null);return K.createElement(ig,{ref:o,"data-overflowmenu":!0,"data-opened":!1,$offset:e-(a?n:0),dimension:l,...r},t.actionRender?t.actionRender(t):null==(i=t.overflowMenuRender)?void 0:i.call(t,t,(e=>{e?o.current&&(o.current.dataset.opened="true"):o.current&&(o.current.dataset.opened="false")})))},Pg=({row:e,dimension:t,underline:l,onRowClick:a,onRowDoubleClick:n,children:r,tableWidth:i,isGroup:o,rowWidth:s,verticalScroll:d,scrollbar:c,grey:u,...f})=>{const h=K.useRef(null);return K.createElement(Hg,{...f,ref:h,onClick:()=>{return t=e.id,void(null==a||a(t));var t},onDoubleClick:()=>{return t=e.id,void(null==n||n(t));var t},underline:l,disabled:!!e.disabled,dimension:t,className:`tr ${e.className||""} hoverable`,isGroup:o,rowWidth:s,hover:!!e.hover},K.createElement(Ag,{className:"tr-simple",selected:!!e.selected,disabled:!!e.disabled,error:!!e.error,success:!!e.success,grey:!!u},r),(e.overflowMenuRender||e.actionRender)&&K.createElement(Tg,{dimension:t,tableWidth:i,row:e,verticalScroll:d,scrollbar:c}),e.expandedRowRender&&K.createElement(Bg,{opened:e.expanded,contentMaxHeight:"90vh",className:"tr-expanded",onMouseEnter:()=>{var e;null==(e=h.current)||e.classList.remove("hoverable")},onMouseLeave:()=>{var e;null==(e=h.current)||e.classList.add("hoverable")}},K.createElement(Vg,null,e.expandedRowRender(e))))},Ug=W.default.div`
   position: absolute;
   right: -8px;
   z-index: 1;
