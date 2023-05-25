@@ -2009,7 +2009,6 @@
   :hover {
     color: ${({theme:e})=>e.color["Neutral/Neutral 30"]};
     background-color: ${({theme:e})=>e.color["Neutral/Neutral 10"]};
-    border: 1px solid ${({theme:e})=>e.color["Neutral/Neutral 10"]};
   }
   & > * {
     pointer-events: none;
@@ -2050,7 +2049,7 @@
   position: relative;
 `,Gr=W.default.div`
   display: flex;
-  padding: 10px 0;
+  padding: 4px 0;
   background-color: ${({theme:e})=>e.color["Special/Elevated BG"]};
   ${ve["Body/Body 2 Long"]}
   color: ${({theme:e})=>e.color["Neutral/Neutral 90"]};
@@ -2064,7 +2063,7 @@
   box-sizing: border-box;
   max-height: 300px;
   overflow: auto;
-  padding: 6px 16px;
+  padding: 8px 16px;
   [data-trigger='click'] & {
     padding-right: ${52}px;
   }
@@ -2281,7 +2280,7 @@
 `;const Bi=W.default(Ra)`
   margin-right: 8px;
   flex-shrink: 0;
-`,Vi=e=>"xl"===e?"l":e,Fi=({id:e,disabled:t=!1,readOnly:l=!1,value:a,children:n,renderOption:r,...i})=>{const o=Oi(),s=ur(),d=(null==s?void 0:s.disabled)||t,c=null!=o&&o.multiple?K.createElement(K.Fragment,null,(null==o?void 0:o.showCheckbox)&&K.createElement(Bi,{checked:null==(u=null==o?void 0:o.selectValue)?void 0:u.includes(a),dimension:"s"===(null==o?void 0:o.dimension)?"s":"m",disabled:t,readOnly:!0}),n):n;var u;return K.useEffect((()=>{var t;const n=null!=e?e:a,s={id:n,value:a,render:e=>r?r(e):K.createElement(bi,{...e,dimension:Vi(null==o?void 0:o.dimension),key:n,...i},c),disabled:d,readOnly:l};return null==(t=null==o?void 0:o.onDropDownOptionMount)||t.call(o,s),()=>{var e;return null==(e=null==o?void 0:o.onDropDownOptionUnMount)?void 0:e.call(o,s)}}),[null==o?void 0:o.onDropDownOptionMount,null==o?void 0:o.onDropDownOptionUnMount,null==o?void 0:o.activeItem,null==o?void 0:o.selectValue,null==o?void 0:o.dimension]),null},Ri=e=>K.createElement(K.Fragment,null,K.createElement(Hi,{...e}),K.createElement(Fi,{...e})),Di=W.default(gi)`
+`,Vi=e=>"xl"===e?"l":e,Fi=({id:e,disabled:t=!1,readOnly:l=!1,value:a,children:n,renderOption:r,...i})=>{const o=Oi(),s=ur(),d=(null==s?void 0:s.disabled)||t,c=null!=o&&o.multiple?K.createElement(K.Fragment,null,(null==o?void 0:o.showCheckbox)&&K.createElement(Bi,{checked:null==(u=null==o?void 0:o.selectValue)?void 0:u.includes(a),dimension:"s"===(null==o?void 0:o.dimension)?"s":"m",disabled:t}),n):n;var u;return K.useEffect((()=>{var t;const n=null!=e?e:a,s={id:n,value:a,render:e=>r?r(e):K.createElement(bi,{...e,dimension:Vi(null==o?void 0:o.dimension),key:n,...i},c),disabled:d,readOnly:l};return null==(t=null==o?void 0:o.onDropDownOptionMount)||t.call(o,s),()=>{var e;return null==(e=null==o?void 0:o.onDropDownOptionUnMount)?void 0:e.call(o,s)}}),[null==o?void 0:o.onDropDownOptionMount,null==o?void 0:o.onDropDownOptionUnMount,null==o?void 0:o.activeItem,null==o?void 0:o.selectValue,null==o?void 0:o.dimension]),null},Ri=e=>K.createElement(K.Fragment,null,K.createElement(Hi,{...e}),K.createElement(Fi,{...e})),Di=W.default(gi)`
   font-weight: 500;
   color: ${e=>e.theme.color["Neutral/Neutral 90"]};
   user-select: none;
@@ -4237,15 +4236,15 @@
   ${({mobile:e})=>e?ve["Header/H6"]:ve["Header/H5"]};
   color: ${({theme:e})=>e.color["Neutral/Neutral 90"]};
   margin: 0;
-  padding: ${({mobile:e,displayCloseIcon:t})=>e?t?"0 46px 10px 16px":"0 16px 10px":t?"0 56px 10px 24px":"0 24px 10px"};
+  padding: ${({mobile:e,displayCloseIcon:t})=>e?t?"0 46px 8px 16px":"0 16px 8px":t?"0 56px 8px 24px":"0 24px 8px"};
 `,ah=W.default.div`
   overflow-y: auto;
   outline: none;
-  padding: ${({scrollbar:e,mobile:t})=>`6px ${(t?16:24)-e}px 6px ${t?16:24}px`};
+  padding: ${({scrollbar:e,mobile:t})=>`8px ${(t?16:24)-e}px 8px ${t?16:24}px`};
 `,nh=W.default.div`
   display: flex;
   flex-direction: ${({mobile:e})=>e?"column-reverse":"row-reverse"};
-  padding: ${({mobile:e})=>e?"18px 16px 0":"18px 24px 0"};
+  padding: ${({mobile:e})=>e?"16px 16px 0":"16px 24px 0"};
 
   & > button {
     margin: ${({mobile:e})=>e?"0 0 16px 0":"0 16px 0 0"};
@@ -6150,7 +6149,7 @@
   ${({mobile:e})=>e?ve["Header/H6"]:ve["Header/H5"]};
   color: ${({theme:e})=>e.color["Neutral/Neutral 90"]};
   margin: 0;
-  padding: ${({mobile:e,displayCloseIcon:t})=>e?t?"0 48px 10px 16px":"0 16px 10px":t?"0 56px 10px 24px":"0 24px 10px"};
+  padding: ${({mobile:e,displayCloseIcon:t})=>e?t?"0 48px 8px 16px":"0 16px 8px":t?"0 56px 8px 24px":"0 24px 8px"};
 `,Mw=W.default.div`
   overflow-y: auto;
   outline: none;
@@ -6159,7 +6158,7 @@
 `,kw=W.default.div`
   display: flex;
   flex-direction: ${({mobile:e})=>e?"column-reverse":"row-reverse"};
-  padding: ${({mobile:e})=>e?"18px 16px 0":"18px 24px 0"};
+  padding: ${({mobile:e})=>e?"16px 16px 0":"16px 24px 0"};
 
   & > button {
     margin: ${({mobile:e})=>e?"0 0 16px 0":"0 16px 0 0"};
