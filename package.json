@@ -17,7 +17,7 @@
   "dependencies": {
     "@admiral-ds/fonts": "^2.0.0",
     "@admiral-ds/icons": "^2.3.0",
-    "@admiral-ds/react-ui": "4.15.1",
+    "@admiral-ds/react-ui": "4.16.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@hookform/devtools": "^4.3.1",
