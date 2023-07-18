@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('drop menu', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://magstrong07.github.io/admiral-react-test/#/drop_menu');
+    await page.goto('http://localhost:3000/#/drop_menu');
   });
   test('drop menu click s', async ({ page }) => {
     await page.locator(`text=Нажми >> nth=0`).click();

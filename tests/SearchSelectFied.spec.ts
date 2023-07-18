@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('search select field', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://magstrong07.github.io/admiral-react-test/#/search_select_field');
+    await page.goto('http://localhost:3000/#/search_select_field');
   });
   test('search select field click', async ({ page }) => {
     await page.locator('input >> nth=1').click();

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('accordion', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://magstrong07.github.io/admiral-react-test/#/accordion');
+    await page.goto('http://localhost:3000/#/accordion');
   });
 
   test('Accordion click1', async ({ page }) => {

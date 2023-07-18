@@ -6,11 +6,11 @@ test.describe('Coomponents', () => {
     const url = links[index];
 
     test(links[index], async ({ page }) => {
-      await page.goto(`https://magstrong07.github.io/admiral-react-test/#${url}`);
+      await page.goto(`http://localhost:3000/#${url}`);
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     });
     test(links[index] + ' Dark', async ({ page }) => {
-      await page.goto(`https://magstrong07.github.io/admiral-react-test/#${url}`);
+      await page.goto(`http://localhost:3000/#${url}`);
       // Dark-mode switch
       await page.locator('label[role="switch"] span').first().click();
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });

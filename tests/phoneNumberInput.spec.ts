@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('phone input', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://magstrong07.github.io/admiral-react-test/#/phone_number_input');
+    await page.goto('http://localhost:3000/#/phone_number_input');
   });
   test('phone click s', async ({ page }) => {
     await page.click(`input >> nth=1`);

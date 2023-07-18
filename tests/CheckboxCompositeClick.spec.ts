@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Checkbox Composite group', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://magstrong07.github.io/admiral-react-test/#/checkbox_composite_group');
+    await page.goto('http://localhost:3000/#/checkbox_composite_group');
   });
   test('Checkbox Composite group click 3', async ({ page }) => {
     await page.locator('input[name="Москва"]').nth(2).check();
