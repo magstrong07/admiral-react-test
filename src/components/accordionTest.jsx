@@ -52,13 +52,13 @@ const AccordionTest = () => {
               marginTop: 8,
             }}
           >
-            <RadioButton name="test1" readOnly value="1">
+            <RadioButton name="test1" value="1">
               First option
             </RadioButton>
-            <RadioButton name="test1" readOnly value="2">
+            <RadioButton name="test1" value="2">
               Second option
             </RadioButton>
-            <RadioButton name="test1" readOnly value="3">
+            <RadioButton name="test1" value="3">
               Third option
             </RadioButton>
           </FieldSet>
