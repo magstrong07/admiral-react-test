@@ -4,6 +4,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
 import AccordionTest from './components/accordionTest.jsx';
+import AccordionHideDividersTest from './components/AccordionHideDividersTest.jsx';
 import AccordionTestFormRadio from './components/Forms/AccordionFormTest.jsx';
 import AvatarGroupTest from './components/AvatarGroupTest.jsx';
 import AvatarTest from './components/AvatarTest.jsx';
@@ -121,6 +122,7 @@ function App() {
           <Routes>
             <Route path="" element={<Welcome />} />
             <Route path="accordion" element={<AccordionTest />} />
+            <Route path="accordionDeviders" element={<AccordionHideDividersTest />} />
             <Route path="accordion_forms_radio" element={<AccordionTestFormRadio />} />
             <Route path="avatar" element={<AvatarTest />} />
             <Route path="avatar_group" element={<AvatarGroupTest />} />

@@ -118,6 +118,24 @@ const AccordionTest = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
+      <Separator />
+      <Accordion iconPosition="left">
+        <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
+        <AccordionItem title="Второй пункт">
+          Аккордеон — это вертикальный список заголовков, которые, при нажатии, показывают контент находящийся под ними.
+        </AccordionItem>
+        <AccordionItem title="Третий пункт"> {content} </AccordionItem>
+      </Accordion>
+      <Separator />
+      <Separator />
+      <Accordion iconPosition="left" hideTopDivider>
+        <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
+        <AccordionItem title="Второй пункт">
+          Аккордеон — это вертикальный список заголовков, которые, при нажатии, показывают контент находящийся под ними.
+        </AccordionItem>
+        <AccordionItem title="Третий пункт"> {content} </AccordionItem>
+      </Accordion>
+      <Separator />
     </div>
   );
 };

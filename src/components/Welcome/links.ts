@@ -1,5 +1,6 @@
 export const links = [
   '/accordion',
+  '/accordionDeviders',
   '/avatar',
   '/avatar_group',
   '/badge',
