@@ -107,9 +107,7 @@ const Chip2 = (props) => {
             {...props}
             selected={selected1 === selectWithBadgeData.id}
             badge={4}
-            onClick={() =>
-              selectWithBadgeData(selectWithBadgeData.disabled ? null : setSelected1(selectWithBadgeData.id))
-            }
+            onClick={() => (selectWithBadgeData.disabled ? null : setSelected1(selectWithBadgeData.id))}
           >
             {selectWithBadgeData.label}
           </Chips>
