@@ -126,7 +126,14 @@ const SelectFields = (props) => {
           </Option>
         ))}
       </SelectField>
-      <SelectField {...props} mode="searchSelect" label="label" value={selectValue2} onChange={onChange2}>
+      <SelectField
+        {...props}
+        mode="searchSelect"
+        label="label"
+        value={selectValue2}
+        onChange={onChange2}
+        placeholder="Placeholder"
+      >
         {OPTIONS.map((option) => (
           <Option key={option.value} value={option.value}>
             <Icon />

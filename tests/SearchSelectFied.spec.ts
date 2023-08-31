@@ -45,8 +45,7 @@ test.describe('search select field', () => {
     await page.locator('input >> nth=1').fill('teeext');
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
-  test('search select field input text 2 Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+     await page.locator('label[role="switch"] span').click();
 
     await page.locator('input >> nth=2').click();
     // await page.keyboard.type('Доп');

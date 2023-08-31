@@ -21,8 +21,10 @@ test.describe('accordion', () => {
   test('Accordion click2 option 5', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.locator('[placeholder="Placeholder"]').click();
-    await page.locator('text=text 4').nth(1).click();
-
+    await page
+      .locator('div')
+      .filter({ hasText: /^text 4$/ })
+      .click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click3', async ({ page }) => {
@@ -53,7 +55,10 @@ test.describe('accordion', () => {
     await page.locator('label[role="switch"] span').click();
     await page.click('button[role="button"]:has-text("Второй пункт")');
     await page.locator('[placeholder="Placeholder"]').click();
-    await page.locator('text=text 4').nth(1).click();
+    await page
+      .locator('div')
+      .filter({ hasText: /^text 4$/ })
+      .click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click3 Dark', async ({ page }) => {

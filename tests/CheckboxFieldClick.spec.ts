@@ -4,7 +4,7 @@ test.describe('Checkbox Field group', () => {
     await page.goto('http://localhost:3000/#/checkbox_field');
   });
   test('Checkbox Field group click 3', async ({ page }) => {
-    await page.getByRole('checkbox', { name: 'Управляемый чекбокс' }).check();
+    await page.getByText('Управляемый чекбокс', { exact: true }).click();
     await page.getByRole('checkbox', { name: 'Не управляемый маленький чекбокс' }).check();
     await page.getByLabel('Error не управляемый чекбоксВариация с дополнительно декорированным текстом').check();
     await page.getByLabel('Не управляемый маленький чекбокс indeterminateВариация с дополнительным текстом').check();
