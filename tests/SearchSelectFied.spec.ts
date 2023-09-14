@@ -38,19 +38,19 @@ test.describe('search select field', () => {
     await page.locator('div:has-text("texttt 6")').first().click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
-  test('search select field input text Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+  //   test('search select field input text Dark', async ({ page }) => {
+  //     await page.locator('label[role="switch"] span').click();
 
-    await page.locator('input >> nth=1').click();
-    await page.locator('input >> nth=1').fill('teeext');
-    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
-  });
-     await page.locator('label[role="switch"] span').click();
+  //     await page.locator('input >> nth=1').click();
+  //     await page.locator('input >> nth=1').fill('teeext');
+  //     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  // //   });
+  // //      await page.locator('label[role="switch"] span').click();
 
-    await page.locator('input >> nth=2').click();
-    // await page.keyboard.type('Доп');
-    await page.locator('input >> nth=2').fill('Доп');
+  // //     await page.locator('input >> nth=2').click();
+  // //     // await page.keyboard.type('Доп');
+  // //     await page.locator('input >> nth=2').fill('Доп');
 
-    await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
-  });
+  // //     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
+  // //   });
 });

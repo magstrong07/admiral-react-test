@@ -25,10 +25,10 @@ export const rowList: RowData[] = [
   {
     id: '0001',
     transfer_type: 'МНО',
-    transfer_date: new Date('2001-01-31').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -37,10 +37,10 @@ export const rowList: RowData[] = [
   {
     id: '0002',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -49,10 +49,10 @@ export const rowList: RowData[] = [
   {
     id: '0003',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -61,10 +61,10 @@ export const rowList: RowData[] = [
   {
     id: '0004',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -73,10 +73,10 @@ export const rowList: RowData[] = [
   {
     id: '0005',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -85,10 +85,10 @@ export const rowList: RowData[] = [
   {
     id: '0006',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -97,10 +97,10 @@ export const rowList: RowData[] = [
   {
     id: '0007',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -109,10 +109,10 @@ export const rowList: RowData[] = [
   {
     id: '0008',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -121,10 +121,10 @@ export const rowList: RowData[] = [
   {
     id: '0009',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -133,10 +133,10 @@ export const rowList: RowData[] = [
   {
     id: '0010',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -145,10 +145,10 @@ export const rowList: RowData[] = [
   {
     id: '0011',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(18_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(18_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -157,10 +157,10 @@ export const rowList: RowData[] = [
   {
     id: '0012',
     transfer_type: 'МНО',
-    transfer_date: new Date('08-06-2020').toLocaleDateString(),
+    transfer_date: new Date('2020-08-06').toLocaleDateString(),
     transfer_amount: (
       <AmountCell>
-        <T font="Additional/XS">{numberFormatter.format(32_500_000_000)}</T>
+        <T font="Body/Body 2 Short">{numberFormatter.format(32_500_000_000)}</T>
       </AmountCell>
     ),
     currency: 'RUB',
@@ -176,6 +176,7 @@ export const columnList: Column[] = [
   {
     name: 'transfer_date',
     title: 'Дата сделки',
+    width: 150,
   },
   {
     name: 'transfer_amount',

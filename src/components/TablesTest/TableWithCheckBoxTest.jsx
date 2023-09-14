@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { rowList, columnListWithWidth } from './data.tsx';
@@ -26,16 +26,20 @@ function func1(dimension) {
 dimensions.forEach((d) => func1(d));
 
 const Tables = (props) => {
+  const [rows, setRows] = useState(rowList);
+  const handleSelectionChange = (ids) => {
+    const updRows = rows.map((row) => ({ ...row, selected: ids[row.id] }));
+    setRows(updRows);
+  };
+
   return (
     <>
       <Table
         {...props}
-        rowList={rowList}
+        rowList={rows}
         columnList={columnListWithWidth}
         displayRowSelectionColumn="true"
-        onRowSelectionChange={(idSelectionStatusMap) => {
-          console.log(idSelectionStatusMap);
-        }}
+        onRowSelectionChange={handleSelectionChange}
       />
     </>
   );
