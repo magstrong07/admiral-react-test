@@ -37,9 +37,10 @@ function func3(dimension, input1, input2, index) {
   });
 }
 dimensions.forEach((d) => func1(d));
-const SliderRanges = (props) => {
+const SliderRanges = (prop) => {
   return (
     <SliderRange
+      {...prop}
       onChange={(value) => console.log(value)}
       minValue={10}
       maxValue={100}
@@ -50,25 +51,18 @@ const SliderRanges = (props) => {
 };
 
 const SliderRangeTest = () => {
-  // return propsData.map((prop, key) => {
+  return propsData.map((prop, key) => {
   return (
     <>
       <Wrapper>
-        {/* <T font="Additional/L" as="div">
+        <T font="Additional/L" as="div">
             {propsData[key].dimension}, {propsData[key].status}
           </T>
-          <SliderRanges {...prop} /> */}
-        <SliderRange
-          onChange={(value) => console.log(value)}
-          minValue={1}
-          maxValue={100}
-          prefix={['From', 'To']}
-          suffix="$"
-        />
+          <SliderRanges {...prop} />
       </Wrapper>
     </>
   );
-  // });
+  });
 };
 
 export default SliderRangeTest;
