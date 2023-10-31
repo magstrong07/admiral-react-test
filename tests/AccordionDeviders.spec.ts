@@ -15,7 +15,7 @@ test('accordion deviders open', async ({ page }) => {
 });
 test('accordion deviders open Dark', async ({ page }) => {
   await page.goto('http://localhost:3000/#/accordionDeviders');
-  await page.locator('label[role="switch"] span').click();
+  await page.getByLabel('Dark_mode').check();
   await page.getByRole('button', { name: 'Первый пункт' }).first().click();
   await page.getByRole('button', { name: 'Второй пункт' }).first().click();
   await page.getByRole('button', { name: 'Третий пункт' }).first().click();

@@ -50,19 +50,19 @@ test.describe('phone input', () => {
   /*==============Dark mode=================*/
 
   test('phone s dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator(`input >> nth=1`).click();
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('phone click m dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator(`input >> nth=3`).click();
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('phone click l dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator(`input >> nth=3`).click();
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });

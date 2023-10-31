@@ -29,7 +29,7 @@ test.describe('Checkbox Composite group', () => {
 
   /*==============Dark mode=================*/
   test('Checkbox Composite group click 3 Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator('input[name="Москва"]').nth(2).check();
     await page.locator('input[name="Воронеж"]').nth(2).check();
     await page.locator('input[name="Самара"]').nth(2).check();
@@ -37,7 +37,7 @@ test.describe('Checkbox Composite group', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Checkbox Composite group click 4 Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator('input[name="Москва"]').nth(2).check();
     await page.locator('input[name="Воронеж"]').nth(2).check();
     await page.locator('input[name="Самара"]').nth(2).check();
@@ -46,7 +46,7 @@ test.describe('Checkbox Composite group', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Checkbox Composite group click uncheck Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
     await page.locator('input[name="Москва"]').nth(2).check();
     await page.locator('input[name="Воронеж"]').nth(2).check();
     await page.locator('input[name="Самара"]').nth(2).check();

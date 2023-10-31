@@ -12,7 +12,7 @@ test.describe('Coomponents', () => {
     test(links[index] + ' Dark', async ({ page }) => {
       await page.goto(`http://localhost:3000/#${url}`);
       // Dark-mode switch
-      await page.locator('label[role="switch"] span').first().click();
+      await page.getByLabel('Dark_mode').check();
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     });
   }

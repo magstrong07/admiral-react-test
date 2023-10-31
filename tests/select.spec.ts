@@ -33,7 +33,7 @@ test.describe('select', () => {
   /*==============Dark mode=================*/
 
   test('select click options Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.waitForTimeout(200);
     await page.locator('input >> nth=1').click();

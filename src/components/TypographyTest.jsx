@@ -68,10 +68,10 @@ const TTest = (props, index) => {
               <T key={typographys} font={typographys}>
                 {typographys}
               </T>
-              <BlueText as={'a'} href={'#'} font={typographys}>
+              <BlueText forwardedAs={'a'} href={'#'} font={typographys}>
                 {typographys} link Primary
               </BlueText>
-              <CustomParagraph font={typographys} as="p">
+              <CustomParagraph font={typographys} forwardedAs="p">
                 {typographys} p Tertiary
               </CustomParagraph>
               <T font={typographys} as="h3" cssMixin={OrangeColor}>

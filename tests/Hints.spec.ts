@@ -20,7 +20,7 @@ test.describe('Hint', () => {
   /*==============Dark mode=================*/
 
   test('Hint click Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.click('[aria-label="Additional information"]');
     await page.waitForTimeout(250);
@@ -30,7 +30,7 @@ test.describe('Hint', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Hint hover Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.hover(':nth-match([aria-label="Additional information"], 2)');
     await page.waitForTimeout(250);

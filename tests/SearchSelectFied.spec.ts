@@ -4,12 +4,11 @@ test.describe('search select field', () => {
     await page.goto('http://localhost:3000/#/search_select_field');
   });
   test('search select field click', async ({ page }) => {
-    await page.locator("select").first().selectOption("text 3");
+    await page.locator('select').first().selectOption('text 3');
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text', async ({ page }) => {
-    await page.locator('input >> nth=1').click();
-    await page.locator('input >> nth=1').fill('teeext');
+    await page.locator('select').nth(1).selectOption('teeext');
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text 2', async ({ page }) => {
@@ -23,7 +22,7 @@ test.describe('search select field', () => {
   /*==============Dark mode=================*/
 
   test('search select field click Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.locator('input >> nth=1').click();
     await page.locator('div:has-text("teeext 1")').first().click();
@@ -33,7 +32,4 @@ test.describe('search select field', () => {
     await page.locator('div:has-text("texttt 6")').first().click();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
-
-
-
 });

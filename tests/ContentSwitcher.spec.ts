@@ -19,7 +19,7 @@ test.describe('Content Switcher', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Content Switcher click Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.locator('"Default button">> nth=0').click();
     await page.locator('"Default button">> nth=1').click();

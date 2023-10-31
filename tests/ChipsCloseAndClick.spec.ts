@@ -44,7 +44,7 @@ test.describe('Chips', () => {
   /*==============Dark mode=================*/
 
   test('Chips close Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.locator(`data-test-id=chipClose >>svg >> nth=0`).click();
     await page.locator(`data-test-id=chipClose >>svg >> nth=0`).click();
@@ -58,7 +58,7 @@ test.describe('Chips', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Chips select Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.locator(`text=Выбрать >> nth=0`).click();
     await page.locator(`text=Выбрать >> nth=1`).click();
@@ -73,7 +73,7 @@ test.describe('Chips', () => {
   });
 
   test('Chips select with badge Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.locator(`text=with badge >> nth=0`).click();
     await page.locator(`text=with badge >> nth=1`).click();

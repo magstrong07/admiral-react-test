@@ -17,14 +17,14 @@ test.describe('Menu Button', () => {
   /*==============Dark mode=================*/
 
   test('menu button open Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.click('button:has-text("Test")');
     await page.waitForTimeout(350);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('menu button select Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.click('button:has-text("Test")');
     await page.click('text=Option four');

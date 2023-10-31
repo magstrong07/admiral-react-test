@@ -29,7 +29,7 @@ test.describe('Date field', () => {
   /*==============Dark mode=================*/
 
   test('date field input text Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.click('input>>nth=1');
     await page.press('input>>nth=1', 'ArrowLeft');
@@ -47,7 +47,7 @@ test.describe('Date field', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('date field calendar Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').click();
+    await page.getByLabel('Dark_mode').check();
 
     await page.click('text=Labelsuccesserrorvalue >> :nth-match(svg, 2)');
 
