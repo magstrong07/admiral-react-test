@@ -34,10 +34,16 @@ dimensions.forEach((d) => func1(d));
 
 const MultiSelects = (props) => {
   const [selectValue, setSelectValue] = React.useState([]);
+  const [selectValue1, setSelectValue2] = React.useState([]);
 
   const onChange = (e) => {
     const newValues = Array.from(e.target.selectedOptions).map((option) => option.value);
     setSelectValue(newValues);
+    props.onChange?.(e);
+  };
+  const onChange1 = (e) => {
+    const newValues = Array.from(e.target.selectedOptions).map((option) => option.value);
+    setSelectValue2(newValues);
     props.onChange?.(e);
   };
 
@@ -65,9 +71,9 @@ const MultiSelects = (props) => {
       <Select
         {...props}
         readOnly
-        value={selectValue}
+        value={selectValue1}
         multiple={true}
-        onChange={onChange}
+        onChange={onChange1}
         displayClearIcon={true}
         placeholder="Read only"
         mode="searchSelect"
