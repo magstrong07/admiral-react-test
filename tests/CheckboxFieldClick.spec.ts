@@ -11,7 +11,7 @@ test.describe('Checkbox Field group', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Checkbox Field group click 3 Dark', async ({ page }) => {
-    await page.locator('label[role="switch"] span').first().click();
+    await page.getByLabel('Dark_mode').check();
     await page.getByText('Управляемый чекбокс', { exact: true }).click();
     await page.getByLabel('Не управляемый маленький чекбокс', { exact: true }).check();
     await page.getByLabel('Error не управляемый чекбоксВариация с дополнительно декорированным текстом').check();
