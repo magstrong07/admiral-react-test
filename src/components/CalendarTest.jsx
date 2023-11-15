@@ -15,7 +15,7 @@ const tomorrow = new Date();
 tomorrow.setDate(new Date().getDate() + 1);
 
 const CalendarTest = () => {
-  const [selected, setSelected] = useState(Date | null);
+  const [selected, setSelected] = useState(Date('2022-01-01') | null);
   const [selectedMaxDate, setSelectedMaxDate] = useState(Date | null);
   const [selectedEn, setSelectedEn] = useState(Date | null);
   const [selectedDe, setSelectedDe] = useState(Date | null);
