@@ -102,7 +102,7 @@ const SelectFields = (props) => {
 
   const onChange = (e) => {
     setSelectValue(e.target.value);
-    props.onChange?.(e);
+    props.onChange1?.(e);
   };
   const onChange2 = (e) => {
     setSelectValue2(e.target.value);
@@ -132,7 +132,7 @@ const SelectFields = (props) => {
         label="label"
         value={selectValue2}
         onChange={onChange2}
-        placeholder="Placeholder"
+        placeholder="Placeholder3"
       >
         {OPTIONS.map((option) => (
           <Option key={option.value} value={option.value}>

@@ -39,7 +39,9 @@ const RadioButtons = (props) => {
         <RadioButton
           {...props}
           extraText={`size: ${props.dimension}, checked: ${props.checked}, disabled: ${props.disabled}`}
-        ></RadioButton>
+        >
+          Test
+        </RadioButton>
       </Wrapper>
     </div>
   );

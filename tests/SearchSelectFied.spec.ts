@@ -8,7 +8,7 @@ test.describe('search select field', () => {
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text', async ({ page }) => {
-    await page.locator('select').nth(1).selectOption('teeext');
+    await page.locator('select').nth(1).selectOption('teeext 1');
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('search select field input text 2', async ({ page }) => {

@@ -22,7 +22,8 @@ test.describe('Checkbox Composite group', () => {
     await page.locator('input[name="Воронеж"]').nth(2).check();
     await page.locator('input[name="Самара"]').nth(2).check();
     await page.locator('input[name="Омск"]').nth(2).check();
-    await page.locator('text=Города:').nth(2).uncheck();
+    // await page.locator('text=Города:').nth(2).uncheck();
+    await page.getByLabel('Города:').nth(2).uncheck();
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
@@ -51,7 +52,7 @@ test.describe('Checkbox Composite group', () => {
     await page.locator('input[name="Воронеж"]').nth(2).check();
     await page.locator('input[name="Самара"]').nth(2).check();
     await page.locator('input[name="Омск"]').nth(2).check();
-    await page.locator('text=Города:').nth(2).uncheck();
+    await page.getByLabel('Города:').nth(2).uncheck();
     await page.waitForTimeout(250);
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
