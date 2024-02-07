@@ -86,7 +86,7 @@ import TreeTest from './components/Tree/TreeTest.jsx';
 import InputExTest from './components/InputExTest.jsx';
 import DropMenuTest from './components/DropMenuTest.jsx';
 import TagMenuTest from './components/TagMenuTest.jsx';
-
+import FloatingButtonTest from './components/FloatingButtonTest.jsx';
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
   const [checked, setChecked] = useState(false);
@@ -203,6 +203,7 @@ function App() {
             <Route path="input_ex" element={<InputExTest />} />
             <Route path="drop_menu" element={<DropMenuTest />} />
             <Route path="tag_menu" element={<TagMenuTest />} />
+            <Route path="floating_button" element={<FloatingButtonTest />} />
           </Routes>
         </HashRouter>
       </div>
