@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditModeField, T, EditMode } from '@admiral-ds/react-ui';
+import { EditMode, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -36,8 +36,8 @@ function func2(dimension, bold) {
 }
 dimensions.forEach((d) => func1(d));
 
-const EditModeFields = (props) => {
-  const [localValue, setValue] = React.useState(props.value ?? 'admin');
+const EditModes = (props) => {
+  const [localValue, setValue] = React.useState(props.value ?? 'asdfasdfa');
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
@@ -47,18 +47,12 @@ const EditModeFields = (props) => {
   return (
     <div>
       <Wrapper>
-        <EditModeField
-          multilineView
-          {...props}
-          value={localValue}
-          onChange={handleChange}
-          label="Label"
-        ></EditModeField>
+        <EditMode multilineView {...props} value={localValue} onChange={handleChange}></EditMode>
       </Wrapper>
     </div>
   );
 };
-const EditModeFieldTest = () => {
+const EditModeTest = () => {
   return propsData.map((prop, key) => {
     return (
       <>
@@ -68,11 +62,11 @@ const EditModeFieldTest = () => {
             {propsData[key].dimension}, {propsData[key].disabled ? 'disabled true' : 'disabled false'},
             {propsData[key].bold ? 'bold true' : 'bold false'}
           </T>
-          <EditModeFields {...prop} />
+          <EditModes {...prop} />
         </Wrapper>
       </>
     );
   });
 };
 
-export default EditModeFieldTest;
+export default EditModeTest;

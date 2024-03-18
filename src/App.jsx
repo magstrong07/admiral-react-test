@@ -3,8 +3,8 @@ import { Route, Routes, HashRouter } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
 
-import AccordionTest from './components/accordionTest.jsx';
 import AccordionHideDividersTest from './components/AccordionHideDividersTest.jsx';
+import AccordionTest from './components/accordionTest.jsx';
 import AccordionTestFormRadio from './components/Forms/AccordionFormTest.jsx';
 import AvatarGroupTest from './components/AvatarGroupTest.jsx';
 import AvatarTest from './components/AvatarTest.jsx';
@@ -21,16 +21,21 @@ import DateFieldTest from './components/DateFieldTest.jsx';
 import DateFieldTestHookForm from './components/Forms/DateFieldTestForms.jsx';
 import DateInputTest from './components/DateInputTest.jsx';
 import DateInputTestHookForm from './components/Forms/DateInputTestForms.jsx';
+import DropMenuTest from './components/DropMenuTest.jsx';
+import EditModeAreaTest from './components/EditModeAreaTest.jsx';
 import EditModeFieldTest from './components/EditModeFieldTest.jsx';
 import EditModeFieldsForms from './components/Forms/EditModeFieldTestForms.jsx';
+import EditModeTest from './components/EditModeTest.jsx';
 import Example from './components/exampleTest.jsx';
 import Example2 from './components/exampleTest2.jsx';
 import FieldSetRadioTest from './components/FieldSetRadioTest.jsx';
 import FieldSetTest from './components/FieldSetTest.jsx';
 import FileInputTest from './components/FileInputTest.jsx';
+import FloatingButtonTest from './components/FloatingButtonTest.jsx';
 import HintTest from './components/hintTest.jsx';
 import IconButtonTest from './components/iconButtonTest.jsx';
 import IconsTest from './icons/IconsTest.jsx';
+import InputExTest from './components/InputExTest.jsx';
 import InputFieldTest from './components/InputFieldTest.jsx';
 import LinkTest from './components/LinkTest.jsx';
 import MenuButtonTest, { items } from './components/MenuButtonTest.jsx';
@@ -70,6 +75,7 @@ import TableColumnOrientationTest from './components/TablesTest/TableColumnOrien
 import TableTest from './components/TablesTest/TableTest.jsx';
 import TableWidthColumnTest from './components/TablesTest/TableWidthColumnTest.jsx';
 import TableWithCheckboxTest from './components/TablesTest/TableWithCheckBoxTest.jsx';
+import TagMenuTest from './components/TagMenuTest.jsx';
 import TagsTest from './components/TagsTest.jsx';
 import TextAreaTest from './components/TextAreaTest.jsx';
 import TextButtonTest from './components/TextButtonTest.jsx';
@@ -80,13 +86,9 @@ import TimeInputTest from './components/TimeInputTest.jsx';
 import ToastTest from './components/ToastTest.jsx';
 import TogglesTest from './components/ToggleTest.jsx';
 import TooltipTest from './components/TooltipTest.jsx';
+import TreeTest from './components/Tree/TreeTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
-import TreeTest from './components/Tree/TreeTest.jsx';
-import InputExTest from './components/InputExTest.jsx';
-import DropMenuTest from './components/DropMenuTest.jsx';
-import TagMenuTest from './components/TagMenuTest.jsx';
-import FloatingButtonTest from './components/FloatingButtonTest.jsx';
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
   const [checked, setChecked] = useState(false);
@@ -139,16 +141,21 @@ function App() {
             <Route path="date_fields_forms" element={<DateFieldTestHookForm />} />
             <Route path="date_input" element={<DateInputTest />} />
             <Route path="date_input_forms" element={<DateInputTestHookForm />} />
+            <Route path="drop_menu" element={<DropMenuTest />} />
+            <Route path="edit_mode" element={<EditModeTest />} />
             <Route path="edit_mode_field" element={<EditModeFieldTest />} />
             <Route path="edit_mode_field_forms" element={<EditModeFieldsForms />} />
+            <Route path="edit_modearea" element={<EditModeAreaTest />} />
             <Route path="example" element={<Example />} />
             <Route path="example2" element={<Example2 />} />
             <Route path="field_set" element={<FieldSetTest />} />
             <Route path="field_set_radio" element={<FieldSetRadioTest />} />
             <Route path="file_input" element={<FileInputTest />} />
+            <Route path="floating_button" element={<FloatingButtonTest />} />
             <Route path="hint" element={<HintTest />} />
             <Route path="icon_button" element={<IconButtonTest />} />
             <Route path="icons" element={<IconsTest />} />
+            <Route path="input_ex" element={<InputExTest />} />
             <Route path="input_field" element={<InputFieldTest />} />
             <Route path="link" element={<LinkTest />} />
             <Route path="menu_button" element={<MenuButtonTest items={items} />} />
@@ -188,6 +195,7 @@ function App() {
             <Route path="table_width" element={<TableWidthColumnTest />} />
             <Route path="table_with_checkbox" element={<TableWithCheckboxTest />} />
             <Route path="tabmenu" element={<TabMenuTest />} />
+            <Route path="tag_menu" element={<TagMenuTest />} />
             <Route path="tags" element={<TagsTest />} />
             <Route path="text_area" element={<TextAreaTest />} />
             <Route path="text_button" element={<TextButtonTest />} />
@@ -198,12 +206,8 @@ function App() {
             <Route path="toast" element={<ToastTest />} />
             <Route path="toggle" element={<TogglesTest />} />
             <Route path="tooltip" element={<TooltipTest />} />
-            <Route path="typography" element={<TTest />} />
             <Route path="tree" element={<TreeTest />} />
-            <Route path="input_ex" element={<InputExTest />} />
-            <Route path="drop_menu" element={<DropMenuTest />} />
-            <Route path="tag_menu" element={<TagMenuTest />} />
-            <Route path="floating_button" element={<FloatingButtonTest />} />
+            <Route path="typography" element={<TTest />} />
           </Routes>
         </HashRouter>
       </div>
