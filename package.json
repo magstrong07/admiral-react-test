@@ -17,7 +17,7 @@
   "dependencies": {
     "@admiral-ds/fonts": "^2.0.0",
     "@admiral-ds/icons": "^2.4.0",
-    "@admiral-ds/react-ui": "github:AdmiralDS/react-ui#1055-feature-editmode-добавлено-многострочное-редактирование",
+    "@admiral-ds/react-ui": "github:AdmiralDS/react-ui#main",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@hookform/devtools": "^4.3.1",
