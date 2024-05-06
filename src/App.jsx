@@ -34,7 +34,7 @@ import FileInputTest from './components/FileInputTest.jsx';
 import FloatingButtonTest from './components/FloatingButtonTest.jsx';
 import HintTest from './components/hintTest.jsx';
 import IconButtonTest from './components/iconButtonTest.jsx';
-import IconsTest from './icons/IconsTest.jsx';
+// import IconsTest from './icons/IconsTest.jsx';
 import InputExTest from './components/InputExTest.jsx';
 import InputFieldTest from './components/InputFieldTest.jsx';
 import LinkTest from './components/LinkTest.jsx';
@@ -154,7 +154,7 @@ function App() {
             <Route path="floating_button" element={<FloatingButtonTest />} />
             <Route path="hint" element={<HintTest />} />
             <Route path="icon_button" element={<IconButtonTest />} />
-            <Route path="icons" element={<IconsTest />} />
+            {/* <Route path="icons" element={<IconsTest />} /> */}
             <Route path="input_ex" element={<InputExTest />} />
             <Route path="input_field" element={<InputFieldTest />} />
             <Route path="link" element={<LinkTest />} />

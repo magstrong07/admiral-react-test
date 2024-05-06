@@ -23,6 +23,9 @@ module.exports = {
       module: false,
     },
   },
+  stats: {
+    children: true,
+  },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
     port: 3000,
@@ -50,28 +53,33 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack',
-            options: {
-              prettier: false,
-              svgo: false,
-              svgoConfig: {
-                plugins: [{ removeViewBox: false }],
-              },
-              titleProp: true,
-              ref: true,
-            },
-          },
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/media/[name].[hash].[ext]',
-            },
-          },
-        ],
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [{ loader: '@svgr/webpack', options: { dimensions: false, svgProps: { focusable: '{false}' } } }],
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: '@svgr/webpack',
+      //       options: {
+      //         prettier: false,
+      //         svgo: false,
+      //         svgoConfig: {
+      //           plugins: [{ removeViewBox: false }],
+      //         },
+      //         titleProp: true,
+      //         ref: true,
+      //       },
+      //     },
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'static/media/[name].[hash].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   performance: {
