@@ -1,4 +1,3 @@
-import React from 'react';
 import { SliderInput, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

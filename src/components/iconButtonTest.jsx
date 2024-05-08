@@ -1,7 +1,6 @@
-import React from 'react';
 import { IconButton, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
 const Container = styled.div`
   padding: 14px;

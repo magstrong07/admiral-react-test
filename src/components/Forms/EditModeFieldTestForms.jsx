@@ -1,4 +1,3 @@
-import React from 'react';
 import { EditModeField, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { Controller, useForm } from 'react-hook-form';

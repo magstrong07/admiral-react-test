@@ -1,6 +1,5 @@
-import React from 'react';
 import { Button, T } from '@admiral-ds/react-ui';
-import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 import styled from 'styled-components';
 
 const WrapperButton = styled.div`

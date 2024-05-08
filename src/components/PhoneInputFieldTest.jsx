@@ -1,4 +1,3 @@
-import React from 'react';
 import { PhoneInputField, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

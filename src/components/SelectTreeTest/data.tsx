@@ -1,5 +1,4 @@
-import React from 'react';
-import { ReactComponent as FolderSolid } from '@admiral-ds/icons/build/documents/FolderSolid.svg';
+import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
 
 export const selectTreeListS = [
   {

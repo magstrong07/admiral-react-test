@@ -49,37 +49,20 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$/,
+        test: /\.(jpg|jpeg|png|gif|svg|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$/,
         type: 'asset/resource',
       },
+      // {
+      //   test: /\.svg$/i,
+      //   type: 'asset',
+      //   resourceQuery: { not: [/react/] }, // *.svg
+      // },
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
+        resourceQuery: /react/, // *.svg?react
         use: [{ loader: '@svgr/webpack', options: { dimensions: false, svgProps: { focusable: '{false}' } } }],
       },
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     {
-      //       loader: '@svgr/webpack',
-      //       options: {
-      //         prettier: false,
-      //         svgo: false,
-      //         svgoConfig: {
-      //           plugins: [{ removeViewBox: false }],
-      //         },
-      //         titleProp: true,
-      //         ref: true,
-      //       },
-      //     },
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: 'static/media/[name].[hash].[ext]',
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
   performance: {

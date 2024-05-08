@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import { Hint, Button, T } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
-import { ReactComponent as HelpOutline } from '@admiral-ds/icons/build/service/HelpOutline.svg';
+import HelpOutline from '@admiral-ds/icons/build/service/HelpOutline.svg?react';
 
 const Container = styled.div`
   padding: 14px;
@@ -25,9 +25,9 @@ const text = `At breakpoint boundaries, mini units divide the screen into a fixe
  of mini units map to fluid grid column widths and row heights.`;
 
 const HintTest = (anchorId) => {
-  const [visible, setVisible] = React.useState(false);
-  const [visible1, setVisible1] = React.useState(false);
-  const [visible2, setVisible2] = React.useState(false);
+  const [visible, setVisible] = useState(false);
+  const [visible1, setVisible1] = useState(false);
+  const [visible2, setVisible2] = useState(false);
 
   const handleVisibilityChange = (visible) => setVisible(visible);
   const handleVisibilityChange1 = (visible1) => setVisible1(visible1);

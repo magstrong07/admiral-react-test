@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import { TabMenu } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as MinusCircleOutline } from '@admiral-ds/icons/build/service/MinusCircleOutline.svg';
+import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 
 const Wrapper = styled.div`
   display: block;
@@ -52,10 +52,10 @@ const items = [
 ];
 
 const TabMenuTest = (props) => {
-  const [selected1, setSelected1] = React.useState('0');
-  const [selected2, setSelected2] = React.useState('0');
-  const [selected3, setSelected3] = React.useState('0');
-  const [selected4, setSelected4] = React.useState('0');
+  const [selected1, setSelected1] = useState('0');
+  const [selected2, setSelected2] = useState('0');
+  const [selected3, setSelected3] = useState('0');
+  const [selected4, setSelected4] = useState('0');
   return (
     <>
       <Wrapper>

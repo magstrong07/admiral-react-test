@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InputEx, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
 const Wrapper = styled.div`
   width: 350px;

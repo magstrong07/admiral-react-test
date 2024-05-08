@@ -1,9 +1,8 @@
-import React from 'react';
 import { StatusIndicator, T } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
-import { ReactComponent as CheckOutline } from '@admiral-ds/icons/build/service/CheckOutline.svg';
-import { ReactComponent as InfoSolid } from '@admiral-ds/icons/build/service/InfoSolid.svg';
-import { ReactComponent as ErrorSolid } from '@admiral-ds/icons/build/service/ErrorSolid.svg';
+import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
+import InfoSolid from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
+import ErrorSolid from '@admiral-ds/icons/build/service/ErrorSolid.svg?react';
 
 const Wrapper = styled.div`
   display: block;

@@ -1,6 +1,5 @@
-import React from 'react';
 import { TreeNode } from '@admiral-ds/react-ui';
-import { ReactComponent as FolderSolid } from '@admiral-ds/icons/build/documents/FolderSolid.svg';
+import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
 export const demo1_TreeModel = [
   {
     render: (options) => (
