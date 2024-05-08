@@ -69,13 +69,13 @@ const Chip2 = (props) => {
         <Chips {...props} role="button">
           Москва
         </Chips>
-        <Chips {...props} iconBefore={<VacationIcon />}>
+        <Chips {...props} iconEnd={<VacationIcon />}>
           Самара
         </Chips>
-        <Chips {...props} aria-label="test" iconAfter={<BurnIcon />}>
+        <Chips {...props} aria-label="test" iconEnd={<BurnIcon />}>
           Санкт-Петербург
         </Chips>
-        <Chips {...props} iconBefore={<DiamondSolid />} iconAfter={<TrophyIcon />}>
+        <Chips {...props} iconStart={<DiamondSolid />} icon={<TrophyIcon />}>
           Калининград
         </Chips>
         <Chips {...props} renderContentTooltip={() => 'Ограниченное пространство с большим текстом'}>
