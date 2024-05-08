@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import { TagMenu } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as CheckOutline } from '@admiral-ds/icons/build/service/CheckOutline.svg';
+import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
 
 const Wrapper = styled.div`
   display: block;
@@ -49,8 +49,8 @@ const items = [
 ];
 
 const TagMenuTest = (props) => {
-  const [selected, setSelected] = React.useState(items[0]);
-  const [selected1, setSelected1] = React.useState(items[0]);
+  const [selected, setSelected] = useState(items[0]);
+  const [selected1, setSelected1] = useState(items[0]);
 
   return (
     <>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { SelectTree, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { selectTreeListS, treeViewList } from './data.tsx';

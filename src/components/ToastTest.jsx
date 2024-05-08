@@ -1,4 +1,3 @@
-import React from 'react';
 import { Toast, ToastProvider, Button, useToast } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

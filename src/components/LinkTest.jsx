@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as ArrowLeftOutline } from '@admiral-ds/icons/build/system/ArrowLeftOutline.svg';
-import { ReactComponent as ArrowRightOutline } from '@admiral-ds/icons/build/system/ArrowRightOutline.svg';
+import ArrowLeftOutline from '@admiral-ds/icons/build/system/ArrowLeftOutline.svg?react';
+import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
 
 const Container = styled.div`
   padding: 14px;

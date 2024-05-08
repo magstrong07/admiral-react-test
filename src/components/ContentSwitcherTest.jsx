@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ContentSwitcher, ContentSwitcherItem, Badge } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
 const Separator = styled.div`
   height: 40px;

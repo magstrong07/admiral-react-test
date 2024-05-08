@@ -1,4 +1,3 @@
-import React from 'react';
 import { Modal, Button, ModalTitle, ModalButtonPanel, ModalContent, T, hexToRgba } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

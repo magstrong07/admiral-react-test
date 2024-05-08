@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import { Tooltip, Button } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as DeleteOutline } from '@admiral-ds/icons/build/system/DeleteOutline.svg';
+import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
 const Wrapper = styled.div`
   display: block;
@@ -12,10 +12,10 @@ const Wrapper = styled.div`
 `;
 
 const TooltipTest = () => {
-  const btnRef = React.useRef(null);
-  const [visible, setVisible] = React.useState(false);
-  const btnRef1 = React.useRef(null);
-  const [visible1, setVisible1] = React.useState(false);
+  const btnRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const btnRef1 = useRef(null);
+  const [visible1, setVisible1] = useState(false);
 
   return (
     <>

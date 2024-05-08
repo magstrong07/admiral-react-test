@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { OverflowMenu, MenuItem, T } from '@admiral-ds/react-ui';
-import { ReactComponent as MinusCircleOutline } from '@admiral-ds/icons/build/service/MinusCircleOutline.svg';
-
+import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -51,7 +50,7 @@ const items = [
 ];
 
 const OverflowMenuTest = (...args) => {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = useState();
   const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,

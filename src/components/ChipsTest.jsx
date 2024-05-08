@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Chips, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 // import uuid from 'react-uuid';
-import { ReactComponent as VacationIcon } from '@admiral-ds/icons/build/category/VacationSolid.svg';
-import { ReactComponent as BurnIcon } from '@admiral-ds/icons/build/category/BurnSolid.svg';
-import { ReactComponent as DiamondSolid } from '@admiral-ds/icons/build/category/DiamondSolid.svg';
-import { ReactComponent as TrophyIcon } from '@admiral-ds/icons/build/category/TrophySolid.svg';
+import VacationIcon from '@admiral-ds/icons/build/category/VacationSolid.svg?react';
+import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
+import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
+import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
 
 const Container = styled.div`
   padding: 14px;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { rowList, columnList } from './data.tsx';

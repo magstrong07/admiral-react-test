@@ -1,8 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import { Select, Tooltip, Option, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as StarSolid } from '@admiral-ds/icons/build/system/StarSolid.svg';
-import { ReactComponent as CardSolid } from '@admiral-ds/icons/build/finance/CardSolid.svg';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
+import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
 
 const Wrapper = styled.div`
   display: block;

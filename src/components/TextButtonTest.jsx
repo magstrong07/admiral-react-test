@@ -1,7 +1,6 @@
-import React from 'react';
 import { TextButton, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ReactComponent as AttachFileOutline } from '@admiral-ds/icons/build/system/AttachFileOutline.svg';
+import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 
 const Wrapper = styled.div`
   display: block;

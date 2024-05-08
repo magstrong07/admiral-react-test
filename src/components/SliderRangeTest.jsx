@@ -1,4 +1,3 @@
-import React from 'react';
 import { SliderRange, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
@@ -52,16 +51,16 @@ const SliderRanges = (prop) => {
 
 const SliderRangeTest = () => {
   return propsData.map((prop, key) => {
-  return (
-    <>
-      <Wrapper>
-        <T font="Additional/L" as="div">
+    return (
+      <>
+        <Wrapper>
+          <T font="Additional/L" as="div">
             {propsData[key].dimension}, {propsData[key].status}
           </T>
           <SliderRanges {...prop} />
-      </Wrapper>
-    </>
-  );
+        </Wrapper>
+      </>
+    );
   });
 };
 

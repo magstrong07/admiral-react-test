@@ -1,6 +1,5 @@
-import React from 'react';
 import { Avatar } from '@admiral-ds/react-ui';
-import { ReactComponent as PersonSolid } from '@admiral-ds/icons/build/system/PersonSolid.svg';
+import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
 import styled from 'styled-components';
 let imageURL = 'https://github.com/DrUNE.png?size=100';
 

@@ -1,10 +1,5 @@
 import { AvatarGroup, T } from '@admiral-ds/react-ui';
 import { SystemPersonSolid } from '@admiral-ds/icons';
-
-// Иконки в виде компонентов в имя включают имя блока в котором они находятся
-// import { CategoryBurnOutline } from '@admiral-ds/icons';
-// import { ReactComponent as BurnOutline } from '@admiral-ds/icons/build/category/BurnOutline.svg';
-
 import styled from 'styled-components';
 
 const imageURL = 'https://github.com/DrUNE.png?size=100';
@@ -50,14 +45,12 @@ const AvatarGroupTest = () => {
   return propsData.map((prop, key) => {
     console.log(propsData);
     return (
-      <>
-        <Wrapper>
-          <T font="Additional/L" as="div">
-            {propsData[key].dimension}, {propsData[key].appearance}
-          </T>
-          <AvatarGroup {...prop} items={items} />
-        </Wrapper>
-      </>
+      <Wrapper key={`key_${key}`}>
+        <T font="Additional/L" as="div">
+          {propsData[key].dimension}, {propsData[key].appearance}
+        </T>
+        <AvatarGroup {...prop} items={items} />
+      </Wrapper>
     );
   });
 };

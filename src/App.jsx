@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Toggle, LIGHT_THEME, DARK_THEME } from '@admiral-ds/react-ui';
@@ -89,23 +89,24 @@ import TooltipTest from './components/TooltipTest.jsx';
 import TreeTest from './components/Tree/TreeTest.jsx';
 import Welcome from './components/Welcome/Welcome.jsx';
 import { MyChips } from './components/MyComponentsTest/MyChips/index.jsx';
-function App() {
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) => theme.color['Neutral/Neutral 00']};
+    font-family: 'VTB Group UI';
+  }
+`;
+const ToggleStyled = styled(Toggle)`
+  margin: 10px 0 30px 10px;
+`;
+
+export default function App() {
   const [selectedTheme, setSelectedTheme] = useState(LIGHT_THEME);
   const [checked, setChecked] = useState(false);
 
   const HandleThemeChange = (theme) => {
     setSelectedTheme(theme);
   };
-
-  const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: ${({ theme }) => theme.color['Neutral/Neutral 00']};
-    font-family: 'VTB Group UI';
-  }
-`;
-  const ToggleStyled = styled(Toggle)`
-    margin: 10px 0 30px 10px;
-  `;
 
   return (
     <ThemeProvider theme={selectedTheme}>
@@ -214,5 +215,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;

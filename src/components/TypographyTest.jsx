@@ -1,4 +1,3 @@
-import React from 'react';
 import { T, MainPrimaryColorName } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 

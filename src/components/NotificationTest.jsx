@@ -1,4 +1,3 @@
-import React from 'react';
 import { Notification } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
