@@ -1,5 +1,6 @@
 import { MenuButton, MenuItem, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
+import { useState, useMemo } from 'react';
 
 const WrapperButton = styled.div`
   display: block;
@@ -64,8 +65,8 @@ dimension.forEach((k) => {
 });
 
 const MenuButtons = (args) => {
-  const [selected, setSelected] = React.useState(undefined);
-  const model = React.useMemo(() => {
+  const [selected, setSelected] = useState(undefined);
+  const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
       render: (items) => (

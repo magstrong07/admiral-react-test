@@ -1,6 +1,7 @@
 import { IconButton, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
+import { ReactComponent as AcceptSolid } from '@admiral-ds/icons/build/category/AcceptSolid.svg';
 
 const Container = styled.div`
   padding: 14px;
@@ -30,6 +31,7 @@ const IconButtonTest = () => {
           <IconButton dimension="xl">
             <StarSolid />
           </IconButton>
+          <AcceptSolid />
         </div>
         <div>
           <T font="Additional/L" as="div">

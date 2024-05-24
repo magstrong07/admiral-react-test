@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@admiral-ds/fonts": "^2.0.0",
-    "@admiral-ds/icons": "github:/AdmiralDS/icons#25-update-icon-kit",
+    "@admiral-ds/icons": "github:/AdmiralDS/icons#main",
     "@admiral-ds/react-ui": "github:AdmiralDS/react-ui#main",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",

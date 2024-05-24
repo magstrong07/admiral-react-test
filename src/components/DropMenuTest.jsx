@@ -1,5 +1,6 @@
 import { DropMenu, MenuItem, Button, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
+import { useState, useMemo } from 'react';
 
 const Wrapper = styled.div`
   display: block;
@@ -67,8 +68,8 @@ const onOpenMenu = () => console.log('menu opened');
 const onCloseMenu = () => console.log('menu closed');
 
 const DropMenus = (props) => {
-  const [selected, setSelected] = React.useState();
-  const model = React.useMemo(() => {
+  const [selected, setSelected] = useState();
+  const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
       render: (options) => (

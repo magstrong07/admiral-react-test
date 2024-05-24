@@ -1,5 +1,6 @@
 import { EditMode, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const Wrapper = styled.div`
   display: block;
@@ -36,7 +37,7 @@ function func2(dimension, bold) {
 dimensions.forEach((d) => func1(d));
 
 const EditModes = (props) => {
-  const [localValue, setValue] = React.useState(props.value ?? 'asdfasdfa');
+  const [localValue, setValue] = useState(props.value ?? 'asdfasdfa');
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
