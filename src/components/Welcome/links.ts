@@ -78,4 +78,5 @@ export const links = [
   '/tooltip',
   '/tree',
   '/typography',
+  '/table_zebra',
 ];

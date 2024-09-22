@@ -15,7 +15,7 @@ test.describe('accordion', () => {
   });
   test('Accordion click2 radio', async ({ page }) => {
     await page.click('button[role="button"]:has-text("Второй пункт")');
-    await page.click('text=Second option');
+    await page.getByLabel('Second option').check();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click2 option 5', async ({ page }) => {
@@ -48,7 +48,7 @@ test.describe('accordion', () => {
   test('Accordion click2 radio Dark', async ({ page }) => {
     await page.getByLabel('Dark_mode').check();
     await page.click('button[role="button"]:has-text("Второй пункт")');
-    await page.click('text=Second option');
+    await page.getByLabel('Second option').check();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
   });
   test('Accordion click2 option 5 Dark', async ({ page }) => {
