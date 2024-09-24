@@ -117,7 +117,7 @@ const rowList = [
   },
   {
     id: '0016',
-    transfer_type: 'МНО',
+    transfer_type: 'Scroll',
     transfer_date: new Date('2020-08-06').toLocaleDateString(),
     currency: 'RUB',
     rate: 2.5,

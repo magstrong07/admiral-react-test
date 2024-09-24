@@ -237,7 +237,7 @@ export default function App() {
             <Route path="table_drag_row" element={<TableDragDropRowsTest />} />
             <Route path="table_detail_row" element={<TableDetailRowTest />} />
             <Route path="table_ovefrlow_menu" element={<TableWithOverflowMenuTest />} />
-            <Route path="table_filter_test" element={<TableFilterTest />} />
+            <Route path="table_filter" element={<TableFilterTest />} />
           </Routes>
         </HashRouter>
       </div>

@@ -28,7 +28,7 @@ dimensions.forEach((d) => func1(d));
 const Tables = (props) => {
   return (
     <>
-      <Table {...props} rowList={rowList} columnList={columnListSticky} />
+      <Table {...props} rowList={rowList} columnList={columnListSticky}/>
     </>
   );
 };

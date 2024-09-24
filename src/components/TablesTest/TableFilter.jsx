@@ -265,7 +265,7 @@ const Tables = (props) => {
     setCols(newCols);
   };
 
-  return <Table columnList={cols} rowList={rows} onColumnResize={handleResize} />;
+  return <Table {...props} columnList={cols} rowList={rows} onColumnResize={handleResize} />;
 };
 
 const TableFilterTest = () => {

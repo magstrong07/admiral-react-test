@@ -10,7 +10,6 @@ test.describe('Checkbox Field group', () => {
     await page.getByLabel('Не управляемый маленький чекбокс indeterminateВариация с дополнительным текстом').check();
     await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
 
-
   });
   test('Checkbox Field group click 3 Dark', async ({ page }) => {
     await page.getByLabel('Dark_mode').check();

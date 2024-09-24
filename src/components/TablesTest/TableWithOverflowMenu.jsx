@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Table, T, OverflowMenu, RowAction, TooltipHoc, MenuItem } from '@admiral-ds/react-ui';
+import { Table, OverflowMenu, RowAction, TooltipHoc, MenuItem } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
@@ -33,7 +33,7 @@ const items = [
   },
 ];
 
-const Menu = (row, onVisibilityChange) => {
+const Menu = ({ row, onVisibilityChange }) => {
   const model = React.useMemo(() => {
     return items.map((item) => ({
       id: item.id,
