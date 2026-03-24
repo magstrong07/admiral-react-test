@@ -7271,7 +7271,7 @@ flex-direction: column;
   }
   flex-direction: column;
   height: 400px;
-`,E5e=()=>o.jsxs(o.Fragment,{children:[o.jsxs(y5e,{children:[o.jsx(fe,{as:"h2",font:"Additional/L-bold",children:"Welcome to admiral-ds"}),o.jsxs(fe,{children:["Date : ",new Date().toDateString()]})]}),o.jsx($r,{style:{marginTop:"50px"},children:o.jsx(gt,{title:"Components for testing",children:o.jsx(b5e,{children:GG.map((e,t)=>o.jsx(v8,{appearance:"primary",to:e,children:e.replace(/\\|\//g,"").charAt(0).toUpperCase()+e.slice(2)},t))})})})]}),w5e=()=>o.jsx("h1",{children:"привет"}),_5e=S.div`
+`,E5e=()=>o.jsxs(o.Fragment,{children:[o.jsxs(y5e,{children:[o.jsx(fe,{as:"h2",font:"Additional/L-bold",children:"Welcome to admiral-ds 2026"}),o.jsxs(fe,{children:["Date : ",new Date().toDateString()]})]}),o.jsx($r,{style:{marginTop:"50px"},children:o.jsx(gt,{title:"Components for testing",children:o.jsx(b5e,{children:GG.map((e,t)=>o.jsx(v8,{appearance:"primary",to:e,children:e.replace(/\\|\//g,"").charAt(0).toUpperCase()+e.slice(2)},t))})})})]}),w5e=()=>o.jsx("h1",{children:"привет"}),_5e=S.div`
   display: block;
   width: 800px;
   > * {
