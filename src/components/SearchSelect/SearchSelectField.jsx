@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectField, T, Option, Highlight } from '@admiral-ds/react-ui';
+import { SelectField, T, Option } from '@admiral-ds/react-ui';
 import styled, { css, keyframes } from 'styled-components';
 
 const Wrapper = styled.div`
@@ -24,11 +24,7 @@ function func1(dimension) {
 }
 function func2(dimension, status) {
   disableds.forEach((disabled) => {
-    propsData.push({
-      dimension,
-      status,
-      disabled,
-    });
+    propsData.push({ dimension, status, disabled });
   });
 }
 dimensions.forEach((d) => func1(d));
@@ -74,26 +70,10 @@ const OPTIONS_SIMPLE = [
 ];
 
 const OPTIONS = [
-  {
-    value: 'val1',
-    text: 'Текст 1',
-    extraText: 'Доооп Текст 1',
-  },
-  {
-    value: 'val2',
-    text: 'Текст 2',
-    extraText: 'Доп Теttкст 2',
-  },
-  {
-    value: 'val3',
-    text: 'Текст 3',
-    extraText: 'дддопТекст 3',
-  },
-  {
-    value: 'val4',
-    text: 'Текст 444',
-    extraText: 'Доооп Тексттт 41232',
-  },
+  { value: 'val1', text: 'Текст 1', extraText: 'Доооп Текст 1' },
+  { value: 'val2', text: 'Текст 2', extraText: 'Доп Теttкст 2' },
+  { value: 'val3', text: 'Текст 3', extraText: 'дддопТекст 3' },
+  { value: 'val4', text: 'Текст 444', extraText: 'Доооп Тексттт 41232' },
 ];
 
 const SelectFields = (props) => {
@@ -138,9 +118,9 @@ const SelectFields = (props) => {
           <Option key={option.value} value={option.value}>
             <Icon />
             <TextWrapper>
-              <Highlight>{option.text}</Highlight>
+              <span>{option.text}</span>
               <ExtraText>
-                <Highlight>{option.extraText}</Highlight>
+                <span>{option.extraText}</span>
               </ExtraText>
             </TextWrapper>
           </Option>

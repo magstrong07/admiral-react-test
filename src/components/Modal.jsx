@@ -1,4 +1,4 @@
-import { Modal, Button, ModalTitle, ModalButtonPanel, ModalContent, T, hexToRgba } from '@admiral-ds/react-ui';
+import { Modal, Button, ModalTitle, ModalButtonPanel, ModalContent, T } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import React, { useState } from 'react';
 
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const overlayStyles = `
-  background-color: ${({ theme }) => hexToRgba(theme.color.background.secondary, 0.6)};
+  background-color: color-mix(in srgb, ${({ theme }) => theme.color.background.secondary} 60%, transparent);
 `;
 const dimension = [{ dimension: 's' }, { dimension: 'm' }, { dimension: 'l' }, { dimension: 'xl' }];
 
