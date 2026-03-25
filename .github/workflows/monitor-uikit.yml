@@ -1,0 +1,91 @@
+name: Monitor UI Kit Changes
+
+# ─── КОГДА ЗАПУСКАТЬ ──────────────────────────────────────────
+on:
+  schedule:
+    # Каждые 6 часов (в 00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
+
+  # Позволяет запустить вручную из вкладки Actions
+  workflow_dispatch:
+
+# ─── РАЗРЕШЕНИЯ ───────────────────────────────────────────────
+# Нужно для чтения/записи Variables через API
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  check-uikit:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.check.outputs.changed }}
+
+    steps:
+      # ── Шаг 1: Спрашиваем у GitHub API последний коммит UI kit ──
+      - name: Check for new commits in UI kit
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "::group::Fetching latest commit from AdmiralDS/react-ui"
+
+          # Запрашиваем SHA последнего коммита в ветке master
+          LATEST_SHA=$(gh api repos/AdmiralDS/react-ui/commits/master --jq '.sha')
+          echo "Latest SHA: $LATEST_SHA"
+
+          # Пытаемся прочитать сохранённый SHA из Variables
+          CACHED_SHA=$(gh api repos/${{ github.repository }}/actions/variables/UIKIT_LAST_SHA --jq '.value' 2>/dev/null || echo "")
+          echo "Cached SHA: $CACHED_SHA"
+
+          echo "::endgroup::"
+
+          # Сравниваем
+          if [ "$LATEST_SHA" != "$CACHED_SHA" ]; then
+            echo "🔄 UI kit has new commits!"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "sha=$LATEST_SHA" >> $GITHUB_OUTPUT
+          else
+            echo "✅ No changes in UI kit"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      # ── Шаг 2: Сохраняем новый SHA, чтобы не запускать повторно ──
+      - name: Update cached SHA
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Пытаемся обновить существующую переменную
+          gh api --method PATCH \
+            repos/${{ github.repository }}/actions/variables/UIKIT_LAST_SHA \
+            -f value="${{ steps.check.outputs.sha }}" 2>/dev/null || \
+          # Если её нет — создаём новую
+          gh api --method POST \
+            repos/${{ github.repository }}/actions/variables \
+            -f name="UIKIT_LAST_SHA" \
+            -f value="${{ steps.check.outputs.sha }}"
+
+  # ─── ТЕСТЫ (только если есть изменения) ─────────────────────
+  test:
+    needs: check-uikit
+    if: needs.check-uikit.outputs.changed == 'true'
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-uikit-monitor
+          path: playwright-report/
+          retention-days: 30
