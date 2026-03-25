@@ -9,12 +9,6 @@ on:
   # Позволяет запустить вручную из вкладки Actions
   workflow_dispatch:
 
-# ─── РАЗРЕШЕНИЯ ───────────────────────────────────────────────
-# Нужно для чтения/записи Variables через API
-permissions:
-  actions: write
-  contents: read
-
 jobs:
   check-uikit:
     runs-on: ubuntu-latest
@@ -22,23 +16,29 @@ jobs:
       changed: ${{ steps.check.outputs.changed }}
 
     steps:
-      # ── Шаг 1: Спрашиваем у GitHub API последний коммит UI kit ──
+      # ── Восстанавливаем кеш с прошлым SHA ──
+      - name: Restore cached SHA
+        uses: actions/cache@v4
+        with:
+          path: .uikit-cache
+          key: uikit-sha-cache
+
+      # ── Спрашиваем у GitHub API последний коммит UI kit ──
       - name: Check for new commits in UI kit
         id: check
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "::group::Fetching latest commit from AdmiralDS/react-ui"
-
-          # Запрашиваем SHA последнего коммита в ветке main
-          LATEST_SHA=$(gh api repos/AdmiralDS/react-ui/commits/main --jq '.sha')
+          # Запрашиваем SHA последнего коммита в ветке master
+          LATEST_SHA=$(gh api repos/AdmiralDS/react-ui/commits/master --jq '.sha')
           echo "Latest SHA: $LATEST_SHA"
 
-          # Пытаемся прочитать сохранённый SHA из Variables
-          CACHED_SHA=$(gh api repos/${{ github.repository }}/actions/variables/UIKIT_LAST_SHA --jq '.value' 2>/dev/null || echo "")
+          # Читаем сохранённый SHA из кеш-файла
+          CACHED_SHA=""
+          if [ -f .uikit-cache/last-sha.txt ]; then
+            CACHED_SHA=$(cat .uikit-cache/last-sha.txt)
+          fi
           echo "Cached SHA: $CACHED_SHA"
-
-          echo "::endgroup::"
 
           # Сравниваем
           if [ "$LATEST_SHA" != "$CACHED_SHA" ]; then
@@ -50,21 +50,12 @@ jobs:
             echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
-      # ── Шаг 2: Сохраняем новый SHA, чтобы не запускать повторно ──
-      - name: Update cached SHA
+      # ── Сохраняем новый SHA в кеш-файл ──
+      - name: Save new SHA to cache
         if: steps.check.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Пытаемся обновить существующую переменную
-          gh api --method PATCH \
-            repos/${{ github.repository }}/actions/variables/UIKIT_LAST_SHA \
-            -f value="${{ steps.check.outputs.sha }}" 2>/dev/null || \
-          # Если её нет — создаём новую
-          gh api --method POST \
-            repos/${{ github.repository }}/actions/variables \
-            -f name="UIKIT_LAST_SHA" \
-            -f value="${{ steps.check.outputs.sha }}"
+          mkdir -p .uikit-cache
+          echo "${{ steps.check.outputs.sha }}" > .uikit-cache/last-sha.txt
 
   # ─── ТЕСТЫ (только если есть изменения) ─────────────────────
   test:
