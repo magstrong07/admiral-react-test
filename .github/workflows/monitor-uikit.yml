@@ -29,8 +29,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Запрашиваем SHA последнего коммита в ветке master
-          LATEST_SHA=$(gh api repos/AdmiralDS/react-ui/commits/master --jq '.sha')
+          # Запрашиваем SHA последнего коммита в ветке main
+          LATEST_SHA=$(gh api repos/AdmiralDS/react-ui/commits/main --jq '.sha')
           echo "Latest SHA: $LATEST_SHA"
 
           # Читаем сохранённый SHA из кеш-файла
