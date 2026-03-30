@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Content Switcher', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/contentSwitcher');
+    await page.goto('/admiral-react-test/#/contentSwitcher');
   });
   test('Content Switcher click', async ({ page }) => {
     await page.locator('"Default button">> nth=0').click();

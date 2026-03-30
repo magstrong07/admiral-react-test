@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Tooltip', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/tooltip');
+    await page.goto('/admiral-react-test/#/tooltip');
   });
 
   test('tooltip click', async ({ page }) => {

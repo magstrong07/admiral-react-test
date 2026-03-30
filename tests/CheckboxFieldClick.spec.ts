@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Checkbox Field group', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/checkbox_field');
+    await page.goto('/admiral-react-test/#/checkbox_field');
   });
   test('Checkbox Field group click 3', async ({ page }) => {
     await page.getByLabel('Управляемый чекбокс', { exact: true }).check();

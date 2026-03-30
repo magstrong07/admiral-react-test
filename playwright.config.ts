@@ -8,7 +8,7 @@ const config: PlaywrightTestConfig = {
   use: {
     trace: 'retain-on-failure',
     baseURL: process.env.CI
-      ? 'https://magstrong07.github.io/admiral-react-test'
+      ? 'https://magstrong07.github.io'
       : process.env.DOCKER
         ? 'http://host.docker.internal:3000'
         : 'http://localhost:3000',

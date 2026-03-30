@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('select', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/select');
+    await page.goto('/admiral-react-test/#/select');
   });
   test('select click options', async ({ page }) => {
     await page.waitForTimeout(200);

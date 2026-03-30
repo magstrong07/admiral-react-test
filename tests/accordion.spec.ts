@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('accordion', { tag: '@fast' }, () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/accordion');
+    await page.goto('/admiral-react-test/#/accordion');
   });
 
   test('Accordion click1', async ({ page }) => {

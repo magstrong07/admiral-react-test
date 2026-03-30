@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Chips', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/#/chips');
+    await page.goto('/admiral-react-test/#/chips');
   });
   test('Chips close', async ({ page }) => {
     await page.locator(`data-test-id=chipClose >>svg >> nth=0`).click();
