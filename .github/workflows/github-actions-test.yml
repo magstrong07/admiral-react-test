@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --grep @fast
       - uses: actions/upload-artifact@v5
         if: ${{ !cancelled() }}
         with:

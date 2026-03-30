@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.describe('accordion', () => {
+test.describe('accordion', { tag: '@fast' }, () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/#/accordion');
   });
