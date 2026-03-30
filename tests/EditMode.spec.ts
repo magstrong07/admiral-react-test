@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('edit_mode', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/edit_mode_field');
+    await page.goto('/#/edit_mode_field');
   });
 
   test('edit_mode_open click_svg', async ({ page }) => {
@@ -45,7 +45,7 @@ test.describe('edit_mode', () => {
 });
 test.describe('edit_mode_dark', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/edit_mode_field');
+    await page.goto('/#/edit_mode_field');
     await page.getByLabel('Dark_mode').check();
   });
 

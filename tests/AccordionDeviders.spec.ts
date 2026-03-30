@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('accordion deviders open', async ({ page }) => {
-  await page.goto('http://localhost:3000/#/accordionDeviders');
+  await page.goto('/#/accordionDeviders');
   await page.getByRole('button', { name: 'Первый пункт' }).first().click();
   await page.getByRole('button', { name: 'Второй пункт' }).first().click();
   await page.getByRole('button', { name: 'Третий пункт' }).first().click();
@@ -14,7 +14,7 @@ test('accordion deviders open', async ({ page }) => {
   await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
 });
 test('accordion deviders open Dark', async ({ page }) => {
-  await page.goto('http://localhost:3000/#/accordionDeviders');
+  await page.goto('/#/accordionDeviders');
   await page.getByLabel('Dark_mode').check();
   await page.getByRole('button', { name: 'Первый пункт' }).first().click();
   await page.getByRole('button', { name: 'Второй пункт' }).first().click();

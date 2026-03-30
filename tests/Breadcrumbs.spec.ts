@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Breadcrumbs cliks', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/breadcrumbs');
+    await page.goto('/#/breadcrumbs');
   });
   test('breadcrumbs hover link', async ({ page }) => {
     await page.locator('a').filter({ hasText: 'page 1' }).getByRole('link').first().hover();
@@ -24,7 +24,7 @@ test.describe('Breadcrumbs cliks', () => {
 
 test.describe('Breadcrumbs cliks Dark', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/breadcrumbs');
+    await page.goto('/#/breadcrumbs');
     await page.getByLabel('Dark_mode').check();
   });
   test('breadcrumbs hover link dark', async ({ page }) => {

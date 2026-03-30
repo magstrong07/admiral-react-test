@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('accordion', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/accordion');
+    await page.goto('/#/accordion');
   });
 
   test('Accordion click1', async ({ page }) => {

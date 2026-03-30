@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('avatar', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/avatar');
+    await page.goto('/#/avatar');
   });
   test('avatar hover', async ({ page }) => {
     await page.hover('button:nth-child(6)');

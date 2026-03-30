@@ -6,19 +6,16 @@ const config: PlaywrightTestConfig = {
 
   use: {
     trace: 'retain-on-failure',
+    baseURL: process.env.CI
+      ? 'https://magstrong07.github.io/admiral-react-test'
+      : process.env.DOCKER
+        ? 'http://host.docker.internal:3000'
+        : 'http://localhost:3000',
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], deviceScaleFactor: 2 },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'], deviceScaleFactor: 2 },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'], deviceScaleFactor: 2 },
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 };

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 test.describe('Tooltip', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:3000/#/tooltip');
+    await page.goto('/#/tooltip');
   });
 
   test('tooltip click', async ({ page }) => {

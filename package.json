@@ -1,7 +1,6 @@
 {
   "name": "admiral-react-test",
   "version": "1.0.0",
-  "homepage": "http://localhost:3000/",
   "description": "",
   "exports": "./src/index.js",
   "scripts": {
@@ -10,9 +9,9 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "test": "npx playwright test",
-    "docker:shell": "docker run --rm --init --ipc=host -it -v ${PWD}:/tests -w /tests mcr.microsoft.com/playwright:v1.58.2-noble /bin/bash",
-    "docker:test": "docker run --rm --init --ipc=host -v ${PWD}:/tests -w /tests mcr.microsoft.com/playwright:v1.58.2-noble bash -c 'npm ci && npx playwright test'",
-    "docker:update-snapshots": "docker run --rm --init --ipc=host -v ${PWD}:/tests -w /tests mcr.microsoft.com/playwright:v1.58.2-noble bash -c 'npm ci && npx playwright test --update-snapshots'",
+    "docker:shell": "docker run -v ${PWD}:/tests -v playwright_nm:/tests/node_modules -w /tests --ipc=host --add-host=host.docker.internal:host-gateway --rm -it mcr.microsoft.com/playwright:v1.58.2-noble /bin/bash",
+    "docker:test": "docker run -v ${PWD}:/tests -v playwright_nm:/tests/node_modules -w /tests --ipc=host --add-host=host.docker.internal:host-gateway -p 9323:9323 --rm -it mcr.microsoft.com/playwright:v1.58.2-noble bash -c 'npm ci && DOCKER=1 npx playwright test'",
+    "docker:update-snapshots": "docker run -v ${PWD}:/tests -v playwright_nm:/tests/node_modules -w /tests --ipc=host --add-host=host.docker.internal:host-gateway -p 9323:9323 --rm -it mcr.microsoft.com/playwright:v1.58.2-noble bash -c 'rm -rf test-results && npm ci && DOCKER=1 npx playwright test --update-snapshots'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
