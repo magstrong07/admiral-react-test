@@ -1,6 +1,7 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
+  timeout: 8000,
   workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], ['html', { open: 'on-failure' }]],
 
