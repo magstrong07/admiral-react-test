@@ -6,11 +6,11 @@ test.describe('Coomponents', () => {
     const url = links[index];
 
     test(links[index], async ({ page }) => {
-      await page.goto(`/#${url}`);
+      await page.goto(`/admiral-react-test/#${url}`);
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
     });
     test(links[index] + ' Dark', async ({ page }) => {
-      await page.goto(`/#${url}`);
+      await page.goto(`/admiral-react-test/#${url}`);
       // Dark-mode switch
       await page.getByLabel('Dark_mode').check();
       await expect(page).toHaveScreenshot({ fullPage: true, scale: 'css' });
